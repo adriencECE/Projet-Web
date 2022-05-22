@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>OMNES Sant&eacute;-Laboratoires</title>
+    <title>OMNES Sant&eacute;-Paiement</title>
     <link href="OMNESSante.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" type="image/x-icon"
         href="https://www.omneseducation.com/app/themes/inseec-group/favicon.ico">
@@ -30,14 +30,21 @@
             </a>
         </div>
         <div id="section">
-            Liste Laboratoires contenant le service s&eacute;lectionn&eacute; <br>
-            <ul>
-                <a href="InfosLabo.html">
-                    <li>Labo 1</li>
-                </a>
-                <li>Labo 2</li>
-                <li>Labo 3</li>
-            </ul>
+            <form>
+                <label>Type de Carte:</label>
+                <input type="radio" name="TypeCarte" value="Visa">
+                <input type="radio" name="TypeCarte" value="MasterCard">
+                <input type="radio" name="TypeCarte" value="American Express">
+                <input type="radio" name="TypeCarte" value="Paypal"><br>
+                <label>Num&eacute;ro de Carte:</label>
+                <input type="text" name="NumeroCarte"><br>
+                <label>Nom:</label>
+                <input type="text" name="NomCarte"><br>
+                <label>Date d'Expiration:</label>
+                <input type="date" name="DateExpiration"><br>
+                <label>Code:</label>
+                <input type="number" name="CodeCarte"><br>
+            </form>
         </div>
         <div id="footer">Copyright &copy; 2022, OMNES Sant&eacute;<br>
             <a href="mailto:OMNES.sante@gmail.com">OMNES.sante@gmail.com</a>
