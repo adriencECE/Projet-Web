@@ -22,15 +22,15 @@ $db_found = mysqli_select_db($db_handle,$db);
 
 if($db_found){
     //echo "Connected to DB <br>";
-        $sql = "SELECT * FROM medecins WHERE Spe != 'Generaliste'";
+        $sql = "SELECT * FROM labo ";
         $res = mysqli_query($db_handle, $sql);
         //var_dump($res);
-        $listeSpecialistes;
+        $listeLabo;
         while($data = mysqli_fetch_assoc($res))
         {
             //$data = une ligne de la table
             //On crée un tableau avec toutes ces lignes
-            $listeSpecialistes[]=$data;
+            $listeLabo[]=$data;
         }
    
         
@@ -76,10 +76,10 @@ else{
             <form method="post" action="InfosLabo.php">
                 <ul>
                     <!-- Pour chaque médecin Généraliste dans la table-->
-                    <?php foreach($listeSpecialistes as $Specialiste) :?>
+                    <?php foreach($listeLabo as $Labo) :?>
                         <li>
-                            <input type="radio" name="Id" value="<?= $Specialiste["Id"]?>" checked>
-                            <?php echo $Specialiste["Id"]." ".$Specialiste['Nom']." ".$Specialiste['Prenom']." ".$Specialiste['Spe']?>
+                            <input type="radio" name="Id" value="<?= $Labo["Id"]?>" checked>
+                            <?php echo $Labo["Id"]." ".$Labo['Nom']." ".$Labo['Service']?>
     
                         </li>
                     <?php endforeach?>

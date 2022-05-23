@@ -43,7 +43,7 @@ else{
 <html>
 
 <head>
-    <title>OMNES Sant&eacute;-Laboratoires</title>
+    <title>OMNES Sant&eacute;-Sp&eacute;cialistes</title>
     <link href="OMNESSante.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" type="image/x-icon"
         href="https://www.omneseducation.com/app/themes/inseec-group/favicon.ico">
@@ -72,21 +72,21 @@ else{
             </a>
         </div>
         <div id="section">
-            Liste Laboratoires contenant le service s&eacute;lectionn&eacute; <br>
-            <form method="post" action="InfosLabo.php">
-                <ul>
-                    <!-- Pour chaque médecin Généraliste dans la table-->
-                    <?php foreach($listeSpecialistes as $Specialiste) :?>
-                        <li>
-                            <input type="radio" name="Id" value="<?= $Specialiste["Id"]?>" checked>
-                            <?php echo $Specialiste["Id"]." ".$Specialiste['Nom']." ".$Specialiste['Prenom']." ".$Specialiste['Spe']?>
-    
-                        </li>
-                    <?php endforeach?>
-                </ul>
-                <label>Voir les informations du m&eacute;decin s&eacute;lectionn&eacute;:</label>
-                <input type="submit" value="Soumettre">
-                </form>
+            Liste M&eacute;decins G&eacute;n&eacute;ralistes <br>
+            <form method="post" action="InfosMedecin.php">
+            <ul>
+                <!-- Pour chaque médecin Généraliste dans la table-->
+                <?php foreach($listeSpecialistes as $Specialiste) :?>
+                    <li>
+                        <input type="radio" name="Id" value="<?= $Specialiste["Id"]?>" checked>
+                        <?php echo $Specialiste["Id"]." ".$Specialiste['Nom']." ".$Specialiste['Prenom']." ".$Specialiste['Spe']?>
+
+                    </li>
+                <?php endforeach?>
+            </ul>
+            <label>Voir les informations du m&eacute;decin s&eacute;lectionn&eacute;:</label>
+            <input type="submit" value="Soumettre">
+            </form>
         </div>
         <div id="footer">Copyright &copy; 2022, OMNES Sant&eacute;<br>
             <a href="mailto:OMNES.sante@gmail.com">OMNES.sante@gmail.com</a>
