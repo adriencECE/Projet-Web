@@ -1,5 +1,4 @@
 <html>
-
 <head>
     <title>OMNES Sant&eacute;-Paiement</title>
     <link href="OMNESSante.css" rel="stylesheet" type="text/css" />
@@ -30,20 +29,27 @@
             </a>
         </div>
         <div id="section">
-            <form>
+            <form method="post" action="Paiement.php">
                 <label>Type de Carte:</label>
-                <input type="radio" name="TypeCarte" value="Visa">
+                <input type="radio" name="TypeCarte" value="Visa" checked>
+                <label>Visa</label>
                 <input type="radio" name="TypeCarte" value="MasterCard">
+                <label>MasterCard</label>
                 <input type="radio" name="TypeCarte" value="American Express">
-                <input type="radio" name="TypeCarte" value="Paypal"><br>
+                <label>American Express</label>
+                <input type="radio" name="TypeCarte" value="Paypal">
+                <label>Paypal</label><br>
                 <label>Num&eacute;ro de Carte:</label>
                 <input type="text" name="NumeroCarte"><br>
                 <label>Nom:</label>
-                <input type="text" name="NomCarte"><br>
+                <input type="text" name="Nom"><br>
+                <label>Prenom:</label>
+                <input type="text" name="Prenom"><br>
                 <label>Date d'Expiration:</label>
-                <input type="date" name="DateExpiration"><br>
+                <input type="text" name="DateExpiration" value="yyyy-mm-dd" onclick="value=''"><br>
                 <label>Code:</label>
                 <input type="number" name="CodeCarte"><br>
+                <input type="submit" value="Soumettre">
             </form>
         </div>
         <div id="footer">Copyright &copy; 2022, OMNES Sant&eacute;<br>

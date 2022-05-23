@@ -8,7 +8,6 @@ $db_id = "root"; //DB login ID
 $db_mdp = ""; //DB login PW
 $Id = $_POST["Id"];
 $sql = "";
-$test="";
 
 //Connect
 $db_handle = mysqli_connect($site, $db_id, $db_mdp);
@@ -25,7 +24,6 @@ if($db_found){
             //$data = une ligne de la table
             //On crée un tableau avec toutes ces lignes
             $Medecin = $data;
-            echo $data["Nom"];
         }  
 }
 else{

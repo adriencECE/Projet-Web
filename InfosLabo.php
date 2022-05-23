@@ -25,7 +25,6 @@ if($db_found){
             //$data = une ligne de la table
             //On crée un tableau avec toutes ces lignes
             $Labo = $data;
-            echo $data["Nom"];
         }  
 }
 else{
