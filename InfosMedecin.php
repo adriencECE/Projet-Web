@@ -1,3 +1,38 @@
+<?php
+//Connection
+//echo "Connecting to DB <br>";
+
+$db = "omnessante"; //Name of DB
+$site = "localhost"; //Name of the Website
+$db_id = "root"; //DB login ID
+$db_mdp = ""; //DB login PW
+$Id = $_POST["Id"];
+$sql = "";
+$test="";
+
+//Connect
+$db_handle = mysqli_connect($site, $db_id, $db_mdp);
+
+//Access DB
+$db_found = mysqli_select_db($db_handle,$db);
+
+if($db_found){
+    //echo "Connected to DB <br>";
+        $sql = "SELECT * FROM medecins WHERE Id=$Id";
+        $res = mysqli_query($db_handle, $sql);
+        while($data = mysqli_fetch_assoc($res))
+        {
+            //$data = une ligne de la table
+            //On crée un tableau avec toutes ces lignes
+            $Medecin = $data;
+            echo $data["Nom"];
+        }  
+}
+else{
+    echo "Unable to connect <br>";
+}
+?>
+
 <html>
 
 <head>
@@ -30,7 +65,12 @@
             </a>
         </div>
         <div id="section">
-            Infos M&eacute;decin <br>
+            Infos M&eacute;decin <?php echo  $Id?><br>
+            <?php echo "Nom: ".$Medecin["Nom"]."  ";
+            echo "Prenom :".$Medecin["Prenom"]."  ";
+            echo "Specialite :".$Medecin["Spe"]."  ";
+            echo "Telephone :".$Medecin["Tel"]."  ";
+            echo "Mail :".$Medecin["Mail"]." <br> "; ?>
             <a href="RDV.html">
                 <input type="button" name="RDV" value="Prendre un RDV">
             </a>

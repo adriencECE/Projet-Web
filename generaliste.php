@@ -9,31 +9,24 @@ $db_mdp = ""; //DB login PW
 $var;
 $sql = "";
 $test="";
-//Connect
-//$db_handle = mysqli_connect($site, $db_id, $db_mdp, $db, $port);
-$db_handle = mysqli_connect($site, $db_id, $db_mdp);
 
-//var_dump($db_handle);
+//Connect
+$db_handle = mysqli_connect($site, $db_id, $db_mdp);
 
 //Access DB
 $db_found = mysqli_select_db($db_handle,$db);
-
-//var_dump($db_found);
 
 if($db_found){
     //echo "Connected to DB <br>";
         $sql = "SELECT * FROM medecins WHERE Spe='Generaliste'";
         $res = mysqli_query($db_handle, $sql);
-        //var_dump($res);
         $listeGeneralistes;
         while($data = mysqli_fetch_assoc($res))
         {
             //$data = une ligne de la table
             //On crée un tableau avec toutes ces lignes
             $listeGeneralistes[]=$data;
-        }
-   
-        
+        }  
 }
 else{
     echo "Unable to connect <br>";
@@ -73,17 +66,20 @@ else{
         </div>
         <div id="section">
             Liste M&eacute;decins G&eacute;n&eacute;ralistes <br>
+            <form method="post" action="InfosMedecin.php">
             <ul>
                 <!-- Pour chaque médecin Généraliste dans la table-->
                 <?php foreach($listeGeneralistes as $Generaliste) :?>
                     <li>
-                        <a href="InfosMedecin.html">
-                        <?php echo $Generaliste['Nom']." "?> 
-                        </a>
-                        <?php echo $Generaliste['Prenom']." ".$Generaliste['Spe']." ".$Generaliste['Tel']." ".$Generaliste['Mail']?>
+                        <input type="radio" name="Id" value="<?= $Generaliste["Id"]?>" checked>
+                        <?php echo $Generaliste["Id"]." ".$Generaliste['Nom']." ".$Generaliste['Prenom']." ".$Generaliste['Spe']?>
+                        
                     </li>
                 <?php endforeach?>
-        </ul>
+            </ul>
+            <label>Voir les informations du m&eacute;decin s&eacute;lectionn&eacute;:</label>
+            <input type="submit" value="Soumettre">
+            </form>
         </div>
         <div id="footer">Copyright &copy; 2022, OMNES Sant&eacute;<br>
             <a href="mailto:OMNES.sante@gmail.com">OMNES.sante@gmail.com</a>
