@@ -57,6 +57,8 @@ else{
     <link href="OMNESSante.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" type="image/x-icon"
         href="https://www.omneseducation.com/app/themes/inseec-group/favicon.ico">
+        <script src="script.js">  
+        </script>
 </head>
 
 <body>
@@ -100,8 +102,8 @@ else{
             <label> IST</label>
             <input type="radio" name="spe" value="Osth&eacute;opathie" onclick="<?php $spe="Ostheopathie"?>"> 
             <label> Ostheopathie</label>
-            <input type="radio" name="spe" value="" onclick="<?php $spe=""?>"><br>
-            <label> Tous</label>
+            <input type="radio" name="spe" value="" onclick="<?php $spe=""?>">
+            <label> Tous</label><br>
             <input type="submit" value="Valider">
             </form>
             <?php if(isset($listeSpecialistes)):?>

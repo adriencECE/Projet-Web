@@ -47,6 +47,8 @@ else{
     <link href="OMNESSante.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" type="image/x-icon"
         href="https://www.omneseducation.com/app/themes/inseec-group/favicon.ico">
+        <script src="script.js">  
+        </script>
 </head>
 
 <body>
