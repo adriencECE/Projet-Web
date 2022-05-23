@@ -6,7 +6,7 @@ $db = "omnessante"; //Name of DB
 $site = "localhost"; //Name of the Website
 $db_id = "root"; //DB login ID
 $db_mdp = ""; //DB login PW
-$var;
+$Id = $_POST["Id"];
 $sql = "";
 $test="";
 
@@ -18,14 +18,14 @@ $db_found = mysqli_select_db($db_handle,$db);
 
 if($db_found){
     //echo "Connected to DB <br>";
-        $sql = "SELECT * FROM medecins WHERE Spe='Generaliste'";
+        $sql = "SELECT * FROM medecins WHERE Id=$Id";
         $res = mysqli_query($db_handle, $sql);
-        $listeGeneralistes;
         while($data = mysqli_fetch_assoc($res))
         {
             //$data = une ligne de la table
             //On crée un tableau avec toutes ces lignes
-            $listeGeneralistes[]=$data;
+            $Medecin = $data;
+            echo $data["Nom"];
         }  
 }
 else{
@@ -36,7 +36,7 @@ else{
 <html>
 
 <head>
-    <title>OMNES Sant&eacute;-G&eacute;n&eacute;ralistes</title>
+    <title>OMNES Sant&eacute;-Informations M&eacute;decin</title>
     <link href="OMNESSante.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" type="image/x-icon"
         href="https://www.omneseducation.com/app/themes/inseec-group/favicon.ico">
@@ -65,21 +65,21 @@ else{
             </a>
         </div>
         <div id="section">
-            Liste M&eacute;decins G&eacute;n&eacute;ralistes <br>
-            <form method="post" action="InfosMedecin.php">
-            <ul>
-                <!-- Pour chaque médecin Généraliste dans la table-->
-                <?php foreach($listeGeneralistes as $Generaliste) :?>
-                    <li>
-                        <input type="radio" name="Id" value="<?= $Generaliste["Id"]?>" checked>
-                        <?php echo $Generaliste["Id"]." ".$Generaliste['Nom']." ".$Generaliste['Prenom']." ".$Generaliste['Spe']?>
-                        
-                    </li>
-                <?php endforeach?>
-            </ul>
-            <label>Voir les informations du m&eacute;decin s&eacute;lectionn&eacute;:</label>
-            <input type="submit" value="Soumettre">
-            </form>
+            Infos M&eacute;decin <?php echo  $Id?><br>
+            <?php echo "Nom: ".$Medecin["Nom"]."  ";
+            echo "Prenom :".$Medecin["Prenom"]."  ";
+            echo "Specialite :".$Medecin["Spe"]."  ";
+            echo "Telephone :".$Medecin["Tel"]."  ";
+            echo "Mail :".$Medecin["Mail"]." <br> "; ?>
+            <a href="RDV.html">
+                <input type="button" name="RDV" value="Prendre un RDV">
+            </a>
+            <a href="Communiquer.html">
+                <input type="button" name="Communiquer" value="Communiquer avec le m&eacute;decin">
+            </a>
+            <a href="CV.html">
+                <input type="button" name="CV" value="Voir son CV">
+            </a>
         </div>
         <div id="footer">Copyright &copy; 2022, OMNES Sant&eacute;<br>
             <a href="mailto:OMNES.sante@gmail.com">OMNES.sante@gmail.com</a>
