@@ -1,22 +1,25 @@
-<?php session_start();
+<?php
+session_start();
+
 $vars = array($_SESSION["connecte"], $_SESSION["login"], $_SESSION["MDP"]);
 $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
- ?>
+?>
+
 
 <html>
-
 <head>
-    <title>OMNES Sant&eacute;-Modifier</title>
+    <title>OMNES Sant&eacute;-Inscription</title>
     <link href="OMNESSante.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" type="image/x-icon"
         href="https://www.omneseducation.com/app/themes/inseec-group/favicon.ico">
         <script src="script.js">  
+            
         </script>
 </head>
-
 <body>
+
     <div id="wrapper">
-    <div id="header">
+        <div id="header">
             <div id="nav">
                 <img src="omnessante.png" class="logo">
                 <div class="header-right">
@@ -39,23 +42,46 @@ $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
                 </div>
             </div>
         </div>
+        
         <div id="section">
-            Liste des M&eacute;decins <br>
-            <ul>
-                <a href="InfosMedecin.php">
-                    <li>M&eacute;decin 1</li>
-                </a>
-                <li>M&eacute;decin 2</li>
-                <li>M&eacute;decin 3</li>
-            </ul><br>
-            <input type="button" name="Ajouter" value="Ajouter un M&eacute;decin">
-            <input type="button" name="Supprimer" value="Supprimer un M&eacute;decin">
-            <input type="button" name="Modifier" value="Modifier un M&eacute;decin">
+            <form method="post" action = "InscriptionTraitement.php">
+                <label>Nom:</label>
+                <input type="text" name="Nom"/>
+                <label>Prenom:</label>
+                <input type="text" name="Prenom"/>
+                <label>Login:</label>
+                <input type="text" name="Login"/>
+                <label>Mot de Passe:</label>
+                <input type="text" name="MDP"/>
+                <label>Mail:</label>
+                <input type="text" name="Mail"/>
+                <label>Tel:</label>
+                <input type="number" name="Tel"/>
+                <label>Adresse:</label>
+                <input type="text" name="Adresse"/>
+                <label>Num&eacute;ro Carte Vitale:</label>
+                <input type="number" name="NumCarteVitale"/>
+                <label>Type de Carte de Paiement:</label><br>
+                <input type="radio" name="TypeCarte" value="Visa"/>
+                <label>Visa</label>
+                <input type="radio" name="TypeCarte" value="MasterCard"/>
+                <label>MasterCard</label>
+                <input type="radio" name="TypeCarte" value="American Express"/>
+                <label>American Express</label>
+                <input type="radio" name="TypeCarte" value="Paypal"/>
+                <label>Paypal</label><br>
+                <label>Numero de Carte:</label>
+                <input type="number" name="NumeroCarte"/><br>
+                <label>Date d'Expiration:</label>
+                <input type="text" name="DateExpiration" value="yyyy-mm-dd" onclick="value=''"/>
+                <label>Code:</label>
+                <input type="number" name="CodeCarte"/><br>
+                <input type="submit" value="Soumettre"/>
+            </form>
         </div>
         <div id="footer">Copyright &copy; 2022, OMNES Sant&eacute;<br>
             <a href="mailto:OMNES.sante@gmail.com">OMNES.sante@gmail.com</a>
         </div>
     </div>
 </body>
-
 </html>

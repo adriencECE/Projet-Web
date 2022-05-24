@@ -87,8 +87,8 @@ else{
         
             <?php else: ?>
                 <script type="text/javascript">
-                alert("Probleme de connexion")
-                window.location = "Accueil.php";
+                alert("Probleme de connexion");
+                window.location = "Connexion.php";
                 </script>
             <?php endif ?>
 </body>

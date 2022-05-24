@@ -33,10 +33,7 @@ $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="OMNESSante.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" type="image/x-icon" href="https://www.omneseducation.com/app/themes/inseec-group/favicon.ico">
-    <script type="text/javascript">
-
-    </script>
-    <script src="script.js"></script>
+    <script type="text/javascript" src="script.js"></script>
 </head>
 
 
@@ -45,7 +42,7 @@ $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
     <div id="wrapper">
         <div id="header">
             <div id="nav">
-                <img src="https://master-7rqtwti-gxvbzt6usscty.fr-4.platformsh.site//app/uploads/2021/09/Logo-blanc-violet.png" class="logo">
+                <img src="omnessante.png" class="logo">
                 <div class="header-right">
 
                     <a href="Accueil.php" data-after="Accueil">Accueil </a>
@@ -54,20 +51,19 @@ $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
                     <a href="ToutParcourir.php" data-after="ToutParcourir">Parcourir </a>
                     <!--<input type="button" name="Parcourir" value="Tout Parcourir">
                     </a>-->
-                    <a href="Accueil.php" data-after="Acc" id="btn1">Modifier </a>
+                    <a href="Accueil.php" data-after="Acc" id="btn1">Modif </a>
                     <!--<input type="button" name="Modifier" value="Modifier" id="btn1">
                     </a>-->
                     <a href="Compte.php" data-after="Compte" id="btn2">Compte </a>
                     <!--<input type="button" name="Compte" value="Compte" id="btn2">
                     </a>-->
-
                     <!--Modification boutons en fonction du compte connecte-->
-
-                    <?php echo "<script type='text/javascript'>testConnexion1($jsvars)</script>";
-                    echo "<script type='text/javascript'>testConnexion2($jsvars)</script>" ?>
+                    <?php echo "<script type='text/javascript'>testConnexion1Acc($jsvars)</script>";
+                    echo "<script type='text/javascript'>testConnexion2Acc($jsvars)</script>" ?>
                 </div>
             </div>
         </div>
+        
         <div id="section">
             Bienvenue sur OMNES Sant&eacute; <?php echo $_SESSION["login"] ?><br>
             Actualit&eacute;s <br>

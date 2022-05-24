@@ -17,32 +17,28 @@ $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
 
 <body>
     <div id="wrapper">
-        <div id="header">
-            <div id="logo">
-            <img src="omnessante.png"
-                    class="custom-logo" height="90" width="1255">
+    <div id="header">
+            <div id="nav">
+                <img src="omnessante.png" class="logo">
+                <div class="header-right">
+
+                    <a href="Accueil.php" data-after="Accueil">Accueil </a>
+                    <!--<input type="button" name="Accueil" value="Accueil">
+                    </a>-->
+                    <a href="ToutParcourir.php" data-after="ToutParcourir">Parcourir </a>
+                    <!--<input type="button" name="Parcourir" value="Tout Parcourir">
+                    </a>-->
+                    <a href="Accueil.php" data-after="Acc" id="btn1">Modif </a>
+                    <!--<input type="button" name="Modifier" value="Modifier" id="btn1">
+                    </a>-->
+                    <a href="Compte.php" data-after="Compte" id="btn2">Compte </a>
+                    <!--<input type="button" name="Compte" value="Compte" id="btn2">
+                    </a>-->
+                    <!--Modification boutons en fonction du compte connecte-->
+                    <?php echo "<script type='text/javascript'>testConnexion1Acc($jsvars)</script>";
+                    echo "<script type='text/javascript'>testConnexion2Acc($jsvars)</script>" ?>
+                </div>
             </div>
-        </div>
-        <div id="nav">
-        <div id="nav">
-            <a href="Accueil.php">
-                <input type="button" name="Accueil" value="Accueil">
-            </a>
-            <a href="ToutParcourir.php">
-                <input type="button" name="Parcourir" value="Tout Parcourir">
-            </a>
-            <a href="Accueil.php">
-                <input type="button" name="Modifier" value="Modifier" id="btn1">
-                
-            </a>
-            <a href="Compte.php" id="lienCompte">
-                <input type="button" name="Compte" value="Compte" id="btn2">
-            </a>
-            <!--Modification boutons en fonction du compte connecte-->
-            
-            <?php echo"<script type='text/javascript'>testConnexion1($jsvars)</script>";
-            echo"<script type='text/javascript'>testConnexion2($jsvars)</script>"?>
-        </div>
         </div>
         <div id="section">
             <form method="post" action="ConnexionTraitement.php">
@@ -51,6 +47,8 @@ $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
                 <label>Mot de Passe:</label>
                 <input type="text" name="MDP"><br>
                 <input type="submit" name="Connexion" value="Connexion"><br>
+            </form>
+            <form method="post" action="Inscription.php">
                 <label>Pas de compte?</label><br>
                 <input type="submit" name="Inscription" value="Inscription">
             </form>
