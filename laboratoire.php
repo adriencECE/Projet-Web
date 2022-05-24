@@ -13,6 +13,13 @@ $db_mdp = ""; //DB login PW
 $var;
 $sql = "";
 $test="";
+if(isset($_POST["service"])){
+    $service=$_POST["service"];
+}
+else{
+    $service = "";
+}
+
 //Connect
 //$db_handle = mysqli_connect($site, $db_id, $db_mdp, $db, $port);
 $db_handle = mysqli_connect($site, $db_id, $db_mdp);
@@ -26,7 +33,13 @@ $db_found = mysqli_select_db($db_handle,$db);
 
 if($db_found){
     //echo "Connected to DB <br>";
+    if($service==""){
         $sql = "SELECT * FROM labo ";
+    }
+    else{
+        $sql = "SELECT * FROM labo WHERE Service='$service'";
+    }
+        
         $res = mysqli_query($db_handle, $sql);
         //var_dump($res);
         $listeLabo;
@@ -81,6 +94,26 @@ else{
             </div>
         </div>
         <div id="section">
+        <form method="post" action="laboratoire.php">
+            Choisissez un Service:<br>
+            <input type="radio" name="service" value="depistage covid" onclick="<?php $service="depistage covid"?>">
+            <label>Test COVID</label>
+            <input type="radio" name="service" value="test sanguin" onclick="<?php $service="test sanguin"?>">
+            <label>Test Sanguin</label>
+            <input type="radio" name="service" value="cancerologie" onclick="<?php $service="cancerologie"?>">
+            <label>Canc&eacute;rologie</label>
+            <input type="radio" name="service" value="IST" onclick="<?php $service="IST"?>">
+            <label> Depisatge IST</label>
+            <input type="radio" name="service" value="BiologiePreventive" onclick="<?php $service="BiologiePreventive"?>">
+            <label> Biologie Pr&eacute;ventive</label>
+            <input type="radio" name="service" value="Gynecologie" onclick="<?php $service="Gynecologie"?>">
+            <label> Gyn&eacute;cologie</label>
+            <input type="radio" name="service" value="BioFemmeEnceinte" onclick="<?php $service="BioFemmeEnceinte"?>">
+            <label> Biologie Femme Enceinte</label>
+            <input type="radio" name="service" value="" onclick="<?php $service=""?>">
+            <label> Tous</label><br>
+            <input type="submit" value="Valider">
+            </form>
             Liste Laboratoires contenant le service s&eacute;lectionn&eacute; <br>
             <form method="post" action="InfosLabo.php">
                 <ul>
@@ -89,7 +122,6 @@ else{
                         <li>
                             <input type="radio" name="Id" value="<?= $Labo["Id"]?>" checked>
                             <?php echo $Labo["Id"]." ".$Labo['Nom']." ".$Labo['Service']?>
-    
                         </li>
                     <?php endforeach?>
                 </ul>

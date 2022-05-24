@@ -1,6 +1,44 @@
 <?php session_start();
 $vars = array($_SESSION["connecte"], $_SESSION["login"], $_SESSION["MDP"]);
 $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
+
+$db = "omnessante"; //Name of DB
+$site = "localhost"; //Name of the Website
+$db_id = "root"; //DB login ID
+$db_mdp = ""; //DB login PW
+$sql = "";
+$Nom=$_POST["NomLabo"];
+
+//Connect
+//$db_handle = mysqli_connect($site, $db_id, $db_mdp, $db, $port);
+$db_handle = mysqli_connect($site, $db_id, $db_mdp);
+
+//var_dump($db_handle);
+
+//Access DB
+$db_found = mysqli_select_db($db_handle,$db);
+
+//var_dump($db_found);
+
+if($db_found){
+    //echo "Connected to DB <br>";
+        $sql = "SELECT Service,Salle FROM labo WHERE Nom='$Nom'";
+        
+        $res = mysqli_query($db_handle, $sql);
+        //var_dump($res);
+        $listeLabo;
+        while($data = mysqli_fetch_assoc($res))
+        {
+            //$data = une ligne de la table
+            //On crée un tableau avec toutes ces lignes
+            $listeServices[]=$data;
+        }
+   
+        
+}
+else{
+    echo "Unable to connect <br>";
+}
 ?>
 
 <html>
@@ -41,13 +79,20 @@ $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
         </div>
         <div id="section">
             Liste des services du laboratoire s&eacute;lectionn&eacute; <br>
+            <form method="post" action="RDVLabo.php">
             <ul>
-                <a href="ChoixService.php">
-                    <li>Service 1</li>
-                </a>
-                <li>Service 2</li>
-                <li>Service 3</li>
+                <!-- Pour chaque médecin Généraliste dans la table-->
+                <?php foreach($listeServices as $Service) :?>
+                    <li>
+                        <input type="radio" name="Id" value="<?= $Service["Service"]?>" checked>
+                        <?php echo $Service["Service"]." Salle: ".$Service['Salle']?>
+
+                    </li>
+                <?php endforeach?>
             </ul>
+            <label>Prendre RDV pour ce Service:</label>
+            <input type="submit" value="Soumettre">
+            </form>
         </div>
         <div id="footer">Copyright &copy; 2022, OMNES Sant&eacute;<br>
             <a href="mailto:OMNES.sante@gmail.com">OMNES.sante@gmail.com</a>

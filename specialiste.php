@@ -122,7 +122,6 @@ else{
                     <li>
                         <input type="radio" name="Id" value="<?= $Specialiste["Id"]?>" checked>
                         <?php echo $Specialiste["Id"]." ".$Specialiste['Nom']." ".$Specialiste['Prenom']." ".$Specialiste['Spe']?>
-
                     </li>
                 <?php endforeach?>
             </ul>

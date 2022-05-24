@@ -78,8 +78,9 @@ else{
             echo "Salle :".$Labo["Salle"]."  ";
             echo "Telephone :".$Labo["Tel"]."  ";
             echo "Mail :".$Labo["Mail"]."<br>  "; ?>
-            <a href="Services.php">
-                <input type="button" name="Services" value="Nos Services">
+            <form method="post" action="Services.php">
+                <input type="text" name="NomLabo" value='<?php echo $Labo["Nom"]?>' hidden/>
+                <input type="submit" name="Services" value="Nos Services"/>
             </a>
         </div>
         <div id="footer">Copyright &copy; 2022, OMNES Sant&eacute;<br>
