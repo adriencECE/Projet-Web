@@ -18,8 +18,8 @@ $vars = array($_SESSION["connecte"], $_SESSION["login"], $_SESSION["MDP"]);
     <div id="wrapper">
         <div id="header">
             <div id="logo">
-                <img src="https://master-7rqtwti-gxvbzt6usscty.fr-4.platformsh.site//app/uploads/2021/09/Logo-blanc-violet.png"
-                    class="custom-logo">
+                <img src="omnessante.png"
+                    class="custom-logo" height="90" width="1255">
             </div>
         </div>
         <div id="nav">

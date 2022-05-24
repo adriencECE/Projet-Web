@@ -1,10 +1,12 @@
-#header{
+#header {
     background-color: lightgrey;
-    margin: 5px;
+    width : 450px;
+    height : 100px;
+
 }
 
 
-
+/*barre de navigation*/
 #nav{
 
 float: right;
@@ -16,6 +18,8 @@ max-width: 1300px;
 
 
 }
+
+
 
 
 input{
@@ -43,6 +47,7 @@ input:hover{
 	text-decoration: none;
 
 }
+/*fin barre de navigation*/
 
 /*footer section*/
 
@@ -69,6 +74,6 @@ input:hover{
 	font-size: 1.3rem;
 }
 
-.invisible{
-	display: none;
-}
+
+/*fin footer section*/
+
