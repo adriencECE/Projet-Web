@@ -1,4 +1,7 @@
 <?php
+session_start();
+$vars = array($_SESSION["connecte"], $_SESSION["login"], $_SESSION["MDP"]);
+    $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
 //Connection
 //echo "Connecting to DB <br>";
 
@@ -53,18 +56,23 @@ else{
             </div>
         </div>
         <div id="nav">
-            <a href="Accueil.html">
+            <a href="Accueil.php">
                 <input type="button" name="Accueil" value="Accueil">
             </a>
-            <a href="ToutParcourir.html">
+            <a href="ToutParcourir.php">
                 <input type="button" name="Parcourir" value="Tout Parcourir">
             </a>
-            <a href="Accueil.html">
-                <input type="button" name="Modifier" value="Modifier">
+            <a href="Accueil.php">
+                <input type="button" name="Modifier" value="Modifier" id="btn1">
+                
             </a>
-            <a href="Compte.html">
-                <input type="button" name="Compte" value="Compte">
+            <a href="Compte.php" id="lienCompte">
+                <input type="button" name="Compte" value="Compte" id="btn2">
             </a>
+            <!--Modification boutons en fonction du compte connecte-->
+            
+            <?php echo"<script type='text/javascript'>testConnexion1($jsvars)</script>";
+            echo"<script type='text/javascript'>testConnexion2($jsvars)</script>"?>
         </div>
         <div id="section">
             Infos Labo <?php echo  $Id?><br>
@@ -72,7 +80,7 @@ else{
             echo "Salle :".$Labo["Salle"]."  ";
             echo "Telephone :".$Labo["Tel"]."  ";
             echo "Mail :".$Labo["Mail"]."<br>  "; ?>
-            <a href="Services.html">
+            <a href="Services.php">
                 <input type="button" name="Services" value="Nos Services">
             </a>
         </div>

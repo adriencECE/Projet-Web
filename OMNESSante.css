@@ -68,3 +68,7 @@ input:hover{
 
 	font-size: 1.3rem;
 }
+
+.invisible{
+	display: none;
+}

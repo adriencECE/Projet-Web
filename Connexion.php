@@ -1,60 +1,6 @@
-<?php
-//Connection
-//echo "Connecting to DB <br>";
-
-$db = "omnessante"; //Name of DB
-$site = "localhost"; //Name of the Website
-$db_id = "root"; //DB login ID
-$db_mdp = ""; //DB login PW
-$var;
-$sql = "";
-
-if(isset($_POST["login"])){
-    $login=$_POST["login"];
-}
-else{
-    $login = "";
-}
-if(isset($_POST["MDP"])){
-    $MDP=$_POST["MDP"];
-}
-else{
-    $MDP = "";
-}
-    
-//Connect
-//$db_handle = mysqli_connect($site, $db_id, $db_mdp, $db, $port);
-$db_handle = mysqli_connect($site, $db_id, $db_mdp);
-
-//var_dump($db_handle);
-
-//Access DB
-$db_found = mysqli_select_db($db_handle,$db);
-
-//var_dump($db_found);
-
-if($db_found){
-    //echo "Connected to DB <br>";
-
-        $sql = "SELECT * FROM compte WHERE 'login'="$login" AND 'MDP'="$MDP"";
-
-   
-    
-        
-        $res = mysqli_query($db_handle, $sql);
-        //var_dump($res);
- 
-        while($data = mysqli_fetch_assoc($res))
-        {
-            //$data = une ligne de la table
-            //On crée un tableau avec toutes ces lignes
-            $Compte=$data;
-        }
-  
-}
-else{
-    echo "Unable to connect <br>";
-}
+<?php session_start() ;
+$vars = array($_SESSION["connecte"], $_SESSION["login"], $_SESSION["MDP"]);
+$jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
 ?>
 
 <html>
@@ -78,24 +24,28 @@ else{
             </div>
         </div>
         <div id="nav">
-            <a href="Accueil.html">
+        <div id="nav">
+            <a href="Accueil.php">
                 <input type="button" name="Accueil" value="Accueil">
             </a>
-            <a href="ToutParcourir.html">
+            <a href="ToutParcourir.php">
                 <input type="button" name="Parcourir" value="Tout Parcourir">
             </a>
-            <a href="Accueil.html">
-                <input type="button" name="Modifier" value="Modifier">
+            <a href="Accueil.php">
+                <input type="button" name="Modifier" value="Modifier" id="btn1">
+                
             </a>
-            <a href="Compte.html">
-                <input type="button" name="Compte" value="Compte">
+            <a href="Compte.php" id="lienCompte">
+                <input type="button" name="Compte" value="Compte" id="btn2">
             </a>
+            <!--Modification boutons en fonction du compte connecte-->
+            
+            <?php echo"<script type='text/javascript'>testConnexion1($jsvars)</script>";
+            echo"<script type='text/javascript'>testConnexion2($jsvars)</script>"?>
+        </div>
         </div>
         <div id="section">
-            <form method="post" action="Connexion.php">
-                <input type="radio" name="Personne" value="Patient">
-                <input type="radio" name="Personne" value="Medecin">
-                <input type="radio" name="Personne" value="Admin">
+            <form method="post" action="ConnexionTraitement.php">
                 <label>Login:</label>
                 <input type="text" name="login"><br>
                 <label>Mot de Passe:</label>

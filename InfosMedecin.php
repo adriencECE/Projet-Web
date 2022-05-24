@@ -1,4 +1,7 @@
 <?php
+session_start();
+$vars = array($_SESSION["connecte"], $_SESSION["login"], $_SESSION["MDP"]);
+    $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
 //Connection
 //echo "Connecting to DB <br>";
 
@@ -51,18 +54,23 @@ else{
             </div>
         </div>
         <div id="nav">
-            <a href="Accueil.html">
+            <a href="Accueil.php">
                 <input type="button" name="Accueil" value="Accueil">
             </a>
-            <a href="ToutParcourir.html">
+            <a href="ToutParcourir.php">
                 <input type="button" name="Parcourir" value="Tout Parcourir">
             </a>
-            <a href="Accueil.html">
-                <input type="button" name="Modifier" value="Modifier">
+            <a href="Accueil.php">
+                <input type="button" name="Modifier" value="Modifier" id="btn1">
+                
             </a>
-            <a href="Compte.html">
-                <input type="button" name="Compte" value="Compte">
+            <a href="Compte.php" id="lienCompte">
+                <input type="button" name="Compte" value="Compte" id="btn2">
             </a>
+            <!--Modification boutons en fonction du compte connecte-->
+            
+            <?php echo"<script type='text/javascript'>testConnexion1($jsvars)</script>";
+            echo"<script type='text/javascript'>testConnexion2($jsvars)</script>"?>
         </div>
         <div id="section">
             Infos M&eacute;decin <?php echo  $Id?><br>
@@ -71,13 +79,13 @@ else{
             echo "Specialite :".$Medecin["Spe"]."  ";
             echo "Telephone :".$Medecin["Tel"]."  ";
             echo "Mail :".$Medecin["Mail"]." <br> "; ?>
-            <a href="RDV.html">
+            <a href="RDV.php">
                 <input type="button" name="RDV" value="Prendre un RDV">
             </a>
-            <a href="Communiquer.html">
+            <a href="Communiquer.php">
                 <input type="button" name="Communiquer" value="Communiquer avec le m&eacute;decin">
             </a>
-            <a href="CV.html">
+            <a href="CV.php">
                 <input type="button" name="CV" value="Voir son CV">
             </a>
         </div>

@@ -1,18 +1,44 @@
-<?php session_start();
-$vars = array($_SESSION["connecte"], $_SESSION["login"], $_SESSION["MDP"]);
-$jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
- ?>
+<?php
+    session_start();
+    //Initialisation si les variables de la session n'existent pas
+    //Uniquement lors de la premiere ouverture de Accueil.php
+    if(!isset($_SESSION["connecte"])){
+        $_SESSION["connecte"] = "false";
+    }
+    if(!isset($_SESSION["login"])){
+        $_SESSION["login"] = "";
+    }
+    if(!isset($_SESSION["MDP"])){
+        $_SESSION["MDP"] = "";
+    }
+     if(isset($_POST["DeconnexionBtn"])){
+        $_SESSION["connecte"] = "false";
+        $_SESSION["login"] = "";
+        $_SESSION["MDP"] = "";
+        }
+    //Affichage Session pour test
+    //echo $_SESSION["connecte"]." ".$_SESSION["login"]." ".$_SESSION["MDP"];
+
+    $vars = array($_SESSION["connecte"], $_SESSION["login"], $_SESSION["MDP"]);
+    $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
+    //echo "<script>alert($jsvars)</script>";
+?>
+
+
 <html>
 <head>
-    <title>OMNES Sant&eacute;-Paiement</title>
+    <title>OMNES Sant&eacute;-Accueil</title>
     <link href="OMNESSante.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" type="image/x-icon"
         href="https://www.omneseducation.com/app/themes/inseec-group/favicon.ico">
-        <script src="script.js">  
+        <script type="text/javascript"> 
+
         </script>
+        <script src="script.js"></script>
 </head>
 
 <body>
+    
     <div id="wrapper">
         <div id="header">
             <div id="logo">
@@ -40,28 +66,9 @@ $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
             echo"<script type='text/javascript'>testConnexion2($jsvars)</script>"?>
         </div>
         <div id="section">
-            <form method="post" action="TraitementPaiement.php">
-                <label>Type de Carte:</label>
-                <input type="radio" name="TypeCarte" value="Visa" checked>
-                <label>Visa</label>
-                <input type="radio" name="TypeCarte" value="MasterCard">
-                <label>MasterCard</label>
-                <input type="radio" name="TypeCarte" value="American Express">
-                <label>American Express</label>
-                <input type="radio" name="TypeCarte" value="Paypal">
-                <label>Paypal</label><br>
-                <label>Num&eacute;ro de Carte:</label>
-                <input type="text" name="NumeroCarte"><br>
-                <label>Nom:</label>
-                <input type="text" name="Nom"><br>
-                <label>Prenom:</label>
-                <input type="text" name="Prenom"><br>
-                <label>Date d'Expiration:</label>
-                <input type="text" name="DateExpiration" value="yyyy-mm-dd" onclick="value=''"><br>
-                <label>Code:</label>
-                <input type="number" name="CodeCarte"><br>
-                <input type="submit" value="Soumettre">
-            </form>
+            Bienvenue sur OMNES Sant&eacute; <?php echo $_SESSION["login"]?><br>
+            Actualit&eacute;s <br>
+            Ev&eacute;nements <br>
         </div>
         <div id="footer">Copyright &copy; 2022, OMNES Sant&eacute;<br>
             <a href="mailto:OMNES.sante@gmail.com">OMNES.sante@gmail.com</a>
