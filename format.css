@@ -1,0 +1,19 @@
+#leftcolumn {
+    float: left;
+    width: 300px;
+  
+}
+#rightcolumn{
+   float: right;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    margin-left: 50px;
+}
+img{
+    width: 100px;
+    height: auto;
+}
+.image{
+    width: 200px;
+    height: auto;
+}

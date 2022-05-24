@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Films>
+    <donnee>
+        <nom>2009</nom>
+        <prenom>2009</prenom>
+        <adresse>2009</adresse>
+        <téléphone>2009</téléphone>
+        <mail>2009</mail>
+
+        <debut>2009</debut>
+        <fin>2009</fin>
+        <poste>2009</poste>
+        <lieu>2009</lieu>
+        <description>2009</description>
+
+        <debut>2009</debut>
+        <fin>2009</fin>
+        <poste>2009</poste>
+        <lieu>2009</lieu>
+        <description>2009</description>
+
+        <un>2009</un>
+        <deux>2009</deux>
+        <trois>2009</trois>
+        <quatre>2009</quatre>
+
+        <diplome>2009</diplome>
+      
+     </donnee>
+</Films>
