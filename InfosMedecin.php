@@ -9,7 +9,14 @@ $db = "omnessante"; //Name of DB
 $site = "localhost"; //Name of the Website
 $db_id = "root"; //DB login ID
 $db_mdp = ""; //DB login PW
-$Id = $_POST["Id"];
+ if(isset( $_POST["Id"]))
+ {
+     $Id = $_POST["Id"];
+$_SESSION["Id"]=$_POST["Id"];
+}
+
+else{$Id=$_SESSION["Id"];
+}
 $sql = "";
 
 //Connect
@@ -83,8 +90,10 @@ else{
             <a href="Communiquer.php">
                 <input type="button" name="Communiquer" value="Communiquer avec le m&eacute;decin">
             </a>
-            <a href="CV.php">
+
+            <a href="test.php">
                 <input type="button" name="CV" value="Voir son CV">
+                
             </a>
         </div>
         <div id="footer">Copyright &copy; 2022, OMNES Sant&eacute;<br>
