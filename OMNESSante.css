@@ -1,4 +1,4 @@
-
+@import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
 
 html {
 	font-size: 12px;
@@ -8,14 +8,35 @@ html {
 
 body {
 	margin: 0;
+
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 
 /*barre de navigation*/
+
+#wrapper {
+
+	background-image: url(https://zupimages.net/up/22/21/zfsx.jpg);
+	background-position: top;
+	background-size: cover;
+
+
+	width: auto;
+	height: 800px;
+
+
+
+	letter-spacing: 0.1rem;
+
+
+
+}
+
 #header {
-
 	overflow: hidden;
-	background-color: rgb(44, 149, 219, 0.50);
-
+	background-color: rgb(44, 149, 219, 0.75);
 	padding: 9px 9px;
 
 
@@ -30,7 +51,7 @@ body {
 	font-size: 18px;
 	line-height: 25px;
 	border-radius: 4px;
-	
+
 }
 
 #header a:hover {
@@ -40,6 +61,7 @@ body {
 .header-right {
 	float: right;
 	bottom: 0%;
+	margin-top: 7px;
 }
 
 .logo {
@@ -55,8 +77,8 @@ body {
 /*section*/
 
 #section {
-	background-image: url(https://zupimages.net/up/22/21/zfsx.jpg);
-	background-position: top ;
+	/*background-image: url(https://zupimages.net/up/22/21/zfsx.jpg);*/
+	background-position: top;
 	background-size: cover;
 
 	padding: 0 50px;
@@ -66,11 +88,14 @@ body {
 	color: white;
 
 	letter-spacing: 0.1rem;
-	text-align:left;
-	
+	text-align: left;
+	text-align: center;
+	margin-top: 110px;
+
 
 }
 
+/*
 #section::after {
 	content: '';
 	position: absolute;
@@ -81,13 +106,52 @@ body {
 	background-color: black;
 	opacity: 0.7;
 	z-index: -1;
-	
+}*/
+
+
+
+
+#section h1 span {
+
+	font-family: 'Montserrat', sans-serif;
+
+	border-width: 2px;
+	border-style: solid;
+	border-color: black;
+	background-color: rgb(72, 69, 69, 0.80);
+
+	color: black;
+	font-weight: bold;
+	font-size: 4rem;
+	padding: 2 30px;
+
+
 }
+
+
+#section .info div:nth-child(1){
+
+	color: black;
+	margin-top: 610px;
+}
+
+#section .info div:nth-child(2){
+
+	color: black;
+
+}
+
+
+
+
 
 
 /*fin section*/
 
 /*footer section*/
+
+
+
 
 #footer {
 
@@ -100,20 +164,32 @@ body {
 	font-size: 1.8rem;
 	letter-spacing: 0.1rem;
 	text-align: center;
-	position: bottom;
-	bottom: 0;
-	left: 0;
-	right: 0;
+	/*la clef du mystere de 1H ptn
+	position: fixed;
+
+	/*la clef du mystere de 1H ptn*/
+
+
+	margin-top: auto;
+
+
+}
+
+#footer h1{
+
+
 }
 
 #footer a {
-
 
 	font-size: 1.3rem;
 }
 
 li {
-    list-style-type: none;
+	
+
+	list-style-type: none;
 
 }
+
 /*fin footer section*/

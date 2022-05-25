@@ -63,15 +63,30 @@ $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
                 </div>
             </div>
         </div>
-        
+
         <div id="section">
-            Bienvenue sur OMNES Sant&eacute; <?php echo $_SESSION["login"] ?><br>
-            Actualit&eacute;s <br>
-            Ev&eacute;nements <br>
+            <h1><span>Bienvenue sur OMNES Sant&eacute; <?php echo $_SESSION["login"] ?><br></span></h1>
+            <div class="info">
+                <div>
+                    Actualit&eacute;s <br>
+                    1. Un nouveau brancard pour la pédiatrie
+                    Depuis novembre 2021, un nouveau brancard d’urgence néonatale et pédiatrique a été acquis par le CHRU. Il va permettre de transporter jusqu’à 300 enfants nés prématurés par an. Notre unité est le pôle de référence de la Bretagne pour la prise en charge des grands prématurés et des jeunes enfants.
+                    D’un montant de 80 000 €, il a été financé par des dons : La Littorale pour 40 000 €, puis Innovéo en partenariat avec le centre Leclerc de Gouesnou, et l’Open de Tennis.
+
+
+                </div>
+                <div>Ev&eacute;nements <br></div>
+            </div>
         </div>
-        <div id="footer">Copyright &copy; 2022, OMNES Sant&eacute;<br>
-            <a href="mailto:OMNES.sante@gmail.com">OMNES.sante@gmail.com</a>
-        </div>
+
+
+            <footer id="footer">
+                <a>Copyright &copy; 2022, OMNES Sant&eacute;<br></a>
+                <a href="mailto:OMNES.sante@gmail.com">OMNES.sante@gmail.com</a>
+            </footer>
+
+        
+        
     </div>
 </body>
 
