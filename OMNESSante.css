@@ -154,93 +154,6 @@ body {
 
 }
 
-
-/*section
-
-#section {
-	/*background-image: url(https://zupimages.net/up/22/21/zfsx.jpg);
-	background-position: top;
-	background-size: cover;
-
-	padding: 0 50px;
-	width: auto;
-	height: 800px;
-	font-size: 4rem;
-	color: white;
-
-	letter-spacing: 0.1rem;
-	text-align: left;
-	text-align: center;
-	margin-top: 110px;
-
-
-}
-
-/*
-#section::after {
-	content: '';
-	position: absolute;
-	left: 0;
-	top: 0;
-	height: 100%;
-	width: 100%;
-	background-color: black;
-	opacity: 0.7;
-	z-index: -1;
-}
-
-
-
-
-#section h1 span {
-
-	font-family: 'Montserrat', sans-serif;
-
-	border-width: 2px;
-	border-style: solid;
-	border-color: black;
-	background-color: rgb(72, 69, 69, 0.80);
-
-	color: black;
-	font-weight: bold;
-	font-size: 4rem;
-	padding: 2 30px;
-
-
-}
-
-
-#section .info div:nth-child(1){
-
-	color: black;
-	margin-top: 610px;
-}
-
-#section .info div:nth-child(2){
-
-	color: black;
-
-}*/
-
-
-
-
-
-
-
-
-/*fin section*/
-
-
-
-
-
-
-
-
-
-
-
 /* offers Section */
 .offers .offers {
 	flex-direction: column;
@@ -400,3 +313,181 @@ body {
 }
 
 /*fin footer section*/
+
+
+.cService div{
+	font-family: 'Montserrat', sans-serif;
+
+
+	font-weight: bold;
+	margin-top: 20px;
+	margin: 20px;
+	padding-top: 200px;
+
+	font-size: 3rem;
+
+
+}
+
+
+.medPacient div{
+
+	font-family: 'Montserrat', sans-serif;
+
+
+	font-weight: bold;
+	margin-top: 20px;
+	margin: 20px;
+	padding-top: 200px;
+
+	font-size: 3rem;
+
+}
+
+.connection div{
+
+	font-family: 'Montserrat', sans-serif;
+
+	font-weight: bold;
+	margin-top: 20px;
+	margin: 20px;
+	padding-top: 200px;
+
+	font-size: 3rem;
+
+}
+
+.lesMedecins div{
+
+	font-family: 'Montserrat', sans-serif;
+
+	font-weight: bold;
+	margin-top: 20px;
+	margin: 20px;
+	padding-top: 200px;
+
+	font-size: 3rem;
+}
+
+.infos1 div{
+
+	font-family: 'Montserrat', sans-serif;
+
+	font-weight: bold;
+	margin-top: 20px;
+	margin: 20px;
+	padding-top: 200px;
+
+	font-size: 3rem;
+
+}
+
+.infoMedecins div{
+
+	font-family: 'Montserrat', sans-serif;
+
+	font-weight: bold;
+	margin-top: 20px;
+	margin: 20px;
+	padding-top: 200px;
+
+	font-size: 3rem;
+
+}
+
+.inscriptionClient div{
+
+	font-family: 'Montserrat', sans-serif;
+
+	font-weight: bold;
+	margin-top: 20px;
+	margin: 20px;
+	padding-top: 200px;
+
+	font-size: 3rem;
+}
+
+.laboratoire div{
+
+	font-family: 'Montserrat', sans-serif;
+
+	font-weight: bold;
+	margin-top: 20px;
+	margin: 20px;
+	padding-top: 200px;
+
+	font-size: 3rem;
+}
+
+.listesMedecins div{
+
+	font-family: 'Montserrat', sans-serif;
+
+	font-weight: bold;
+	margin-top: 20px;
+	margin: 20px;
+	padding-top: 200px;
+
+	font-size: 3rem;
+}
+
+.payement div{
+
+	font-family: 'Montserrat', sans-serif;
+
+	font-weight: bold;
+	margin-top: 20px;
+	margin: 20px;
+	padding-top: 200px;
+
+	font-size: 3rem;
+}
+
+.messagesRdv div{
+
+	font-family: 'Montserrat', sans-serif;
+
+	font-weight: bold;
+	margin-top: 20px;
+	margin: 20px;
+	padding-top: 200px;
+
+	font-size: 3rem;
+}
+
+
+.infos3 div{
+
+	font-family: 'Montserrat', sans-serif;
+
+	font-weight: bold;
+	margin-top: 20px;
+	margin: 20px;
+	padding-top: 200px;
+
+	font-size: 3rem;
+}
+
+.specialiste div{
+
+	font-family: 'Montserrat', sans-serif;
+
+	font-weight: bold;
+	margin-top: 20px;
+	margin: 20px;
+	padding-top: 200px;
+
+	font-size: 3rem;
+}
+.toutParcourir div{
+
+	font-family: 'Montserrat', sans-serif;
+
+	font-weight: bold;
+	margin-top: 20px;
+	margin: 20px;
+	padding-top: 200px;
+
+	font-size: 3rem;
+}
+
