@@ -13,6 +13,7 @@ $db_mdp = ""; //DB login PW
 $var;
 $sql = "";
 $test = "";
+
 if (isset($_POST["service"])) {
     $service = $_POST["service"];
 } else {
@@ -94,8 +95,8 @@ if ($db_found) {
 
 
     <section class="laboratoire">
-        <div id="section">
-            <form method="post" action="laboratoire.php">
+        <div id="section" style="color:black">
+            <form method="post" action="laboratoire.php" >
                 Choisissez un Service:<br>
                 <input type="radio" name="service" value="depistage covid" onclick="<?php $service = "depistage covid" ?>">
                 <label>Test COVID</label>
@@ -116,7 +117,7 @@ if ($db_found) {
                 <input type="submit" value="Valider">
             </form>
             Liste Laboratoires contenant le service s&eacute;lectionn&eacute; <br>
-            <form method="post" action="InfosLabo.php">
+            <form method="post" action="InfosLabo.php" style="color:black">
                 <ul>
                     <!-- Pour chaque médecin Généraliste dans la table-->
                     <?php foreach ($listeLabo as $Labo) : ?>

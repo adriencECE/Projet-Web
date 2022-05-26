@@ -92,7 +92,7 @@ if ($db_found) {
 
     <section class="specialiste">
         <div id="section">
-            <form method="post" action="specialiste.php">
+            <form method="post" action="specialiste.php" style="color:black">
                 Choisissez une Sp&eacute;cialit&eacute;:<br>
                 <input type="radio" name="spe" value="Addictologie" onclick="<?php $spe = "Addictologie" ?>">
                 <label>Addictologie</label>
@@ -115,7 +115,7 @@ if ($db_found) {
                 <input type="submit" value="Valider">
             </form>
             <?php if (isset($listeSpecialistes)) : ?>
-                <form method="post" action="InfosMedecin.php">
+                <form method="post" action="InfosMedecin.php" style="color:black">
                     Liste M&eacute;decins Sp&eacute;cialistes <br>
                     <ul>
                         <!-- Pour chaque médecin Généraliste dans la table-->

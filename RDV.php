@@ -44,7 +44,7 @@ $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
     </section>
 
     <section class="messagesRdv">
-        <div id="section">
+        <div id="section" style="color:black">
             Historique des Messages <br>
             <ul>
                 <li>Message 1</li>

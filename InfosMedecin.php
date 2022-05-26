@@ -79,7 +79,7 @@ if ($db_found) {
     </section>
 
     <section class="infoMedecins">
-        <div id="section">
+        <div id="section" style="color:black">
             Infos M&eacute;decin <?php echo  $Id ?><br>
             <?php echo "Nom: " . $Medecin["Nom"] . "  ";
             echo "Prenom :" . $Medecin["Prenom"] . "  ";

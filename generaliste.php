@@ -78,7 +78,7 @@ if ($db_found) {
     <section class="lesMedecins">
         <div id="section">
             Liste M&eacute;decins G&eacute;n&eacute;ralistes <br>
-            <form method="post" action="InfosMedecin.php">
+            <form method="post" action="InfosMedecin.php" style="color:black">
                 <ul>
                     <!-- Pour chaque médecin Généraliste dans la table-->
                     <?php foreach ($listeGeneralistes as $Generaliste) : ?>
