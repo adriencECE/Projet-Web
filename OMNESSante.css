@@ -18,13 +18,13 @@ body {
 
 .presentation {
 
-	background-image: url(https://zupimages.net/up/22/21/zfsx.jpg);
+	/*background-image: url(https://zupimages.net/up/22/21/zfsx.jpg);*/
 	background-position: top;
 	background-size: cover;
 
 
 	width: auto;
-	height: 800px;
+	/*height: 800px;*/
 
 
 
@@ -34,13 +34,47 @@ body {
 
 }
 
-#header {
+
+
+.presentation {
 	overflow: hidden;
 	background-color: rgb(44, 149, 219, 0.75);
-	padding: 9px 9px;
+	padding: 9px 1px;
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: auto;
 
 
 }
+
+.presentation a {
+	float: left;
+	color: white;
+	text-align: center;
+	padding: 12px;
+	text-decoration: none;
+	font-size: 18px;
+	line-height: 25px;
+
+
+}
+
+.presentation a:hover {
+	color: crimson;
+}
+
+.presentation .header-right {
+	float: right;
+	bottom: 0%;
+	margin-top: 7px;
+	left: 12px;
+	text-indent: -15%;
+}
+
+
 
 #header a {
 	float: left;
@@ -73,6 +107,23 @@ body {
 
 
 /*fin barre de navigation*/
+
+
+.infos {
+	background-image: url(https://zupimages.net/up/22/21/zfsx.jpg);
+	background-size: cover;
+	background-position: top center;
+	position: relative;
+	z-index: 1;
+	width: auto;
+	height: 800px;
+	letter-spacing: 0.1rem;
+
+
+}
+
+
+
 
 /*section
 
@@ -142,9 +193,9 @@ body {
 }*/
 
 
-.info{
+.info {
 
-color: red;
+	color: red;
 
 }
 
@@ -169,7 +220,7 @@ color: red;
 	font-weight: 500;
 	font-size: 1.8rem;
 	letter-spacing: 0.1rem;
-	text-align:center;
+	text-align: center;
 	/*la clef du mystere de 1H ptn
 	position: fixed;
 
@@ -181,10 +232,7 @@ color: red;
 
 }
 
-#footer h1{
-
-
-}
+#footer h1 {}
 
 #footer a {
 
@@ -192,21 +240,29 @@ color: red;
 }
 
 li {
-	
+
 
 	list-style-type: none;
 
-}/*footer section*/
+}
+
+/*footer section*/
 
 .footer {
 	background-image: linear-gradient(60deg, #092340 0%, #2c95db 100%);
+
+	bottom: 0;
+	left: 0;
+	right: 0
 }
+
 .footer .footer {
 	min-height: 200px;
 	flex-direction: column;
 	padding-top: 50px;
 	padding-bottom: 10px;
 }
+
 .footer h2 {
 	color: white;
 	font-weight: 500;
@@ -215,22 +271,30 @@ li {
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
+
 .footer .social-icon {
 	display: flex;
 	margin-bottom: 30px;
 }
+
 .footer .social-item {
 	height: 40px;
 	width: 40px;
 	margin: 0 5px;
 }
+
 .footer .social-item img {
 	filter: grayscale(1);
 	transition: 0.3s ease filter;
 }
+
 .footer .social-item:hover img {
 	filter: grayscale(0);
 }
 
+.footer p {
+	color: white;
+	font-size: 1.3rem;
+}
 
 /*fin footer section*/

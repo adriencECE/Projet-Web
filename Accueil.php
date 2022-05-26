@@ -70,6 +70,7 @@ $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
 
     <section class="infos">
         <div id="section">
+        <a id="infos"></a>
             <h1><span>Bienvenue sur OMNES Sant&eacute; <?php echo $_SESSION["login"] ?><br></span></h1>
             <div class="info">
                 <div>
