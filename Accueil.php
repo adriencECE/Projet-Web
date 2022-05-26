@@ -39,31 +39,36 @@ $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
 
 <body>
 
-    <div id="wrapper">
-        <div id="header">
-            <div id="nav">
-                <img src="omnessante.png" class="logo">
-                <div class="header-right">
+    <section class="presentation">
+        <div id="wrapper">
+            <div id="header">
+                <div id="nav">
+                    <img src="omnessante.png" class="logo">
+                    <div class="header-right">
 
-                    <a href="Accueil.php" data-after="Accueil">Accueil </a>
-                    <!--<input type="button" name="Accueil" value="Accueil">
+                        <a href="Accueil.php" data-after="Accueil">Accueil </a>
+                        <!--<input type="button" name="Accueil" value="Accueil">
                     </a>-->
-                    <a href="ToutParcourir.php" data-after="ToutParcourir">Parcourir </a>
-                    <!--<input type="button" name="Parcourir" value="Tout Parcourir">
+                        <a href="ToutParcourir.php" data-after="ToutParcourir">Parcourir </a>
+                        <!--<input type="button" name="Parcourir" value="Tout Parcourir">
                     </a>-->
-                    <a href="Accueil.php" data-after="Acc" id="btn1">Modif </a>
-                    <!--<input type="button" name="Modifier" value="Modifier" id="btn1">
+                        <a href="Accueil.php" data-after="Acc" id="btn1">Modif </a>
+                        <!--<input type="button" name="Modifier" value="Modifier" id="btn1">
                     </a>-->
-                    <a href="Compte.php" data-after="Compte" id="btn2">Compte </a>
-                    <!--<input type="button" name="Compte" value="Compte" id="btn2">
+                        <a href="Compte.php" data-after="Compte" id="btn2">Compte </a>
+                        <!--<input type="button" name="Compte" value="Compte" id="btn2">
                     </a>-->
-                    <!--Modification boutons en fonction du compte connecte-->
-                    <?php echo "<script type='text/javascript'>testConnexion1Acc($jsvars)</script>";
-                    echo "<script type='text/javascript'>testConnexion2Acc($jsvars)</script>" ?>
+                        <!--Modification boutons en fonction du compte connecte-->
+                        <?php echo "<script type='text/javascript'>testConnexion1Acc($jsvars)</script>";
+                        echo "<script type='text/javascript'>testConnexion2Acc($jsvars)</script>" ?>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
+
+    <section class="infos">
         <div id="section">
             <h1><span>Bienvenue sur OMNES Sant&eacute; <?php echo $_SESSION["login"] ?><br></span></h1>
             <div class="info">
@@ -78,16 +83,22 @@ $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
                 <div>Ev&eacute;nements <br></div>
             </div>
         </div>
+    </section>
 
 
-            <footer id="footer">
+    <section class="footer">
+        <a id="footer"></a>
+        <div class="footer container">
+            <div id="footer">
                 <a>Copyright &copy; 2022, OMNES Sant&eacute;<br></a>
                 <a href="mailto:OMNES.sante@gmail.com">OMNES.sante@gmail.com</a>
-            </footer>
+            </div>
+        </div>
+    </section>
 
-        
-        
-    </div>
+
+
+
 </body>
 
 </html>

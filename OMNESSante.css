@@ -16,7 +16,7 @@ body {
 
 /*barre de navigation*/
 
-#wrapper {
+.presentation {
 
 	background-image: url(https://zupimages.net/up/22/21/zfsx.jpg);
 	background-position: top;
@@ -74,10 +74,10 @@ body {
 
 /*fin barre de navigation*/
 
-/*section*/
+/*section
 
 #section {
-	/*background-image: url(https://zupimages.net/up/22/21/zfsx.jpg);*/
+	/*background-image: url(https://zupimages.net/up/22/21/zfsx.jpg);
 	background-position: top;
 	background-size: cover;
 
@@ -106,7 +106,7 @@ body {
 	background-color: black;
 	opacity: 0.7;
 	z-index: -1;
-}*/
+}
 
 
 
@@ -139,8 +139,14 @@ body {
 
 	color: black;
 
-}
+}*/
 
+
+.info{
+
+color: red;
+
+}
 
 
 
@@ -152,10 +158,10 @@ body {
 
 
 
-
+/*footer section*/
 #footer {
 
-	background-image: linear-gradient(60deg, #092340 0%, #2c95db 100%);
+
 	flex-direction: column;
 	padding-top: 20px;
 	padding-bottom: 10px;
@@ -163,14 +169,14 @@ body {
 	font-weight: 500;
 	font-size: 1.8rem;
 	letter-spacing: 0.1rem;
-	text-align: center;
+	text-align:center;
 	/*la clef du mystere de 1H ptn
 	position: fixed;
 
 	/*la clef du mystere de 1H ptn*/
 
 
-	margin-top: auto;
+
 
 
 }
@@ -190,6 +196,41 @@ li {
 
 	list-style-type: none;
 
+}/*footer section*/
+
+.footer {
+	background-image: linear-gradient(60deg, #092340 0%, #2c95db 100%);
 }
+.footer .footer {
+	min-height: 200px;
+	flex-direction: column;
+	padding-top: 50px;
+	padding-bottom: 10px;
+}
+.footer h2 {
+	color: white;
+	font-weight: 500;
+	font-size: 1.8rem;
+	letter-spacing: 0.1rem;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.footer .social-icon {
+	display: flex;
+	margin-bottom: 30px;
+}
+.footer .social-item {
+	height: 40px;
+	width: 40px;
+	margin: 0 5px;
+}
+.footer .social-item img {
+	filter: grayscale(1);
+	transition: 0.3s ease filter;
+}
+.footer .social-item:hover img {
+	filter: grayscale(0);
+}
+
 
 /*fin footer section*/
