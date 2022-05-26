@@ -38,7 +38,8 @@ body {
 
 .presentation {
 	overflow: hidden;
-	background-color: rgb(44, 149, 219, 0.75);
+	min-height: 8vh;
+	background-color: rgba(31, 30, 30, 0.24);
 	padding: 9px 1px;
 	position: fixed;
 	z-index: 1000;
@@ -118,11 +119,40 @@ body {
 	width: auto;
 	height: 800px;
 	letter-spacing: 0.1rem;
+	flex-grow: 1;
+
+	color: red;
 
 
 }
 
+.infos::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: black;
+	opacity: 0.7;
+	z-index: -1;
 
+}
+
+.infos h1 {
+
+
+	font-family: 'Montserrat', sans-serif;
+
+	color: rgb(255, 255, 255);
+	font-weight: bold;
+	margin-top: 20px;
+	margin: 20px;
+	padding-top: 200px;
+	font-size: 5rem;
+
+
+}
 
 
 /*section
@@ -193,11 +223,7 @@ body {
 }*/
 
 
-.info {
 
-	color: red;
-
-}
 
 
 
@@ -205,13 +231,122 @@ body {
 
 /*fin section*/
 
+
+
+
+
+
+
+
+
+
+
+/* offers Section */
+.offers .offers {
+	flex-direction: column;
+	text-align: center;
+	max-width: 1500px;
+	margin: 0 auto;
+	padding: 100px 0;
+}
+
+.offers .offer-top {
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+.offers .offer-bottom {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 50px;
+}
+
+.offers .offer-item {
+	flex-basis: 80%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+	padding: 30px;
+	/*border-radius: 10px;*/
+	background-image: url(./img/img-1.png);
+	background-size: cover;
+	margin: 10px 5%;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+
+}
+
+.offers .offer-item::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+	opacity: 0.9;
+	z-index: -1;
+}
+
+.offers .offer-bottom .icon {
+	height: 80px;
+	width: 80px;
+	margin-bottom: 20px;
+}
+
+.offers .offer-item h2 {
+	font-size: 2rem;
+	color: white;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+}
+
+.offers .offer-item p {
+	color: white;
+	text-align: left;
+}
+
+/* End offers Section */
+
+
+
+
 /*footer section*/
 
 
+.footerAcceuil {
 
-/*footer section*/
-#footer {
+	background-image: linear-gradient(60deg, #092340 0%, #2c95db 100%);
+	flex-direction: column;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	color: white;
+	font-weight: 500;
+	font-size: 1.8rem;
+	letter-spacing: 0.1rem;
+	text-align: center;
 
+
+	position: relative;
+	z-index: 10;
+	height: 4em;
+	background-color: #FFF;
+	clear: both;
+	background-color: #2A64A7;
+}
+
+
+.footer {
+
+	background-image: linear-gradient(60deg, #092340 0%, #2c95db 100%);
+	bottom: 0;
+	left: 0;
+	right: 0;
+	position: absolute;
 
 	flex-direction: column;
 	padding-top: 20px;
@@ -221,43 +356,10 @@ body {
 	font-size: 1.8rem;
 	letter-spacing: 0.1rem;
 	text-align: center;
-	/*la clef du mystere de 1H ptn
-	position: fixed;
-
-	/*la clef du mystere de 1H ptn*/
-
-
-
-
-
-}
-
-#footer h1 {}
-
-#footer a {
-
-	font-size: 1.3rem;
-}
-
-li {
-
-
-	list-style-type: none;
-
-}
-
-/*footer section*/
-
-.footer {
-	background-image: linear-gradient(60deg, #092340 0%, #2c95db 100%);
-
-	bottom: 0;
-	left: 0;
-	right: 0
 }
 
 .footer .footer {
-	min-height: 200px;
+	min-height: 10px;
 	flex-direction: column;
 	padding-top: 50px;
 	padding-bottom: 10px;
