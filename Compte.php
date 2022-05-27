@@ -113,6 +113,7 @@ if ($db_found) {
 
     <section class="medPacient">
         <div id="section">
+        <img src="https://img.icons8.com/windows/64/000000/user.png"/>
             Infos Compte <br>
             <?php //var_dump($_SESSION);
             if ($Type == 1) //Patient

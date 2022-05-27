@@ -28,7 +28,7 @@ $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
                         <a href="ToutParcourir.php" data-after="ToutParcourir">Parcourir </a>
                         <!--<input type="button" name="Parcourir" value="Tout Parcourir">
                     </a>-->
-                        <a href="Accueil.php" data-after="Acc" id="btn1">Modif </a>
+                        <a href="RDV.php" data-after="Acc" id="btn1">Modif </a>
                         <!--<input type="button" name="Modifier" value="Modifier" id="btn1">
                     </a>-->
                         <a href="Compte.php" data-after="Compte" id="btn2">Compte </a>
@@ -45,6 +45,7 @@ $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
 
     <section class="messagesRdv">
         <div id="section" style="color:black">
+            <img src="https://img.icons8.com/windows/32/000000/chat-messages--v2.png" />
             Historique des Messages <br>
             <ul>
                 <li>Message 1</li>
@@ -52,6 +53,7 @@ $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
                 <li>Message 3</li>
             </ul><br>
 
+            <img src="https://img.icons8.com/metro/26/000000/planner.png" />
             Historique des RDV <br>
             <ul>
                 <a href="InfosMedecin.php">

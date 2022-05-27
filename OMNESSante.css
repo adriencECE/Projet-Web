@@ -109,6 +109,7 @@ body {
 
 /*fin barre de navigation*/
 
+/*infos section*/
 
 .infos {
 	background-image: url(https://zupimages.net/up/22/21/zfsx.jpg);
@@ -153,6 +154,11 @@ body {
 
 
 }
+/*fin infos section*/
+
+
+
+
 
 /* offers Section */
 .offers .offers {
@@ -315,7 +321,31 @@ body {
 /*fin footer section*/
 
 
-.cService div{
+/*css de chaque page section*/
+
+.cService div {
+	font-family: 'Montserrat', sans-serif;
+
+
+	font-weight: bold;
+	margin-top: 20px;
+	margin: 20px;
+	padding-top: 200px;
+
+	font-size: 3rem;
+	margin-bottom: 10px;
+
+
+}
+
+.medPacient img {
+
+	border : 2px solid #000000;
+	padding-bottom: 20px;
+}
+
+.medPacient div {
+
 	font-family: 'Montserrat', sans-serif;
 
 
@@ -326,50 +356,9 @@ body {
 
 	font-size: 3rem;
 
-
 }
 
-
-.medPacient div{
-
-	font-family: 'Montserrat', sans-serif;
-
-
-	font-weight: bold;
-	margin-top: 20px;
-	margin: 20px;
-	padding-top: 200px;
-
-	font-size: 3rem;
-
-}
-
-.connection div{
-
-	font-family: 'Montserrat', sans-serif;
-
-	font-weight: bold;
-	margin-top: 20px;
-	margin: 20px;
-	padding-top: 200px;
-
-	font-size: 3rem;
-
-}
-
-.lesMedecins div{
-
-	font-family: 'Montserrat', sans-serif;
-
-	font-weight: bold;
-	margin-top: 20px;
-	margin: 20px;
-	padding-top: 200px;
-
-	font-size: 3rem;
-}
-
-.infos1 div{
+.connection div {
 
 	font-family: 'Montserrat', sans-serif;
 
@@ -382,7 +371,19 @@ body {
 
 }
 
-.infoMedecins div{
+.lesMedecins div {
+
+	font-family: 'Montserrat', sans-serif;
+
+	font-weight: bold;
+	margin-top: 20px;
+	margin: 20px;
+	padding-top: 200px;
+
+	font-size: 3rem;
+}
+
+.infos1 div {
 
 	font-family: 'Montserrat', sans-serif;
 
@@ -395,7 +396,20 @@ body {
 
 }
 
-.inscriptionClient div{
+.infoMedecins div {
+
+	font-family: 'Montserrat', sans-serif;
+
+	font-weight: bold;
+	margin-top: 20px;
+	margin: 20px;
+	padding-top: 200px;
+
+	font-size: 3rem;
+
+}
+
+.inscriptionClient div {
 
 	font-family: 'Montserrat', sans-serif;
 
@@ -407,7 +421,7 @@ body {
 	font-size: 3rem;
 }
 
-.laboratoire div{
+.laboratoire div {
 
 	font-family: 'Montserrat', sans-serif;
 
@@ -419,7 +433,7 @@ body {
 	font-size: 3rem;
 }
 
-.listesMedecins div{
+.listesMedecins div {
 
 	font-family: 'Montserrat', sans-serif;
 
@@ -431,7 +445,7 @@ body {
 	font-size: 3rem;
 }
 
-.payement div{
+.payement div {
 
 	font-family: 'Montserrat', sans-serif;
 
@@ -443,7 +457,21 @@ body {
 	font-size: 3rem;
 }
 
-.messagesRdv div{
+.messagesRdv div {
+
+	font-family: 'Montserrat', sans-serif;
+
+	font-weight: bold;
+	margin-top: 20px;
+	margin: 20px;
+	padding-top: 150px;
+	margin-bottom: 200px;
+
+	font-size: 2rem;
+}
+
+
+.infos3 div {
 
 	font-family: 'Montserrat', sans-serif;
 
@@ -455,31 +483,7 @@ body {
 	font-size: 3rem;
 }
 
-
-.infos3 div{
-
-	font-family: 'Montserrat', sans-serif;
-
-	font-weight: bold;
-	margin-top: 20px;
-	margin: 20px;
-	padding-top: 200px;
-
-	font-size: 3rem;
-}
-
-.specialiste div{
-
-	font-family: 'Montserrat', sans-serif;
-
-	font-weight: bold;
-	margin-top: 20px;
-	margin: 20px;
-	padding-top: 200px;
-
-	font-size: 3rem;
-}
-.toutParcourir div{
+.specialiste div {
 
 	font-family: 'Montserrat', sans-serif;
 
@@ -491,3 +495,14 @@ body {
 	font-size: 3rem;
 }
 
+.toutParcourir div {
+
+	font-family: 'Montserrat', sans-serif;
+
+	font-weight: bold;
+	margin-top: 20px;
+	margin: 20px;
+	padding-top: 200px;
+
+	font-size: 3rem;
+}
