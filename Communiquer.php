@@ -43,7 +43,7 @@ echo
 
 <head>
     <title>OMNES Sant&eacute;-Rendez-Vous</title>
-    <link rel="stylesheet" href="chat.css" />
+    <link rel="stylesheet" href="chat2.css" />
     <link href="OMNESSante.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" type="image/x-icon"
         href="https://www.omneseducation.com/app/themes/inseec-group/favicon.ico">
@@ -104,16 +104,6 @@ echo
                     <input name="usermsg" type="text" id="usermsg" />
                     <input name="submitmsg" type="submit" id="submitmsg" value="Envoyer" />
                 </form>
-            </div>
-            <div id="RDV">
-                Historique des RDV <br>
-                <ul>
-                    <a href="InfosMedecin.php">
-                        <li>RDV 1</li>
-                    </a>
-                    <li>RDV 2</li>
-                    <li>RDV 3</li>
-                </ul>
             </div>
         </div>
         <div id="footer">Copyright &copy; 2022, OMNES Sant&eacute;<br>

@@ -1,7 +1,6 @@
 <?php
 session_start();
-    $vars = array($_SESSION["connecte"], $_SESSION["login"], $_SESSION["MDP"]);
-    $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
+
 //Connection
 //echo "Connecting to DB <br>";
 
@@ -78,6 +77,8 @@ else{
         $_SESSION["login"]=$login;
         $_SESSION["MDP"]=$MDP;
         $_SESSION["connecte"]="true"; 
+        $_SESSION["name"]=$Compte["Nom"];
+        $_SESSION["Prenom"]=$Compte["Prenom"];
         //var_dump($_SESSION);
         ?>
         <script type="text/javascript">        

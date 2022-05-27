@@ -19,6 +19,12 @@ function testConnexion1Acc(vars) {
 
 function testConnexion2Acc(vars) {
     if (vars[0] == "true") {
+        if (vars[1] == "admin") { 
+            document.getElementById("btn1").href = "Modifier.php";
+        }
+        else { 
+            document.getElementById("btn1").href = "RDV.php"; 
+        }
         document.getElementById("btn2").href = "Compte.php"; 
      }
      else {

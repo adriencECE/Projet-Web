@@ -15,6 +15,9 @@ if (isset($_POST["DeconnexionBtn"])) {
     $_SESSION["connecte"] = "false";
     $_SESSION["login"] = "";
     $_SESSION["MDP"] = "";
+    $_SESSION["name"] = "";
+    $_SESSION["prenom"] = "";
+    $_SESSION["type"] = "";
 }
 //Affichage Session pour test
 //echo $_SESSION["connecte"]." ".$_SESSION["login"]." ".$_SESSION["MDP"];
@@ -51,7 +54,7 @@ $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
                     <a href="ToutParcourir.php" data-after="ToutParcourir">Parcourir </a>
                     <!--<input type="button" name="Parcourir" value="Tout Parcourir">
                     </a>-->
-                    <a href="Accueil.php" data-after="Acc" id="btn1">Modif </a>
+                    <a href="RDV.php" data-after="Acc" id="btn1">Modif </a>
                     <!--<input type="button" name="Modifier" value="Modifier" id="btn1">
                     </a>-->
                     <a href="Compte.php" data-after="Compte" id="btn2">Compte </a>
