@@ -61,3 +61,4 @@ function testConnexion2(vars) {
         document.getElementById("lienCompte").href = "Connexion.php"; 
      }
 }
+

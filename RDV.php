@@ -113,7 +113,7 @@ echo
             <div id="RDV">
                 Historique des RDV <br>
                 <ul>
-                    <a href="InfosMedecin.php">
+                    <a href="testu.php">
                         <li>RDV 1</li>
                     </a>
                     <li>RDV 2</li>

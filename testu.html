@@ -1,0 +1,253 @@
+<?php
+session_start();
+
+//Connection
+//echo "Connecting to DB <br>";
+
+$db = "omnessante"; //Name of DB
+$site = "localhost"; //Name of the Website
+$db_id = "root"; //DB login ID
+$db_mdp = ""; //DB login PW
+$var;
+$sql = "";
+
+if(isset($_POST["login"])){
+    $login=$_POST["login"];
+}
+else{
+    $login = "";
+}
+if(isset($_POST["MDP"])){
+    $MDP=$_POST["MDP"];
+}
+else{
+    $MDP = "";
+}
+    
+//Connect
+//$db_handle = mysqli_connect($site, $db_id, $db_mdp, $db, $port);
+$db_handle = mysqli_connect($site, $db_id, $db_mdp);
+
+//var_dump($db_handle);
+
+//Access DB
+$db_found = mysqli_select_db($db_handle,$db);
+
+//var_dump($db_found);
+
+if($db_found){
+    //echo "Connected to DB <br>";
+
+        $sql = "SELECT * FROM comptes WHERE Login='$login' AND MDP='$MDP'";
+        $res = mysqli_query($db_handle, $sql);
+        //var_dump($res);
+ 
+        while($data = mysqli_fetch_assoc($res))
+        {
+            //var_dump($data);
+            //$data = une ligne de la table
+            //On crée un tableau avec toutes ces lignes
+            $Compte=$data;
+            $login = $data['Login'];
+            $MDP = $data['MDP'];
+        }        
+        //var_dump($Compte);
+}
+else{
+    echo "Unable to connect <br>";
+}
+?>
+
+<!DOCTYPE html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <title>Calendrier</title>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+ <script  type="text/javascript">
+   function RDV()
+{
+    alert();
+   var choix= confirm("validez vous ce rdv ?");
+
+   if(choix)
+   {
+    alert("Rendez-vous confirmé");
+
+  }
+
+   else{alert("non");}
+
+
+}
+ </script>
+ 
+</head>
+
+<body>
+  <table border="colapse">
+    <tr bgcolor="grey">
+     
+      <th width="150">Lundi 06/06</th>
+      <th width="150">Mardi 07/06</th>
+      <th width="150">Mercredi 08/06</th>
+      <th width="150">Jeudi 09/06</th>
+      <th width="150">Vendredi 10/06</th>
+      <th width="150">Samedi 11/06</th>
+      <th width="150">Dimanche 12/06</th>
+    </tr>
+
+    <tr > 
+      <td> <input id="lundi8" type="button" value="8h-9h" onclick="RDV()">
+      </td>
+      <td><input id="mardi8" type="button" value="8h-9h" onclick="RDV()">
+      </td>
+      <td><input id="mardi8" type="button" value="8h-9h">
+      </td>
+      <td><input id="mardi8" type="button" value="8h-9h">
+      </td>
+      <td><input  type="button" value="8h-9h" >
+      </td>
+      <td><input type="button" value="8h-9h">
+      </td>
+      <td><input type="button" value="8h-9h">
+      </td>
+    </tr>
+
+    <tr>
+    
+      <td> <br><input type="button" value="9h-10h">
+      </td>
+      <td> <br><input type="button" value="9h-10h">
+      </td>
+      <td> <br><input type="button" value="9h-10h">
+      </td>
+      <td> <br><input type="button" value="9h-10h">
+      </td>
+      <td> <br><input type="button" value="9h-10h">
+      </td>
+
+      <td> <br><input type="button" value="9h-10h">
+      </td>
+      <td> <br><input type="button" value="9h-10h">
+      </td>
+    </tr>
+    
+    <tr>
+
+      <td> <br><input type="button" value="10h-11h">
+      </td>
+      <td> <br><input type="button" value="10h-11h">
+      </td>
+      <td> <br><input type="button" value="10h-11h">
+      </td>
+      <td> <br><input type="button" value="10h-11h">
+      </td>
+      <td> <br><input type="button" value="10h-11h">
+      </td>
+      <td> <br><input type="button" value="10h-11h">
+      </td>
+      <td> <br><input type="button" value="10h-11h">
+      </td>
+    </tr>
+
+    <tr>
+      
+      <td> <br><input type="button" value="11h-12h">
+      </td>
+      <td> <br><input type="button" value="11h-12h">
+      </td>
+      <td> <br><input type="button" value="11h-12h">
+      </td>
+      <td> <br><input type="button" value="11h-12h">
+      </td>
+      <td> <br><input type="button" value="11h-12h">
+      </td>
+      <td> <br><input type="button" value="11h-12h">
+      </td>
+      <td> <br><input type="button" value="11h-12h">
+      </td>
+    </tr>
+
+
+
+
+    <tr>
+      
+      <td><input type="button" value="14h-15h">
+      </td>
+      <td> <input type="button" value="14h-15h">
+      </td>
+      <td> <input type="button" value="14h-15h">
+      </td>
+      <td> <input type="button" value="14h-15h">
+      </td>
+      <td> <input type="button" value="14h-15h">
+      </td>
+      <td> <input type="button" value="14h-15h">
+      </td>
+      <td> <input type="button" value="14h-15h">
+      </td>
+    </tr>
+    <tr>
+     
+      <td> <input type="button" value="15h-16h" >
+      </td>
+      <td> <input type="button" value="15h-16h" >
+      </td>
+      <td> <input type="button" value="15h-16h" >
+      </td>
+      <td> <input type="button" value="15h-16h" >
+      </td>
+      <td> <input type="button" value="15h-16h" >
+      </td>
+
+      <td> <input type="button" value="15h-16h" >
+      </td>
+      <td> <input type="button" value="15h-16h" >
+      </td>
+    </tr>
+
+    <tr>
+     
+      <td> <br><input type="button" value="16h-17h">
+      </td>
+      <td> <br><input type="button" value="16h-17h">
+      </td>
+      <td> <br><input type="button" value="16h-17h">
+      </td>
+      <td> <br><input type="button" value="16h-17h">
+      </td>
+      <td> <br><input type="button" value="16h-17h">
+      </td>
+
+      <td> <br><input type="button" value="16h-17h">
+      </td>
+      <td> <br><input type="button" value="16h-17h">
+      </td>
+    </tr>
+    
+    <tr>
+      
+      <td> <br><input type="button" value="17h-18h">
+      </td>
+      <td> <br><input type="button" value="17h-18h">
+      </td>
+      <td> <br><input type="button" value="17h-18h">
+      </td>
+      <td> <br><input type="button" value="17h-18h">
+      </td>
+      <td> <br><input type="button" value="17h-18h">
+      </td>
+      <td> <br><input type="button" value="17h-18h">
+      </td>
+      <td> <br><input type="button" value="17h-18h">
+      </td>
+    </tr>
+
+
+  </table>
+  </div>
+</body>
+
+</html>
