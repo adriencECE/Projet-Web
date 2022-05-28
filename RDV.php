@@ -2,8 +2,51 @@
 $vars = array($_SESSION["connecte"], $_SESSION["login"], $_SESSION["MDP"]);
 $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
 
-if(!isset($_SESSION["name2"])){
-    $_SESSION["name2"]="";
+$db = "omnessante"; //Name of DB
+$site = "localhost"; //Name of the Website
+$db_id = "root"; //DB login ID
+$db_mdp = ""; //DB login PW
+$sql = "";
+//Patient
+if($_SESSION["type"]==1){
+$NomMedecin = $_SESSION["name2"];
+$NomPatient=$_SESSION["name"];
+$PrenomMedecin = $_SESSION["prenom2"];
+$PrenomPatient = $_SESSION["prenom"];
+//Medecin
+}else if($_SESSION["type"]==2){
+$NomMedecin=$_SESSION["name"];
+$NomPatient=$_SESSION["name2"];
+$PrenomMedecin = $_SESSION["prenom"];
+$PrenomPatient = $_SESSION["prenom2"];
+}
+
+$text;
+$sent;
+if(isset($_GET["text"])){
+    $text = $_GET["text"];
+    $sent = $_GET["sent"];
+}
+else{
+    $text = "erreur";
+    $sent = false;
+}
+
+
+loadTexts();
+//Si un message est envoye on l'ajoute a la BDD
+if($sent==true){
+    $db_handle = mysqli_connect($site, $db_id, $db_mdp);
+    //Access DB
+    $db_found = mysqli_select_db($db_handle, $db);
+    if ($db_found && $sent==true) {
+        //echo "Connected to DB <br>";
+        $sql = "INSERT INTO message (NomM, PrenomM, NomP, PrenomP, Type, Message, Id, envoyeur) 
+                VALUES ('$NomMedecin', '$PrenomMedecin', '$NomPatient', '$PrenomPatient', '1', '$text', NULL, '$NomPatient')";
+        $res = mysqli_query($db_handle, $sql);
+    } else {
+        echo "Unable to connect <br>";
+    }
 }
 
 if (isset($_GET['logout'])){
@@ -16,6 +59,7 @@ if (isset($_GET['logout'])){
 
     $myfile = fopen(__DIR__ . "/log.html", "a") or die("Impossible d'ouvrir le fichier!" . __DIR__ . "/log.html");
     fwrite($myfile, $logout_message);
+    //ftruncate($myfile, 0);
     fclose($myfile);
     header("Location: RDV.php"); //Rediriger l'utilisateur
  }
@@ -29,7 +73,61 @@ if (isset($_POST['enter'])){
     }
 }
 
+function loadTexts(){
+    $db = "omnessante"; //Name of DB
+$site = "localhost"; //Name of the Website
+$db_id = "root"; //DB login ID
+$db_mdp = ""; //DB login PW
+$sql = "";
+//Patient
+if($_SESSION["type"]==1){
+$NomMedecin = $_SESSION["name2"];
+$NomPatient=$_SESSION["name"];
+$PrenomMedecin = $_SESSION["prenom2"];
+$PrenomPatient = $_SESSION["prenom"];
+//Medecin
+}else if($_SESSION["type"]==2){
+$NomMedecin=$_SESSION["name"];
+$NomPatient=$_SESSION["name2"];
+$PrenomMedecin = $_SESSION["prenom"];
+$PrenomPatient = $_SESSION["prenom2"];
+}
+//Si aucun message envoye on recupere les anciens
+    //Connect
+    $db_handle = mysqli_connect($site, $db_id, $db_mdp);
+
+//Access DB
+$db_found = mysqli_select_db($db_handle, $db);
+$messages;
+if ($db_found) {
+    //echo "Connected to DB <br>";
+    $sql = "SELECT * FROM message WHERE NomM='$NomMedecin' AND NomP='$NomPatient'";
+    $res = mysqli_query($db_handle, $sql);
+    while ($data = mysqli_fetch_assoc($res)) {
+        //$data = une ligne de la table
+        //On crée un tableau avec toutes ces lignes
+        $messages[] = $data;
+    }
+
+    // Charger les anciens messages entre les 2 personnes dans la BDD
+    $myfile = fopen(__DIR__ . "/log.html", "a") or die("Impossible d'ouvrir le fichier!" . __DIR__ . "/log.html");
+    ftruncate($myfile, 0);
+    if(isset($messages)){
+        foreach($messages as $mess){
+            $loaded_message = "<div class='msgln'> <b class='username'>".$mess['envoyeur']."</b> ".stripslashes(htmlspecialchars($mess['Message']))."<br></div>";
+        fwrite($myfile, $loaded_message);
+    }
+    fclose($myfile);
+    }
+    
+
+} else {
+    echo "Unable to connect <br>";
+}
+}
+
 function loginForm() {
+    $sent=false;
 echo
 '<div id="loginform">
 <p>Avec qui voulez-vous communiquer</p>
@@ -39,6 +137,7 @@ echo
 <input type="submit" name="enter" id="enter" value="Soumettre" />
 </form>
 </div>';
+    loadTexts();
 }
 
 ?>
@@ -83,15 +182,17 @@ echo
             </div>
         </div>
         <div id="section">
-            <?php
-            if ($_SESSION['name2'] == ""){
-            loginForm();
-            }
-            else {
-            ?>
+            
         
             <div id="chatWrapper">
+            <?php
+                        if ($_SESSION['name2'] == ""){
+                            loginForm();
+                        }
+                        else {
+                    ?>
                 <div id="menu">
+                    
                     <p class="welcome">Communiquer avec <b>
                             <?php echo $_SESSION['name2']; ?>
                         </b></p>
@@ -109,6 +210,7 @@ echo
                     <input name="usermsg" type="text" id="usermsg" />
                     <input name="submitmsg" type="submit" id="submitmsg" value="Envoyer" />
                 </form>
+                <?php } ?>
             </div>
             <div id="RDV">
                 Historique des RDV <br>
@@ -162,6 +264,7 @@ echo
             $("#submitmsg").click(function () {
                 var clientmsg = $("#usermsg").val();
                 $.post("post.php", { text: clientmsg });
+                window.location.href="RDV.php?text="+clientmsg+"&sent=true";
                 $("#usermsg").val("");
                 return false;
             });
@@ -191,7 +294,7 @@ echo
 
 
     </script>
-    <?php } ?>
+    
 </body>
 
 </html>

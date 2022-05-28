@@ -5,6 +5,7 @@ $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
 //Connection
 //echo "Connecting to DB <br>";
 
+
 $db = "omnessante"; //Name of DB
 $site = "localhost"; //Name of the Website
 $db_id = "root"; //DB login ID
@@ -85,13 +86,27 @@ if ($db_found) {
             echo "Prenom :" . $Medecin["Prenom"] . "  ";
             echo "Specialite :" . $Medecin["Spe"] . "  ";
             echo "Telephone :" . $Medecin["Tel"] . "  ";
-            echo "Mail :" . $Medecin["Mail"] . " <br> "; ?>
+            echo "Mail :" . $Medecin["Mail"] . " <br> "; 
+            $_SESSION["name2"]=$Medecin["Nom"];
+            $_SESSION["prenom2"]=$Medecin["Prenom"];?>
+            
             <a href="RDV.php">
                 <input type="button" name="RDV" value="Prendre un RDV">
             </a>
-            <a href="Communiquer.php">
-                <input type="button" name="Communiquer" value="Communiquer avec le m&eacute;decin">
+            
+            <a href="#" id="btnCom">
+                <input type="button" name="Communiquer" value="Communiquer avec le m&eacute;decin" onclick='if(<?php echo $_SESSION["connecte"]?>==false)alert("Vous devez etre connecte pour envoyer un message")'>
             </a>
+            <!--On ne peut pas cliquer sur le bouton communiquer si on n'est pas connecte-->
+            <script type="text/javascript">
+                if(<?php echo $_SESSION["connecte"]?>==true){
+                    document.getElementById("btnCom").href = "Communiquer.php";
+                }
+                else{
+                    
+                    document.getElementById("btnCom").href = "javascript:void(0)";
+                }
+            </script>
 
             <a href="test.php">
                 <input type="button" name="CV" value="Voir son CV">

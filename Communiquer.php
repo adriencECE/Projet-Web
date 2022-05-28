@@ -2,6 +2,75 @@
 $vars = array($_SESSION["connecte"], $_SESSION["login"], $_SESSION["MDP"]);
 $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
 
+
+$db = "omnessante"; //Name of DB
+$site = "localhost"; //Name of the Website
+$db_id = "root"; //DB login ID
+$db_mdp = ""; //DB login PW
+$sql = "";
+$NomMedecin = $_SESSION["name2"];
+$NomPatient=$_SESSION["name"];
+$PrenomMedecin = $_SESSION["prenom2"];
+$PrenomPatient = $_SESSION["prenom"];
+$text;
+$sent;
+if(isset($_GET["text"])){
+    $text = $_GET["text"];
+    $sent = $_GET["sent"];
+}
+else{
+    $text = "erreur";
+    $sent = false;
+}
+
+//Si aucun message envoye on recupere les anciens
+if($sent==false){
+    //Connect
+    $db_handle = mysqli_connect($site, $db_id, $db_mdp);
+
+//Access DB
+$db_found = mysqli_select_db($db_handle, $db);
+$messages;
+if ($db_found) {
+    //echo "Connected to DB <br>";
+    $sql = "SELECT * FROM message WHERE NomM='$NomMedecin' AND NomP='$NomPatient'";
+    $res = mysqli_query($db_handle, $sql);
+    while ($data = mysqli_fetch_assoc($res)) {
+        //$data = une ligne de la table
+        //On crée un tableau avec toutes ces lignes
+        $messages[] = $data;
+    }
+
+    // Charger les anciens messages entre les 2 personnes dans la BDD
+    $myfile = fopen(__DIR__ . "/log.html", "a") or die("Impossible d'ouvrir le fichier!" . __DIR__ . "/log.html");
+    ftruncate($myfile, 0);
+    if(isset($messages)){
+        foreach($messages as $mess){
+            $loaded_message = "<div class='msgln'> <b class='username'>".$mess['envoyeur']."</b> ".stripslashes(htmlspecialchars($mess['Message']))."<br></div>";
+        fwrite($myfile, $loaded_message);
+    }
+    fclose($myfile);
+    }
+    
+
+} else {
+    echo "Unable to connect <br>";
+}
+//Si un message est envoye on l'ajoute a la BDD
+}else{
+    $db_handle = mysqli_connect($site, $db_id, $db_mdp);
+    //Access DB
+    $db_found = mysqli_select_db($db_handle, $db);
+    if ($db_found && $sent==true) {
+        //echo "Connected to DB <br>";
+        $sql = "INSERT INTO message (NomM, PrenomM, NomP, PrenomP, Type, Message, Id, envoyeur) 
+                VALUES ('$NomMedecin', '$PrenomMedecin', '$NomPatient', '$PrenomPatient', '1', '$text', NULL, '$NomPatient')";
+        $res = mysqli_query($db_handle, $sql);
+    } else {
+        echo "Unable to connect <br>";
+    }
+}
+
 if (isset($_GET['logout'])){
 
     //Message de sortie simple
@@ -12,9 +81,11 @@ if (isset($_GET['logout'])){
 
     $myfile = fopen(__DIR__ . "/log.html", "a") or die("Impossible d'ouvrir le fichier!" . __DIR__ . "/log.html");
     fwrite($myfile, $logout_message);
+    ftruncate($myfile, 0);
     fclose($myfile);
-    header("Location: RDV.php"); //Rediriger l'utilisateur
+    header("Location: InfosMedecin.php"); //Rediriger l'utilisateur
  }
+
 if (isset($_POST['enter'])){
     if($_POST['name2'] != ""){
         $_SESSION['name2'] = stripslashes(htmlspecialchars($_POST['name2']));
@@ -25,26 +96,15 @@ if (isset($_POST['enter'])){
     }
 }
 
-function loginForm() {
-echo
-'<div id="loginform">
-<p>Avec qui voulez-vous communiquer</p>
-<form action="RDV.php" method="post">
-<label for="name">Nom: </label>
-<input type="text" name="name2" id="name2" />
-<input type="submit" name="enter" id="enter" value="Soumettre" />
-</form>
-</div>';
-}
-
 ?>
 
 <html>
 
 <head>
     <title>OMNES Sant&eacute;-Rendez-Vous</title>
-    <link rel="stylesheet" href="chat2.css" />
+    
     <link href="OMNESSante.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="chat2.css" />
     <link rel="shortcut icon" type="image/x-icon"
         href="https://www.omneseducation.com/app/themes/inseec-group/favicon.ico">
 
@@ -78,16 +138,10 @@ echo
             </div>
         </div>
         <div id="section">
-            <?php
-            if ($_SESSION['name2'] == ""){
-            loginForm();
-            }
-            else {
-            ?>
         
             <div id="chatWrapper">
                 <div id="menu">
-                    <p class="welcome">Communiquer avec <b>
+                    <p class="welcome">Communiquer avec Dr. <b>
                             <?php echo $_SESSION['name2']; ?>
                         </b></p>
                     <p class="logout"><a id="exit" href="#">Quitter la conversation</a></p>
@@ -114,11 +168,14 @@ echo
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript">
         // jQuery Document
+        
         $(document).ready(function () {
             $("#submitmsg").click(function () {
                 var clientmsg = $("#usermsg").val();
                 $.post("post.php", { text: clientmsg });
+                window.location.href="Communiquer.php?text="+clientmsg+"&sent=true";
                 $("#usermsg").val("");
+
                 return false;
             });
             function loadLog() {
@@ -138,16 +195,15 @@ echo
             }
             setInterval(loadLog, 2500);
             $("#exit").click(function () {
-                var exit = confirm("Voulez-vous vraiment mettre fin à la session ?");
+                var exit = confirm("Voulez-vous vraiment mettre fin à la conversation ?");
                 if (exit == true) {
-                    window.location = "RDV.php?logout=true";
+                    window.location = "Communiquer.php?logout=true";
                 }
             });
         });
 
 
     </script>
-    <?php } ?>
 </body>
 
 </html>

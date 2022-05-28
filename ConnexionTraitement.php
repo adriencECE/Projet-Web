@@ -78,7 +78,8 @@ else{
         $_SESSION["MDP"]=$MDP;
         $_SESSION["connecte"]="true"; 
         $_SESSION["name"]=$Compte["Nom"];
-        $_SESSION["Prenom"]=$Compte["Prenom"];
+        $_SESSION["prenom"]=$Compte["Prenom"];
+        $_SESSION["type"]=$Compte["Type"];
         //var_dump($_SESSION);
         ?>
         <script type="text/javascript">        
