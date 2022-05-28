@@ -15,13 +15,24 @@ form label {
 }
 
 
-a {
+
+.chat{
+
+
+    margin-top: 20px;
+	margin: 20px;
+	padding-top: 80px;
+	font-size: 3rem;
+}
+
+
+#section a {
     color: #0000ff;
     text-decoration: none;
 
 }
 
-a:hover {
+#section a:hover {
     text-decoration: underline;
 
 }
@@ -163,3 +174,5 @@ a#exit {
     float: right;
     width: 500px;
 }
+
+

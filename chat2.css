@@ -14,13 +14,22 @@ form label {
 }
 
 
-a {
+
+
+.communiquer{
+	margin-top: 20px;
+	margin: 20px;
+	padding-top: 80px;
+	font-size: 3rem;
+}
+
+#menu a {
     color: #0000ff;
     text-decoration: none;
 
 }
 
-a:hover {
+#menu a:hover {
     text-decoration: underline;
 
 }
