@@ -9,10 +9,18 @@ $db = "omnessante"; //Name of DB
 $site = "localhost"; //Name of the Website
 $db_id = "root"; //DB login ID
 $db_mdp = ""; //DB login PW
+if (isset($_POST["Id"])) {
+    $Id = $_POST["Id"];
+    $_SESSION["Id"] = $_POST["Id"];
+ 
+   
+} else {
+    $Id = $_SESSION["Id"];
+}
 $Id = $_POST["Id"];
 $sql = "";
 $test = "";
-
+var_dump($Id);
 //Connect
 $db_handle = mysqli_connect($site, $db_id, $db_mdp);
 
@@ -31,6 +39,7 @@ if ($db_found) {
 } else {
     echo "Unable to connect <br>";
 }
+var_dump($Id);
 ?>
 
 
@@ -86,14 +95,16 @@ if ($db_found) {
             <form method="post" action="Services.php">
                 <input type="text" name="NomLabo" value='<?php echo $Labo["Nom"] ?>' hidden />
                 <input type="submit" name="Services" value="Nos Services" />
-                </a>
+               
             </form>
         </div>
+        <?php var_dump($Id);?>
     </section>
 
 
 
-    <section class="footer">
+            
+    <section class="footerAcceuil">
         <a id="footer"></a>
         <div class="footer container">
             <div id="footer">

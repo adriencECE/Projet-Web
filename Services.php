@@ -9,6 +9,15 @@ $db_mdp = ""; //DB login PW
 $sql = "";
 $Nom = $_POST["NomLabo"];
 
+if (isset($_POST["Id"])) {
+    $Id = $_POST["Id"];
+    $_SESSION["Id"] = $_POST["Id"];
+ 
+   
+} else {
+    $Id = $_SESSION["Id"];
+}
+var_dump($Id);
 //Connect
 //$db_handle = mysqli_connect($site, $db_id, $db_mdp, $db, $port);
 $db_handle = mysqli_connect($site, $db_id, $db_mdp);
@@ -22,7 +31,7 @@ $db_found = mysqli_select_db($db_handle, $db);
 
 if ($db_found) {
     //echo "Connected to DB <br>";
-    $sql = "SELECT Service,Salle FROM labo WHERE Nom='$Nom'";
+    $sql = "SELECT Id,Service,Salle FROM labo WHERE Nom='$Nom'";
 
     $res = mysqli_query($db_handle, $sql);
     //var_dump($res);
@@ -86,9 +95,8 @@ if ($db_found) {
                     <!-- Pour chaque médecin Généraliste dans la table-->
                     <?php foreach ($listeServices as $Service) : ?>
                         <li>
-                            <input type="radio" name="Id" value="<?= $Service["Service"] ?>" checked>
+                            <input type="radio" name="Id" value="<?= $Service["Id"] ?>" checked>
                             <?php echo $Service["Service"] . " Salle: " . $Service['Salle'] ?>
-
                         </li>
                     <?php endforeach ?>
                 </ul>
@@ -99,7 +107,8 @@ if ($db_found) {
     </section>
 
 
-    <section class="footer">
+   
+    <section class="footerAcceuil">
         <a id="footer"></a>
         <div class="footer container">
             <div id="footer">

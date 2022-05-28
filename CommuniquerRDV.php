@@ -8,10 +8,19 @@ $site = "localhost"; //Name of the Website
 $db_id = "root"; //DB login ID
 $db_mdp = ""; //DB login PW
 $sql = "";
-$NomMedecin = $_SESSION["name2"];
-$NomPatient=$_SESSION["name"];
-$PrenomMedecin = $_SESSION["prenom2"];
-$PrenomPatient = $_SESSION["prenom"];
+if($_SESSION["type"]==1){
+    $NomPatient=$_SESSION["name"];
+    $PrenomPatient = $_SESSION["prenom"];
+    $NomMedecin=$_SESSION["name2"];
+    $PrenomMedecin = $_SESSION["prenom2"];
+    //Medecin
+    }else if($_SESSION["type"]==2){
+    $NomMedecin=$_SESSION["name"];
+    $PrenomMedecin = $_SESSION["prenom"];
+    $NomPatient=$_SESSION["name2"];
+    $PrenomPatient = $_SESSION["prenom2"];
+    }
+
 $text;
 $sent;
 if(isset($_GET["text"])){
@@ -61,12 +70,11 @@ if ($db_found) {
     $db_handle = mysqli_connect($site, $db_id, $db_mdp);
     //Access DB
     $db_found = mysqli_select_db($db_handle, $db);
-    if ($db_found ) {
+    if ($db_found && $sent==true) {
         //echo "Connected to DB <br>";
         $sql = "INSERT INTO message (NomM, PrenomM, NomP, PrenomP, Type, Message, envoyeur) 
-                VALUES ('$NomMedecin', '$PrenomMedecin', '$NomPatient', '$PrenomPatient', '1', '$text', '$NomPatient')";
+                VALUES ('$NomMedecin', '$PrenomMedecin', '$NomPatient', '$PrenomPatient', '1', '$text','$NomPatient')";
         $res = mysqli_query($db_handle, $sql);
-    
     } else {
         echo "Unable to connect <br>";
     }
@@ -84,7 +92,7 @@ if (isset($_GET['logout'])){
     fwrite($myfile, $logout_message);
     ftruncate($myfile, 0);
     fclose($myfile);
-    header("Location: InfosMedecin.php"); //Rediriger l'utilisateur
+    header("Location: RDV.php"); //Rediriger l'utilisateur
  }
 
 if (isset($_POST['enter'])){
@@ -174,7 +182,7 @@ if (isset($_POST['enter'])){
             $("#submitmsg").click(function () {
                 var clientmsg = $("#usermsg").val();
                 $.post("post.php", { text: clientmsg });
-                window.location="Communiquer.php?text="+clientmsg+"&sent=true";
+                window.location.href="CommuniquerRDV.php?text="+clientmsg+"&sent=true";
                 $("#usermsg").val("");
 
                 return false;
@@ -198,7 +206,7 @@ if (isset($_POST['enter'])){
             $("#exit").click(function () {
                 var exit = confirm("Voulez-vous vraiment mettre fin à la conversation ?");
                 if (exit == true) {
-                    window.location = "Communiquer.php?logout=true";
+                    window.location = "RDV.php?logout=true";
                 }
             });
         });

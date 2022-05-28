@@ -90,7 +90,7 @@ if ($db_found) {
             $_SESSION["name2"]=$Medecin["Nom"];
             $_SESSION["prenom2"]=$Medecin["Prenom"];?>
             
-            <a href="RDV.php">
+            <a href="testu.php">
                 <input type="button" name="RDV" value="Prendre un RDV">
             </a>
             
@@ -115,8 +115,7 @@ if ($db_found) {
         </div>
     </section>
 
-
-    <section class="footer">
+    <section class="footerAcceuil">
         <a id="footer"></a>
         <div class="footer container">
             <div id="footer">

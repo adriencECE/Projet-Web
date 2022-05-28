@@ -19,14 +19,15 @@ if (isset($_POST["Login"])) {
     $login = "";
 }
 
-if (isset($_POST["Id"])) {
-    $Id = $_POST["Id"];
+if (isset($_SESSION["Id"])) {
+    $Id = $_SESSION["Id"];
     $_SESSION["Id"] = $_POST["Id"];
  
    
 } else {
     $Id = $_SESSION["Id"];
 }
+var_dump($Id);
 
 if (isset($_GET["Bouton"])) {
     $Bouton = $_GET["Bouton"];
@@ -35,7 +36,7 @@ if (isset($_GET["Bouton"])) {
     $Bouton = "";
 }
 
-$NomM;
+
 $PrenomM;
 $NomP=$_SESSION["name"];
 $PrenomP=$_SESSION["prenom"];
@@ -69,9 +70,9 @@ $db_found = mysqli_select_db($db_handle, $db);
 if ($db_found) {
     //echo "Connected to DB <br>";
      
-    $sql = "SELECT Nom,Prenom FROM medecins WHERE Id=$Id";
+    $sql = "SELECT Nom FROM labo WHERE Id=$Id";
         $res = mysqli_query($db_handle, $sql);
-        //var_dump($res);
+   
  
         while($data = mysqli_fetch_assoc($res))
         {
@@ -80,13 +81,13 @@ if ($db_found) {
             //On crée un tableau avec toutes ces lignes
            // $med=$data;
            
-            $NomM=$data["Nom"];
-            $PrenomM=$data["Prenom"];
+            $NomL=$data["Nom"];
+        
             
         }  
 
         
-    $sql = "INSERT INTO rdv (Id, NomM, PrenomM, NomP, PrenomP, Date, Heure) VALUES (NULL,'$NomM', '$PrenomM','$NomP', '$PrenomP', '$Date', '$Heure')";
+    $sql = "INSERT INTO rdv (Id, NomM,PrenomM, NomP, PrenomP, Date, Heure) VALUES (NULL,'$NomL','','$NomP','$PrenomP', '$Date', '$Heure')";
     $res = mysqli_query($db_handle, $sql);
   
 }
@@ -110,7 +111,7 @@ else {
 
 <script type="text/javascript">
     
-                window.location = "Accueil.php";
+              window.location = "Accueil.php";
             </script>
                 <section class="footerAcceuil">
         <a id="footer"></a>

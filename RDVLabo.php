@@ -3,7 +3,6 @@ session_start();
 $vars = array($_SESSION["connecte"], $_SESSION["login"], $_SESSION["MDP"]);
 $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
 
-
 //Connection
 //echo "Connecting to DB <br>";
 
@@ -16,6 +15,15 @@ $sql = "";
 $Date="";
 $Heure="";
 $repos=""; 
+
+if (isset($_POST["Id"])) {
+  $Id = $_POST["Id"];
+  $_SESSION["Id"] = $_POST["Id"]; 
+ 
+} else {
+  $Id = $_SESSION["Id"];
+}
+var_dump($Id);
 //Connect
 //$db_handle = mysqli_connect($site, $db_id, $db_mdp, $db, $port);
 $db_handle = mysqli_connect($site, $db_id, $db_mdp);
@@ -26,24 +34,16 @@ $db_handle = mysqli_connect($site, $db_id, $db_mdp);
 $db_found = mysqli_select_db($db_handle,$db);
 
 //var_dump($db_found);
-$nomMedecin="";
+$nomLabo="";
 $nomPatient="";
 
 $rdv[]="";
 
-if (isset($_POST["Id"])) {
-    $Id = $_POST["Id"];
-    $_SESSION["Id"] = $_POST["Id"];
- 
-   
-} else {
-    $Id = $_SESSION["Id"];
-}
 
 if($db_found){
     //echo "Connected to DB <br>";
     
-    $sql = "SELECT Nom FROM medecins WHERE Id='$Id'";
+    $sql = "SELECT Nom FROM labo WHERE Id='$Id'";
         $res = mysqli_query($db_handle, $sql);
         //var_dump($res);
  
@@ -54,12 +54,12 @@ if($db_found){
             //On crée un tableau avec toutes ces lignes
            // $med=$data;
            
-            $nomMedecin=$data["Nom"];
+            $nomLabo=$data["Nom"];
             
         }    
        // $test=$data["Nom"];
        $nomPatient=$_SESSION["name"];
-        $sql = "SELECT * FROM rdv WHERE NomM='$nomMedecin'";
+        $sql = "SELECT * FROM rdv WHERE NomM='$nomLabo'";
         $res = mysqli_query($db_handle, $sql);
         //var_dump($res);
  
@@ -71,18 +71,7 @@ if($db_found){
             $rdv[]=$data;
         
         }    
-        $sql = "SELECT Repos FROM medecins WHERE Nom='$nomMedecin'";
-        $res = mysqli_query($db_handle, $sql);
-       // var_dump($res);
- 
-        while($data = mysqli_fetch_assoc($res))
-        {
-           
-            //$data = une ligne de la table
-            //On crée un tableau avec toutes ces lignes
-            $repos=$data['Repos'];
-        
-        }      
+      
        // var_dump($repos);
         
         //<?php echo $var["Date"].$var["Heure"]
@@ -105,12 +94,16 @@ else{
 
    function RDV(clicked_id)
 {
+
+
    var choix= confirm("validez vous ce rdv ?");
 
    if(choix)
    {
     alert("Rendez-vous confirmé");
-   window.location="RdvTraitement.php?Bouton="+clicked_id;  }
+   // $but=clicked_id;
+
+   window.location="PriseRdvLabo.php?Bouton="+clicked_id;  }
 
    else{alert("non");}
 
@@ -313,7 +306,7 @@ else{
     </tr>
   </table>
 </form>
-  
+ 
   <?php
   foreach($rdv as $var):
         
@@ -321,24 +314,20 @@ else{
              <script type="text/javascript" >
              document.getElementById("<?php echo $var["Date"].$var["Heure"]?>").style.backgroundColor="Red";
              document.getElementById("<?php echo $var["Date"].$var["Heure"]?>").disabled=true;
-
-            var elements= document.getElementsByClassName("<?php echo $repos?>");
-           for(i=0;i<elements.length;i++)
-           {
-            elements[i].style.backgroundColor="white";
-            elements[i].disabled=true;
-           }
-
-           var elements= document.getElementsByClassName("dimanche");
-           for(i=0;i<elements.length;i++)
-           {
-            elements[i].style.backgroundColor="white";
-            elements[i].disabled=true;
-
-           }
+           
+       
              </script>
 
-                <?php endforeach ; ?> 
+                <?php endforeach ;?> 
+                <script type="text/javascript" >
+                      var elements= document.getElementsByClassName("dimanche");
+                    for(i=0;i<elements.length;i++)
+                    {
+         elements[i].style.backgroundColor="white";
+         elements[i].disabled=true;
+         
+                    }
+                    </script>
                
 
                 </div>
