@@ -4,13 +4,17 @@ $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
 
 
 //Patient
-if($_SESSION["type"]==1){
-$NomPatient=$_SESSION["name"];
-$PrenomPatient = $_SESSION["prenom"];
-//Medecin
-}else if($_SESSION["type"]==2){
-$NomMedecin=$_SESSION["name"];
-$PrenomMedecin = $_SESSION["prenom"];
+if ($_SESSION["type"] == 1) {
+    $NomMedecin = $_SESSION["name2"];
+    $NomPatient = $_SESSION["name"];
+    $PrenomMedecin = $_SESSION["prenom2"];
+    $PrenomPatient = $_SESSION["prenom"];
+    //Medecin
+} else if ($_SESSION["type"] == 2) {
+    $NomMedecin = $_SESSION["name"];
+    $NomPatient = $_SESSION["name2"];
+    $PrenomMedecin = $_SESSION["prenom"];
+    $PrenomPatient = $_SESSION["prenom2"];
 }
 $nom=$_SESSION["name"];
 $prenom=$_SESSION["prenom"];
@@ -18,9 +22,8 @@ $prenom=$_SESSION["prenom"];
 if (isset($_POST['enter'])){
     if($_POST['name2'] != ""){
         $_SESSION['name2'] = stripslashes(htmlspecialchars($_POST['name2']));
-    }
-    else{
-        $_POST['name2']="";
+    } else {
+        $_POST['name2'] = "";
         echo '<span class="error">Veuillez saisir votre nom</span>';
     }
 }
@@ -157,10 +160,11 @@ else{
     echo "Unable to connect <br>";
 }
 
-function loginForm() {
-    $sent=false;
-echo
-'<div id="loginform">
+function loginForm()
+{
+    $sent = false;
+    echo
+    '<div id="loginform">
 <p>Avec qui voulez-vous communiquer</p>
 <form action="CommuniquerRDV.php" method="post">
 <label for="name">Nom: </label>

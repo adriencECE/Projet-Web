@@ -43,27 +43,36 @@ $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
         </div>
     </section>
 
-    
+
     <section class="toutParcourir">
         <div id="section">
-            S&eacute;l&eacute;ctionnez ce que vous cherchez <br>
+            <p>
+            S&eacute;l&eacute;ctionnez ce que vous cherchez: <br><br></p>
             <form method="post" action="generaliste.php">
-                <input type="submit" name="Generalistes" value="M&eacute;decins G&eacute;n&eacute;ralistes">
+                    <!--<input type="submit" name="Generalistes" value="M&eacute;decins G&eacute;n&eacute;ralistes">-->
+                    <a href="generaliste.php" data-after="M&eacute;decins G&eacute;n&eacute;ralistes"> M&eacute;decins G&eacute;n&eacute;ralistes</a>
             </form>
 
             <form method="post" action="specialiste.php">
-                <input type="submit" name="Specialistes" value="M&eacute;decins Sp&eacute;cialistes">
+                
+                    <!--<input type="submit" name="Specialistes" value="M&eacute;decins Sp&eacute;cialistes">-->
+                    <a href="specialiste.php" data-after="M&eacute;decins Sp&eacute;cialistes">M&eacute;decins Sp&eacute;cialistes</a>
+                
             </form>
 
             <form method="post" action="laboratoire.php">
-                <input type="submit" name="Laboratoires" value="Laboratoires">
+                
+                    <!--<input type="submit" name="Laboratoires" value="Laboratoires">-->
+                    <a href="laboratoire.php" data-after="Laboratoires">Laboratoires</a>
+                
             </form>
         </div>
     </section>
 
 
 
-    <section class="footer">
+
+    <section class="footertoutParcourir">
         <a id="footer"></a>
         <div class="footer container">
             <div id="footer">

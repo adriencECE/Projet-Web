@@ -99,37 +99,43 @@ $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
         <a id="offers"></a>
         <div class="offers container">
             <div class="offer-top">
-                <h1 class="section-title">Offers</h1>
-                <p>We offer you the possibility of receiving specific assistance for your expeditions.
-                    With our teams, we have the experience and the ability to provide you with high-quality,
-                    long-term shipments. Our profession, our know-how are at your service to allow you to evolve in the high mountains
-                    between safety and to be able to improve yourself every day.
+                <h1 class="section-title">Nos service et notre offre <br></h1>
+                <p>Notre valeur première et la plus fondamentale est la qualité des soins. 
+                    Nous nous efforçons d'offrir à tous les patients la meilleure qualité de soins grâce 
+                    à une formation approfondie et continue de notre personnel, des équipements performants, 
+                    une approche multidisciplinaire et une priorité absolue pour la sécurité des patients.
                 </p>
             </div>
             <div class="offer-bottom">
                 <div class="offer-item">
                     <div class="icon"><img src="https://img.icons8.com/color/48/000000/medical-doctor.png" /></div>
-                    <h2>Blabla</h2>
-                    <p>A two-day adventure to discover the Madriu Valley, which was declared a World Heritage Site by UNESCO.
-                        For your convenience, horses will carry your equipment and we will organize an unforgettable bivouac in some remote cabins.</p>
+                    <h2>Actualit&eacute;s</h2>
+                    <p>Notre hôpital lance une nouvelle action contre la faim dans notre région. 
+                        Nous allons en effet tenter de subvenir aux besoins des plus pauvres et 
+                        ainsi avec votre aide créer des subventions ces subvention que vous nous verserez 
+                        sur notre site permettront à nos 
+                        équipes d'aller au plus près des pauvres pour apporter les premiers soins.</p>
                 </div>
                 <div class="offer-item">
                     <div class="icon"><img src="https://img.icons8.com/ios/50/000000/hospital-3.png" /></div>
-                    <h2>Blabla</h2>
-                    <p>The Himalayas stretches for more than 2,400 km, from Nanga Parbat in Pakistan in the west to Namche Barwa in the east.
-                        It has three parallel chains arranged of altitude.</p>
+                    <h2>Ev&eacute;nements</h2>
+                    <p>Nous sommes ravis de vous inviter à la 7e Conférence internationale sur la maladie aortique. 
+                        Cette année sera particulière à plusieurs égards.</p>
                 </div>
+                <!--
                 <div class="offer-item">
                     <div class="icon"><img src="https://img.icons8.com/ios-glyphs/30/000000/implant.png" /></div>
-                    <h2>Alps</h2>
+                    <h2>Soins</h2>
                     <p>Mountain passes connecting valleys or countries often exceed 2,000 meters in altitude.
                         The Alps form a 1,200 kilometer barrier between the Mediterranean Sea and the Danube. The alps are beautiful and as big as huge.</p>
-                </div>
+                </div>-->
                 <div class="offer-item">
                     <div class="icon"><img src="https://img.icons8.com/fluency-systems-filled/48/000000/fetus.png" /></div>
-                    <h2>The Andes Cordillera</h2>
-                    <p>The Andes Cordillera is the longest continental mountain range in the world2,
-                        trending north-south along the western coast of South America. It's so nice.</p>
+                    <h2>Maternité</h2>
+                    <p>Notre équipe vous informera et vous accompagnera tout au long de votre voyage.
+                        Nous accompagnons vos choix, qu'il s'agisse de préparation à l'accouchement,
+                        Approche de gestion de la douleur ou niveau d'intervention médicale.
+                         Laissez votre naissance correspondre à vos rêves.</p>
                 </div>
             </div>
         </div>

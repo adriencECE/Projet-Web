@@ -154,8 +154,46 @@ margin: 0;
 
 
 }
+
 /*fin infos section*/
 
+
+/*choix medecins*/
+
+.toutParcourir {
+
+	background-image: url(https://zupimages.net/up/22/21/bxs8.jpg);
+	background-size: cover;
+	background-position: top center;
+	position: relative;
+	z-index: 1;
+	width: auto;
+	height: 800px;
+	letter-spacing: 0.1rem;
+	flex-grow: 1;
+
+
+}
+
+.toutParcourir::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: black;
+	opacity: 0.7;
+	z-index: -1;
+
+
+}
+
+
+
+
+
+/*fin choix medecins*/
 
 
 
@@ -164,13 +202,13 @@ margin: 0;
 .offers .offers {
 	flex-direction: column;
 	text-align: center;
-	max-width: 1500px;
+	max-width: 500px;
 	margin: 0 auto;
 	padding: 100px 0;
 }
 
 .offers .offer-top {
-	max-width: 500px;
+	max-width: 700px;
 	margin: 0 auto;
 }
 
@@ -238,6 +276,54 @@ margin: 0;
 
 
 .footerAcceuil {
+	background-image: linear-gradient(60deg, #092340 0%, #2c95db 100%);
+	flex-direction: column;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	color: white;
+	font-weight: 500;
+	font-size: 1.8rem;
+	letter-spacing: 0.1rem;
+	text-align: center;
+	position: relative;
+	z-index: 10;
+	height: 4em;
+	clear: both;
+}
+
+.footerRDV {
+	background-image: linear-gradient(60deg, #092340 0%, #2c95db 100%);
+	flex-direction: column;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	color: white;
+	font-weight: 500;
+	font-size: 1.8rem;
+	letter-spacing: 0.1rem;
+	text-align: center;
+	position: relative;
+	z-index: 10;
+	height: 4em;
+	clear: both;
+}
+
+.footerinfoMedecins {
+	background-image: linear-gradient(60deg, #092340 0%, #2c95db 100%);
+	flex-direction: column;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	color: white;
+	font-weight: 500;
+	font-size: 1.8rem;
+	letter-spacing: 0.1rem;
+	text-align: center;
+	position: relative;
+	z-index: 10;
+	height: 4em;
+	clear: both;
+}
+
+.footerlesMedecins {
 
 	background-image: linear-gradient(60deg, #092340 0%, #2c95db 100%);
 	flex-direction: column;
@@ -249,14 +335,12 @@ margin: 0;
 	letter-spacing: 0.1rem;
 	text-align: center;
 
-
-	position: relative;
 	z-index: 10;
 	height: 4em;
-	background-color: #FFF;
 	clear: both;
-	background-color: #2A64A7;
 }
+
+
 
 
 .footer {
@@ -293,25 +377,7 @@ margin: 0;
 	margin-bottom: 10px;
 }
 
-.footer .social-icon {
-	display: flex;
-	margin-bottom: 30px;
-}
 
-.footer .social-item {
-	height: 40px;
-	width: 40px;
-	margin: 0 5px;
-}
-
-.footer .social-item img {
-	filter: grayscale(1);
-	transition: 0.3s ease filter;
-}
-
-.footer .social-item:hover img {
-	filter: grayscale(0);
-}
 
 .footer p {
 	color: white;
@@ -338,9 +404,10 @@ margin: 0;
 
 }
 
+
 .medPacient img {
 
-	border : 2px solid #000000;
+	border: 2px solid #000000;
 	padding-bottom: 20px;
 }
 
@@ -505,18 +572,22 @@ margin: 0;
 	font-size: 3rem;
 }
 
-.toutParcourir div {
+.toutParcourir #section p {
+
 
 	font-family: 'Montserrat', sans-serif;
 
 	font-weight: bold;
-	margin-top: 20px;
-	margin: 20px;
-	padding-top: 200px;
+	margin-top: 60px;
+	margin: 130px;
 
+	position: relative;
+	text-indent: 2em;
+	color: white;
+	text-decoration: none;
+	text-align: right;
 	font-size: 3rem;
 }
-
 #loginchat
 {
 float: left;
@@ -532,3 +603,58 @@ width: 300px;
 	float: right;
 
 }
+.toutParcourir #section a {
+
+	color: white;
+	text-decoration: none;
+	position: relative;
+	text-align: center;
+	left: 900px;
+	top: -60px;
+
+
+	font-size: 2rem;
+}
+
+.toutParcourir #section a:hover {
+
+	color: crimson;
+	text-decoration: none;
+}
+
+/*
+.toutParcourir div:nth-child(1) {
+
+	background-image: url(https://img.freepik.com/vecteurs-libre/cardiologie-cardiologue-examine-coeur-humain-medecin-traite-maladies-cardiaques-verifie-rythme-cardiaque-pouls-du-patient-cardiogramme-diagnostic-avc-examen-medical-pression-cardiovasculaire_458444-526.jpg?w=1060);
+	width: auto;
+	height: auto;
+	max-width: 200px;
+	max-height: 150px;
+
+	text-decoration: none;
+
+}
+
+.toutParcourir div:nth-child(2) {
+
+	background-image: url(https://img.freepik.com/vecteurs-libre/cardiologie-cardiologue-examine-coeur-humain-medecin-traite-maladies-cardiaques-verifie-rythme-cardiaque-pouls-du-patient-cardiogramme-diagnostic-avc-examen-medical-pression-cardiovasculaire_458444-526.jpg?w=1060);
+	width: auto;
+	height: auto;
+	max-width: 200px;
+	max-height: 150px;
+
+	text-decoration: none;
+
+}
+
+.toutParcourir div:nth-child(3) {
+
+	background-image: url(https://img.freepik.com/vecteurs-libre/cardiologie-cardiologue-examine-coeur-humain-medecin-traite-maladies-cardiaques-verifie-rythme-cardiaque-pouls-du-patient-cardiogramme-diagnostic-avc-examen-medical-pression-cardiovasculaire_458444-526.jpg?w=1060);
+	width: auto;
+	height: auto;
+	max-width: 200px;
+	max-height: 150px;
+
+	text-decoration: none;
+
+}*/
