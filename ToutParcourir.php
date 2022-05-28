@@ -61,9 +61,10 @@ $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
         </div>
     </section>
 
+    
 
 
-    <section class="footer">
+    <section class="footertoutParcourir">
         <a id="footer"></a>
         <div class="footer container">
             <div id="footer">

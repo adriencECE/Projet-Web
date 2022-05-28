@@ -181,47 +181,47 @@ function loginForm()
         </div>
     </section>
 
-    <div id="section">
+    <section class="chat">
+        <div id="section">
+            <div id="chatWrapper">
+                <?php
+                if ($_SESSION['name2'] == "") {
+                    loginForm();
+                } else {
+                ?>
+                    <div id="menu">
 
-
-        <div id="chatWrapper">
-            <?php
-            if ($_SESSION['name2'] == "") {
-                loginForm();
-            } else {
-            ?>
-                <div id="menu">
-
-                    <p class="welcome">Communiquer avec <b>
-                            <?php echo $_SESSION['name2']; ?>
-                        </b></p>
-                    <p class="logout"><a id="exit" href="#">Quitter la conversation</a></p>
-                </div>
-                <div id="chatbox">
-                    <?php
-                    if (file_exists("log.html") && filesize("log.html") > 0) {
-                        $contents = file_get_contents("log.html");
-                        echo $contents;
-                    }
-                    ?>
-                </div>
-                <form id="formChat" name="message" action="">
-                    <input name="usermsg" type="text" id="usermsg" />
-                    <input name="submitmsg" type="submit" id="submitmsg" value="Envoyer" />
-                </form>
-            <?php } ?>
+                        <p class="welcome">Communiquer avec <b>
+                                <?php echo $_SESSION['name2']; ?>
+                            </b></p>
+                        <p class="logout"><a id="exit" href="#">Quitter la conversation</a></p>
+                    </div>
+                    <div id="chatbox">
+                        <?php
+                        if (file_exists("log.html") && filesize("log.html") > 0) {
+                            $contents = file_get_contents("log.html");
+                            echo $contents;
+                        }
+                        ?>
+                    </div>
+                    <form id="formChat" name="message" action="">
+                        <input name="usermsg" type="text" id="usermsg" />
+                        <input name="submitmsg" type="submit" id="submitmsg" value="Envoyer" />
+                    </form>
+                <?php } ?>
+            </div>
+            <div id="RDV">
+                Historique des RDV <br>
+                <ul>
+                    <a href="testu.php">
+                        <li>RDV 1</li>
+                    </a>
+                    <li>RDV 2</li>
+                    <li>RDV 3</li>
+                </ul>
+            </div>
         </div>
-        <div id="RDV">
-            Historique des RDV <br>
-            <ul>
-                <a href="testu.php">
-                    <li>RDV 1</li>
-                </a>
-                <li>RDV 2</li>
-                <li>RDV 3</li>
-            </ul>
-        </div>
-    </div>
+    </section>
 
     <section class="messagesRdv">
         <div id="section" style="color:black">
@@ -239,7 +239,9 @@ function loginForm()
                 <a href="InfosMedecin.php">
                     <li>RDV 1</li>
                 </a>
-                <a><li>RDV 2</li></a>
+                <a>
+                    <li>RDV 2</li>
+                </a>
                 <li>RDV 3</li>
             </ul>
         </div>
