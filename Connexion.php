@@ -44,8 +44,9 @@ $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
         </div>
     </section>
 
-    <section class="connection">
-        <div id="section">
+    <section class="lesMedecins">
+        <div id=photoC></div>
+        <div id="section"><br>
             <form method="post" action="ConnexionTraitement.php">
                 <label>Login:</label>
                 <input type="text" name="login"><br>

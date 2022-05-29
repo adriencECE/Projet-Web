@@ -165,7 +165,7 @@ function loginForm()
     $sent = false;
     echo
     '<div id="loginform">
-<p>Avec qui voulez-vous communiquer</p>
+<p style="color:black">Avec qui voulez-vous communiquer </p>
 <form action="CommuniquerRDV.php" method="post">
 <label for="name">Nom: </label>
 <input type="text" name="name2" id="name2" />
@@ -227,7 +227,7 @@ function loginForm()
         </div>
     </section>
 
-    <section>
+    <section class="lesMedecins">
 
 
         <div id="loginchat">
@@ -467,7 +467,7 @@ echo "<br>Nom et prenom du patient: ".$rdvclick["NomP"]." ".$rdvclick["PrenomP"]
    
 
 
-    <section class="footerAcceuil">
+    <section class="footer">
         <a id="footer"></a>
         <div class="footer container">
             <div id="footer">

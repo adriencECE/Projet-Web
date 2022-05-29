@@ -260,6 +260,22 @@ body {
 	border-radius: 75px;
 }
 
+.lesMedecins #photoC{
+
+	background-image: url(https://cdn4.iconfinder.com/data/icons/people-avatar-1-1/128/16-512.png);
+	background-size: 200px;
+	padding-bottom: 10px;
+	width: 200px;
+	height: 200px;
+
+	position: absolute;
+	top: 90px;
+	left: 50px;
+	background-repeat: no-repeat;
+
+
+}
+
 .lesMedecins #section {
 	position: absolute;
 	top: 50px;
@@ -278,7 +294,7 @@ body {
 	position: absolute;
 	left: 0;
 	top: 0;
-	height: 150%;
+	height: 130%;
 	width: 100%;
 	background-color: black;
 	opacity: 0.7;
@@ -303,7 +319,10 @@ p {
 	color: crimson;
 }
 
+loginform{
 
+	color: #000000;
+}
 
 
 /*fin medecins generalistes*/

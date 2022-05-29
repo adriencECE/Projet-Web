@@ -111,14 +111,14 @@ if ($db_found) {
     </section>
 
 
-    <section class="medPacient">
+    <section class="lesMedecins">
+        <div id="photoC"></div>
         <div id="section">
-        <img src="https://img.icons8.com/windows/64/000000/user.png"/>
-            Infos Compte <br>
+            <h2>Infos Compte <br></h2>
             <?php //var_dump($_SESSION);
             if ($Type == 1) //Patient
             {
-                echo "Bonjour " . $Patient["Prenom"] . " " . $Patient["Nom"] . "<br>";
+                echo "Bonjour Patient" . $Patient["Prenom"] . " " . $Patient["Nom"] . "<br>";
                 echo "Mail: " . $Patient["Mail"] . "<br>";
                 echo "Adresse: " . $Patient["Adresse"];
             } else if ($Type == 2) //Medecin

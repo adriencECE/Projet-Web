@@ -47,45 +47,104 @@ $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
         </div>
     </section>
 
-    <section class="inscriptionClient">
+    <section class="ajouterMedecin">
         <div id="section">
-            <form method="post" action="InscriptionTraitement.php">
-                <label>Nom:</label>
-                <input type="text" name="Nom" />
-                <label>Prenom:</label>
-                <input type="text" name="Prenom" />
-                <label>Login:</label>
-                <input type="text" name="Login" />
-                <label>Mot de Passe:</label>
-                <input type="text" name="MDP" />
-                <label>Mail:</label>
-                <input type="text" name="Mail" />
-                <label>Tel:</label>
-                <input type="number" name="Tel" />
-                <label>Adresse:</label>
-                <input type="text" name="Adresse" />
-                <label>Num&eacute;ro Carte Vitale:</label>
-                <input type="number" name="NumCarteVitale" />
-                <label>Type de Carte de Paiement:</label><br>
-                <input type="radio" name="TypeCarte" value="Visa" />
-                <label>Visa</label>
-                <input type="radio" name="TypeCarte" value="MasterCard" />
-                <label>MasterCard</label>
-                <input type="radio" name="TypeCarte" value="American Express" />
-                <label>American Express</label>
-                <input type="radio" name="TypeCarte" value="Paypal" />
-                <label>Paypal</label><br>
-                <label>Numero de Carte:</label>
-                <input type="number" name="NumeroCarte" /><br>
-                <label>Date d'Expiration:</label>
-                <input type="text" name="DateExpiration" value="yyyy-mm-dd" onclick="value=''" />
-                <label>Code:</label>
-                <input type="number" name="CodeCarte" /><br>
-                <input type="submit" value="Soumettre" />
-            </form>
+            <div class="carreca">
+                <u>
+                    <h2>Vos informations:</h2><br><br>
+                </u>
+                <form method="post" action="InscriptionTraitement.php">
+
+                    <div class="input_field">
+                        <input type="text" placeholder="Nom" name="Nom" /><br>
+                    </div>
+
+                    <div class="input_field">
+                        <input type="text" placeholder="Prenom" name="Prenom" /><br>
+                    </div>
+
+                    <div class="input_field">
+                        <input type="text" placeholder="Login" name="Login" /><br>
+                    </div>
+
+                    <div class="input_field">
+                        <input type="text" placeholder="MDP" name="MDP" /><br>
+                    </div>
+
+                    <div class="input_field">
+                        <input type="text" placeholder="Mail" name="Mail" /><br>
+                    </div>
+
+                    <div class="input_field">
+                        <input type="text" placeholder="Téléphone" name="Tel" /><br>
+                    </div>
+
+                    <div class="input_field">
+                        <input type="text" placeholder="Adresse" name="Adresse" /><br>
+                    </div>
+
+                    <div class="input_field">
+                        <input type="text" placeholder="NumCarteVitale" name="NumCarteVitale" /><br>
+                    </div>
+                    <div class="tbeau">
+                        <input type="submit" value="Soumettre">
+                    </div>
+                    
+                </form>
+            </div>
         </div>
     </section>
-    <section class="footerRDV">
+
+
+    <section class="ajouterLabo">
+        <div id="section"><br><br><br><br><br><br>
+            <div class="carreca">
+                <u>
+                    <h2>Votre moyen de payment:</h2>
+                </u>
+                <form method="post" action="InscriptionTraitement.php">
+
+                <label>Type de Carte:</label>
+                    <input type="radio" name="TypeCarte" value="Visa" checked>
+                    <label>Visa</label>
+                    <input type="radio" name="TypeCarte" value="MasterCard">
+                    <label>MasterCard</label>
+                    <input type="radio" name="TypeCarte" value="American Express">
+                    <label>American Express</label>
+                    <input type="radio" name="TypeCarte" value="Paypal">
+                    <label>Paypal</label><br>
+
+
+                    <div class="input_field">
+                        <input type="text" placeholder="NumeroCarte" name="NumeroCarte"><br>
+                    </div>
+
+                    <div class="input_field">
+                        <input type="text" placeholder="Nom" name="Nom"><br>
+                    </div>
+
+                    <div class="input_field">
+                        <input type="text" placeholder="Prenom" name="Prenom"><br>
+                    </div>
+
+                    <div class="input_field">
+                        <input type="text" placeholder="DateExpiration" name="DateExpiration" value="yyyy-mm-dd" onclick="value=''"><br>
+                    </div>
+
+                    <div class="input_field">
+                        <textarea type="number" placeholder="CodeCarte" name="CodeCarte"></textarea>
+                    </div>
+
+                    <div class="tbeau">
+                        <input type="submit" value="Soumettre">
+                    </div>
+
+                </form>
+            </div>
+    </section>
+
+
+    <section class="footerAcceuil">
         <a id="footer"></a>
         <div class="footer container">
             <div id="footer">

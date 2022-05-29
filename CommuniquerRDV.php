@@ -178,7 +178,7 @@ if (isset($_POST['enter'])){
 
             <div id="chatWrapper">
                 <div id="menu">
-                    <p class="welcome">Communiquer avec  <b>
+                    <p class="welcome" style="color:black">Communiquer avec  <b>
                             <?php echo $_SESSION['name2']; ?>
                         </b></p>
                     <p class="logout"><a id="exit" href="#">Quitter la conversation</a></p>
