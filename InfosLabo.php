@@ -104,7 +104,7 @@ var_dump($Id);
 
 
             
-    <section class="footerAcceuil">
+    <section class="footerRDV">
         <a id="footer"></a>
         <div class="footer container">
             <div id="footer">

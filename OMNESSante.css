@@ -8,10 +8,11 @@ html {
 
 body {
 
-margin: 0;
+	margin: 0;
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
+	overflow-x: hidden; 
 }
 
 /*barre de navigation*/
@@ -161,7 +162,6 @@ margin: 0;
 /*choix medecins*/
 
 .toutParcourir {
-
 	background-image: url(https://zupimages.net/up/22/21/bxs8.jpg);
 	background-size: cover;
 	background-position: top center;
@@ -171,8 +171,6 @@ margin: 0;
 	height: 800px;
 	letter-spacing: 0.1rem;
 	flex-grow: 1;
-
-
 }
 
 .toutParcourir::after {
@@ -185,17 +183,148 @@ margin: 0;
 	background-color: black;
 	opacity: 0.7;
 	z-index: -1;
+}
+
+.toutParcourir #section p {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	margin-top: 60px;
+	margin: 130px;
+	position: relative;
+	text-indent: 2em;
+	color: white;
+	text-decoration: none;
+	text-align: right;
+	font-size: 3rem;
+}
+
+.toutParcourir #section a {
+	color: white;
+	text-decoration: none;
+	position: relative;
+	text-align: center;
+	left: 900px;
+	top: -60px;
+	font-size: 2rem;
+}
+
+.toutParcourir #section a:hover {
+	color: crimson;
+	text-decoration: none;
+}
+
+/*fin choix medecins*/
 
 
+
+/*ajouter medecin*/
+
+.ajouterMedecin {
+
+	transform: translate(0%, 30%);
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 350px;
+	text-align: center;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	color: #332902;
+
+}
+
+.ajouterLabo {
+
+
+	transform: translate(200%, -92%);
+
+	max-width: 350px;
+	text-align: center;
+	padding-left: 13%;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	color: #332902;
+
+
+}
+
+.carreca {
+
+	transform: translate(-100%, -10%);
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 350px;
+	width: 100%;
+	background: #fff;
+	padding: 25px;
+	box-shadow: 0px 0px 18px 0 #0000002c;
+}
+
+.carreca h2 {
+	text-align: center;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	color: #332902;
+}
+
+.carreca .tbeau {
+
+	border: 0px;
+	margin-top: 10px;
+	padding: 5px;
+	text-align: center;
+	width: 100%;
+	background: rgb(109, 152, 243);
+	color: #332902;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	font-weight: bold;
+
+	cursor: pointer;
+}
+
+.carreca .input_field {
+	margin-bottom: 5px;
+}
+
+.carreca .input_field input[type="text"],
+.carreca .textarea {
+	border: 1px solid #e0e0e0;
+	width: 100%;
+	padding: 5px;
+	text-align: center;
+}
+
+.carreca textarea {
+	resize: none;
+	height: 30px;
+	border: 1px solid #e0e0e0;
+	width: 100%;
+	padding: 5px;
+	text-align: center;
+}
+
+.carreca .tbeau input[type="submit"] {
+	border: 0px;
+
+
+	text-align: center;
+	width: 100%;
+	background: rgb(109, 152, 243);
+	color: #332902;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	font-weight: bold;
+	cursor: pointer;
 }
 
 
 
 
 
-/*fin choix medecins*/
 
-
+/*fin ajouter medecin*/
 
 
 /* offers Section */
@@ -293,6 +422,11 @@ margin: 0;
 
 .footerRDV {
 	background-image: linear-gradient(60deg, #092340 0%, #2c95db 100%);
+	bottom: 0;
+	left: 0;
+	right: 0;
+	position: absolute;
+
 	flex-direction: column;
 	padding-top: 20px;
 	padding-bottom: 10px;
@@ -301,14 +435,34 @@ margin: 0;
 	font-size: 1.8rem;
 	letter-spacing: 0.1rem;
 	text-align: center;
-	position: relative;
-	z-index: 10;
-	height: 4em;
-	clear: both;
+}
+
+.footerGeneraliste {
+
+	background-image: linear-gradient(60deg, #092340 0%, #2c95db 100%);
+	bottom: 0;
+	left: 0;
+	right: 0;
+	position: absolute;
+
+	flex-direction: column;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	color: white;
+	font-weight: 500;
+	font-size: 1.8rem;
+	letter-spacing: 0.1rem;
+	text-align: center;
+
 }
 
 .footerinfoMedecins {
 	background-image: linear-gradient(60deg, #092340 0%, #2c95db 100%);
+	bottom: 0;
+	left: 0;
+	right: 0;
+	position: absolute;
+
 	flex-direction: column;
 	padding-top: 20px;
 	padding-bottom: 10px;
@@ -317,10 +471,6 @@ margin: 0;
 	font-size: 1.8rem;
 	letter-spacing: 0.1rem;
 	text-align: center;
-	position: relative;
-	z-index: 10;
-	height: 4em;
-	clear: both;
 }
 
 .footerlesMedecins {
@@ -339,7 +489,6 @@ margin: 0;
 	height: 4em;
 	clear: both;
 }
-
 
 
 
@@ -449,6 +598,7 @@ margin: 0;
 
 	font-size: 3rem;
 }
+
 .lesLabos div {
 	font-family: 'Montserrat', sans-serif;
 
@@ -572,54 +722,20 @@ margin: 0;
 	font-size: 3rem;
 }
 
-.toutParcourir #section p {
 
 
-	font-family: 'Montserrat', sans-serif;
-
-	font-weight: bold;
-	margin-top: 60px;
-	margin: 130px;
-
-	position: relative;
-	text-indent: 2em;
-	color: white;
-	text-decoration: none;
-	text-align: right;
-	font-size: 3rem;
-}
-#loginchat
-{
-float: left;
-width: 300px;
+#loginchat {
+	float: left;
+	width: 300px;
 
 }
 
-#tableau
-{
+#tableau {
 	background-color: #2A64A7;
 	width: 600px;
-	
+
 	float: right;
 
-}
-.toutParcourir #section a {
-
-	color: white;
-	text-decoration: none;
-	position: relative;
-	text-align: center;
-	left: 900px;
-	top: -60px;
-
-
-	font-size: 2rem;
-}
-
-.toutParcourir #section a:hover {
-
-	color: crimson;
-	text-decoration: none;
 }
 
 /*
