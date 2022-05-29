@@ -104,7 +104,7 @@ if ($db_found) {
                 </ul>
                 <label>Que faire avec le m&eacute;decin s&eacute;lectionn&eacute;:</label>
                 <input type="submit" name="SupprimerMedecin" value="Supprimer">
-                <input type="submit" name="ModifierMedecin" value="Modifier">
+                
             </form>
         </div>
     </section>
@@ -121,7 +121,7 @@ if ($db_found) {
                 </ul>
                 <label>Que faire avec le laboratoire s&eacute;lectionn&eacute; ?:</label>
                 <input type="submit" name="SupprimerLabo" value="Supprimer">
-                <input type="submit" name="ModifierLabo" value="Modifier">
+           
             </form>
     </section>
 
@@ -130,7 +130,7 @@ if ($db_found) {
         <form method="post" action="Ajouter.php" style="color:black">
             <input type="submit" name="Ajouter" value="Ajouter un M&eacute;decin ou un Laboratoire">
             </form>
-            <input type="button" name="Modifier" value="Modifier un M&eacute;decin">
+        
         </div>
     </section>
 

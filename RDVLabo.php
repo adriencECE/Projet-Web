@@ -100,10 +100,11 @@ else{
 
    if(choix)
    {
-    alert("Rendez-vous confirmé");
+    
+    
    // $but=clicked_id;
 
-   window.location="PriseRdvLabo.php?Bouton="+clicked_id;  }
+   window.location="Paiement.php?Bouton="+clicked_id+"&Id="+<?php echo $Id ?>;  }
 
    else{alert("non");}
 

@@ -112,7 +112,7 @@ if ($db_found) {
                 <label> Gyn&eacute;cologie</label>
                 <input type="radio" name="service" value="BioFemmeEnceinte" onclick="<?php $service = "BioFemmeEnceinte" ?>">
                 <label> Biologie Femme Enceinte</label>
-                <input type="radio" name="service" value="" onclick="<?php $service = "" ?>">
+                <input type="radio" name="service" value="" onclick="<?php $service = "" ?>" checked>
                 <label> Tous</label><br>
                 <input type="submit" value="Valider">
             </form>

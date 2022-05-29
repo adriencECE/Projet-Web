@@ -19,10 +19,15 @@ if (isset($_POST["Login"])) {
     $login = "";
 }
 
-if (isset($_SESSION["Id"])) {
+if (!isset($_SESSION["Id"])) {
+   
+    if(isset($_POST["Id"])){
+        $_SESSION["Id"] = $_POST["Id"];
+    }
+    if(isset($_GET["Id"])){
+        $_SESSION["Id"] = $_GET["Id"];
+    }
     $Id = $_SESSION["Id"];
-    $_SESSION["Id"] = $_POST["Id"];
- 
    
 } else {
     $Id = $_SESSION["Id"];
@@ -110,8 +115,8 @@ else {
 <body>
 
 <script type="text/javascript">
-    
-              window.location = "Accueil.php";
+    alert("Paiement accepte");
+             window.location = "Accueil.php";
             </script>
                 <section class="footerAcceuil">
         <a id="footer"></a>

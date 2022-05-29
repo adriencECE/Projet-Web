@@ -6,13 +6,14 @@ $vars = array($_SESSION["connecte"], $_SESSION["login"], $_SESSION["MDP"]);
     
 //Connection
 //echo "Connecting to DB <br>";
-
+$Id=$_GET["Id"];
 $db = "omnessante"; //Name of DB
 $site = "localhost"; //Name of the Website
 $db_id = "root"; //DB login ID
 $db_mdp = ""; //DB login PW
 
-
+$clicked_id=$_GET["Bouton"];
+echo $_GET["Bouton"];
 $Type=$_POST["TypeCarte"];
 $Nom=$_POST["Nom"];
 $Prenom=$_POST["Prenom"];
@@ -50,6 +51,7 @@ if($db_found){
         }
         if($bon==true){
             echo "Paiement accepte";
+            header("Location:PriseRdvLabo.php?Bouton=".$clicked_id."&Id=".$Id);
         }
         
 }

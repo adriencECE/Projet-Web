@@ -17,7 +17,7 @@ if (isset($_POST["Id"])) {
 } else {
     $Id = $_SESSION["Id"];
 }
-var_dump($Id);
+
 //Connect
 //$db_handle = mysqli_connect($site, $db_id, $db_mdp, $db, $port);
 $db_handle = mysqli_connect($site, $db_id, $db_mdp);

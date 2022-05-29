@@ -20,7 +20,7 @@ if (isset($_POST["Id"])) {
 $Id = $_POST["Id"];
 $sql = "";
 $test = "";
-var_dump($Id);
+
 //Connect
 $db_handle = mysqli_connect($site, $db_id, $db_mdp);
 
@@ -39,7 +39,7 @@ if ($db_found) {
 } else {
     echo "Unable to connect <br>";
 }
-var_dump($Id);
+
 ?>
 
 
@@ -98,7 +98,6 @@ var_dump($Id);
                
             </form>
         </div>
-        <?php var_dump($Id);?>
     </section>
 
 

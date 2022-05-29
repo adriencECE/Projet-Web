@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Films>
+    <donnee>
+        <nom>Perez</nom>
+        <prenom>Benjamin</prenom>
+        <adresse>54 rue Dutot</adresse>
+        <tel>0611111111</tel>
+        <mail>benjamin@gmail.com</mail>
+
+        <debut>Juin 2017- Aout 2019</debut>
+        <poste>Medecin Cardiologue</poste>
+        <lieu>Hôpital Européen Georges Pompidou</lieu>
+        <description>Diagnostique et prise en charge des patients atteints de syndrome coronarien aigu</description>
+        <desc>Traitement des maladies cardiovasculaires courantes et rares</desc>
+
+        <debutd>Aout 2019- Actuel</debutd>  
+        <posted>Medecin Cardiologue</posted>
+        <lieud>Hôpitaux Universitaires Pitié Salpêtrière</lieud>
+        <descriptiond>Echographie avancée et tests à l'effort</descriptiond>
+        <descd>Imagerie cardiaque</descd>
+
+        <un>Sang-froid</un>
+        <deux>Grande curiosité scientifique</deux>
+        <trois>Rigoureux et methodique</trois>
+        <quatre>Maitrise l'anglais</quatre>
+
+        <diplome>2017-Docteur en Cardiologie</diplome>
+        <universite>Faculté de Médecine - Sorbonne Université</universite>
+
+        <photo>Perez.png</photo>
+      
+     </donnee>
+</Films>

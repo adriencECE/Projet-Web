@@ -1,6 +1,11 @@
 <?php session_start();
 $vars = array($_SESSION["connecte"], $_SESSION["login"], $_SESSION["MDP"]);
 $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
+
+$clicked_id=$_GET["Bouton"];
+$Id=$_GET["Id"];
+
+$link="TraitementPaiement.php?Bouton=".$clicked_id."&Id=".$Id;
 ?>
 <html>
 
@@ -45,7 +50,7 @@ $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
 
     <section class="payement">
         <div id="section">
-            <form method="post" action="TraitementPaiement.php">
+            <form method="post" action=<?php echo $link?> >
                 <label>Type de Carte:</label>
                 <input type="radio" name="TypeCarte" value="Visa" checked>
                 <label>Visa</label>

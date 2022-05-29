@@ -10,11 +10,20 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
 </head>
 <body>
-    
-<div class="cv-container">
-<?php 
+<a href="InfosMedecin.php">
+                <input type="button" name="retour" value="Retour">
+                </a>
+                <div class="cv-container">
+<?php  
 
-$fichier = 'testo.xml';
+
+$Nom=$_GET["Nom"];
+$fichier = $Nom.'.xml';
+$myfile = fopen(__DIR__ .$fichier, "a") or die("Impossible d'ouvrir le fichier " . __DIR__ .$fichier);
+if(file_exists($fichier))
+{
+
+
 $contenu = simplexml_load_file($fichier);
 
 
@@ -52,12 +61,14 @@ echo'<div class="content">';
     
 
 }
+}
+else{
+    echo "Pas de Cv disponible";
+}
 ?>
-<a href="InfosMedecin.php">
-                <input type="button" name="retour" value="Retour">
-                </a>
 
-</div>
+
+
 </div>
 </body>
 </html>

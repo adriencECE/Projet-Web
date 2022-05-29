@@ -33,9 +33,12 @@ if ($db_found) {
         //On crée un tableau avec toutes ces lignes
         $Medecin = $data;
     }
-} else {
+    $link="test.php?Nom=".$Medecin['Nom'];
+} 
+else {
     echo "Unable to connect <br>";
 }
+
 ?>
 
 <html>
@@ -108,7 +111,7 @@ if ($db_found) {
                 }
             </script>
 
-            <a href="test.php">
+            <a href=<?php echo $link ?>>
                 <input type="button" name="CV" value="Voir son CV">
 
             </a>

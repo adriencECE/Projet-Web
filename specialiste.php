@@ -110,7 +110,7 @@ if ($db_found) {
                 <label> IST</label>
                 <input type="radio" name="spe" value="Osth&eacute;opathie" onclick="<?php $spe = "Ostheopathie" ?>">
                 <label> Ostheopathie</label>
-                <input type="radio" name="spe" value="" onclick="<?php $spe = "" ?>">
+                <input type="radio" name="spe" value="" onclick="<?php $spe = "" ?>" checked >
                 <label> Tous</label><br>
                 <input type="submit" value="Valider">
             </form>
