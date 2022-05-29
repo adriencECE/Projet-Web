@@ -156,7 +156,8 @@ alert("Rien n'a ete trouve pour cette recherche !");
         <a id="footer"></a>
         <div class="footer container">
             <div id="footer">
-                <a>Copyright &copy; 2022, OMNES Sant&eacute;<br></a>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.337709887612!2d2.2842932154568762!3d48.851770309127225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6701b4f58251b%3A0x167f5a60fb94aa76!2sECE%20Paris%20Lyon!5e0!3m2!1sfr!2sfr!4v1653329170449!5m2!1sfr!2sfr" width="200" height="100" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <a><br>Copyright &copy; 2022, OMNES Sant&eacute;<br></a>
                 <a href="mailto:OMNES.sante@gmail.com">OMNES.sante@gmail.com</a>
             </div>
         </div>
