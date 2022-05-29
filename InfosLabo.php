@@ -12,11 +12,9 @@ $db_mdp = ""; //DB login PW
 if (isset($_POST["Id"])) {
     $Id = $_POST["Id"];
     $_SESSION["Id"] = $_POST["Id"];
-} elseif(isset($_GET["Id"]))
-{
-    $Id=$_GET["Id"];
-}
-else{
+} elseif (isset($_GET["Id"])) {
+    $Id = $_GET["Id"];
+} else {
     $Id = $_SESSION["Id"];
 }
 $sql = "";
@@ -86,33 +84,27 @@ if ($db_found) {
     </section>
 
 
-    <section class="infos1">
+    <section class="lesMedecins">
+    <div id="photoB"></div>
         <div id="section">
-            Infos Labo <?php echo  $Id ?><br>
-            <?php echo "Nom: " . $Labo["Nom"] . "  ";
-            echo "Salle :" . $Labo["Salle"] . "  ";
-            echo "Telephone :" . $Labo["Tel"] . "  ";
-            echo "Mail :" . $Labo["Mail"] . "<br>  "; ?>
+            <h2>Infos Labo <?php echo  $Id ?><br></h2>
+            <p>
+                <?php echo "Nom: " . $Labo["Nom"] . " <br> ";
+                echo "Salle: " . $Labo["Salle"] . " <br> ";
+                echo "Telephone: " . $Labo["Tel"] . " <br> ";
+                echo "Mail: " . $Labo["Mail"] . " <br> "; ?>
             <form method="post" action="Services.php">
                 <input type="text" name="NomLabo" value='<?php echo $Labo["Nom"] ?>' hidden />
                 <input type="submit" name="Services" value="Nos Services" />
-               
+
             </form>
+            </p>
         </div>
     </section>
 
 
 
-            
-    <section class="footerRDV">
-        <a id="footer"></a>
-        <div class="footer container">
-            <div id="footer">
-                <a>Copyright &copy; 2022, OMNES Sant&eacute;<br></a>
-                <a href="mailto:OMNES.sante@gmail.com">OMNES.sante@gmail.com</a>
-            </div>
-        </div>
-    </section>
+
 
 </body>
 

@@ -12,11 +12,9 @@ $Nom = $_POST["NomLabo"];
 if (isset($_POST["Id"])) {
     $Id = $_POST["Id"];
     $_SESSION["Id"] = $_POST["Id"];
-} elseif(isset($_GET["Id"]))
-{
-    $Id=$_GET["Id"];
-}
-else{
+} elseif (isset($_GET["Id"])) {
+    $Id = $_GET["Id"];
+} else {
     $Id = $_SESSION["Id"];
 }
 
@@ -89,10 +87,11 @@ if ($db_found) {
         </div>
     </section>
 
-    
-    <section class="infos3">
+
+    <section class="lesMedecins">
+        <div id="photoB"></div>
         <div id="section">
-            Liste des services du laboratoire s&eacute;lectionn&eacute; <br>
+            <h2>Liste des services du laboratoire s&eacute;lectionn&eacute; <br></h2>
             <form method="post" action="RDVLabo.php">
                 <ul>
                     <!-- Pour chaque médecin Généraliste dans la table-->
@@ -110,7 +109,7 @@ if ($db_found) {
     </section>
 
 
-   
+
     <section class="footerRDV">
         <a id="footer"></a>
         <div class="footer container">

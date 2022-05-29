@@ -17,12 +17,12 @@ body {
 
 /*barre de navigation*/
 
-#header input{
+#header input {
 	background-color: white;
 	height: 30px;
 	margin-top: -20px;
 	margin-left: 450px;
-  }
+}
 
 .presentation {
 
@@ -240,6 +240,26 @@ body {
 
 }
 
+.lesMedecins #photoB {
+	background-image: url(https://www.lifeder.com/wp-content/uploads/2018/04/cientifica-escribiendo-traje-min-768x768.jpg);
+	background-size: 200px;
+	padding-bottom: 10px;
+	width: 200px;
+	height: 200px;
+
+	position: absolute;
+	top: 90px;
+	left: 50px;
+	background-repeat: no-repeat;
+
+	width: 180px;
+	height: 180px;
+	border: none;
+	-moz-border-radius: 75px;
+	-webkit-border-radius: 75px;
+	border-radius: 75px;
+}
+
 .lesMedecins #section {
 	position: absolute;
 	top: 50px;
@@ -265,7 +285,10 @@ body {
 	z-index: -1;
 }
 
-.lesMedecins a,li,h2,p {
+.lesMedecins a,
+li,
+h2,
+p {
 
 	text-decoration: none;
 	color: white;
@@ -285,7 +308,102 @@ body {
 
 /*fin medecins generalistes*/
 
+/*ajouter medecin*/
 
+.ajouterMedecin {
+
+	transform: translate(0%, 30%);
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 350px;
+	text-align: center;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	color: #332902;
+}
+.ajouterLabo {
+	transform: translate(200%, -92%);
+	max-width: 350px;
+	text-align: center;
+	padding-left: 13%;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	color: #332902;
+}
+
+.ajouterPayement{
+
+	transform: translate(140%, 50%);
+	max-width: 350px;
+	text-align: center;
+	padding-left: 13%;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	color: #332902;
+}
+.carreca {
+	transform: translate(-100%, -10%);
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 350px;
+	width: 100%;
+	background: #fff;
+	padding: 25px;
+	box-shadow: 0px 0px 18px 0 #0000002c;
+}
+.carreca h2 {
+	text-align: center;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	color: #332902;
+}
+.carreca .tbeau {
+
+	border: 0px;
+	margin-top: 10px;
+	padding: 5px;
+	text-align: center;
+	width: 100%;
+	background: rgb(109, 152, 243);
+	color: #332902;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	font-weight: bold;
+	cursor: pointer;
+}
+.carreca .input_field {
+	margin-bottom: 5px;
+}
+.carreca .input_field input[type="text"],
+.carreca .textarea {
+	border: 1px solid #e0e0e0;
+	width: 100%;
+	padding: 5px;
+	text-align: center;
+}
+.carreca textarea {
+	resize: none;
+	height: 30px;
+	border: 1px solid #e0e0e0;
+	width: 100%;
+	padding: 5px;
+	text-align: center;
+}
+.carreca .tbeau input[type="submit"] {
+	border: 0px;
+	text-align: center;
+	width: 100%;
+	background: rgb(109, 152, 243);
+	color: #332902;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+/*fin ajouter medecin*/
 
 
 /* offers Section */
@@ -693,106 +811,3 @@ body {
 }
 
 
-/*ajouter medecin*/
-
-.ajouterMedecin {
-
-	transform: translate(0%, 30%);
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 350px;
-	text-align: center;
-	margin-bottom: 20px;
-	text-transform: uppercase;
-	letter-spacing: 3px;
-	color: #332902;
-
-}
-
-.ajouterLabo {
-
-
-	transform: translate(200%, -92%);
-
-	max-width: 350px;
-	text-align: center;
-	padding-left: 13%;
-	text-transform: uppercase;
-	letter-spacing: 3px;
-	color: #332902;
-
-
-}
-
-.carreca {
-
-	transform: translate(-100%, -10%);
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 350px;
-	width: 100%;
-	background: #fff;
-	padding: 25px;
-	box-shadow: 0px 0px 18px 0 #0000002c;
-}
-
-.carreca h2 {
-	text-align: center;
-	margin-bottom: 20px;
-	text-transform: uppercase;
-	letter-spacing: 3px;
-	color: #332902;
-}
-
-.carreca .tbeau {
-
-	border: 0px;
-	margin-top: 10px;
-	padding: 5px;
-	text-align: center;
-	width: 100%;
-	background: rgb(109, 152, 243);
-	color: #332902;
-	text-transform: uppercase;
-	letter-spacing: 5px;
-	font-weight: bold;
-
-	cursor: pointer;
-}
-
-.carreca .input_field {
-	margin-bottom: 5px;
-}
-
-.carreca .input_field input[type="text"],
-.carreca .textarea {
-	border: 1px solid #e0e0e0;
-	width: 100%;
-	padding: 5px;
-	text-align: center;
-}
-
-.carreca textarea {
-	resize: none;
-	height: 30px;
-	border: 1px solid #e0e0e0;
-	width: 100%;
-	padding: 5px;
-	text-align: center;
-}
-
-.carreca .tbeau input[type="submit"] {
-	border: 0px;
-
-
-	text-align: center;
-	width: 100%;
-	background: rgb(109, 152, 243);
-	color: #332902;
-	text-transform: uppercase;
-	letter-spacing: 5px;
-	font-weight: bold;
-	cursor: pointer;
-}
-
-/*fin ajouter medecin*/
