@@ -34,17 +34,17 @@ if ($db_found) {
 
     if ($service == "") {
         $sql = "SELECT * FROM labo ";
-   
 
-    $res = mysqli_query($db_handle, $sql);
-    //var_dump($res);
-    $listeLabo;
-    while ($data = mysqli_fetch_assoc($res)) {
-        //$data = une ligne de la table
-        //On crée un tableau avec toutes ces lignes
-        $listeLabo[] = $data;
+
+        $res = mysqli_query($db_handle, $sql);
+        //var_dump($res);
+        $listeLabo;
+        while ($data = mysqli_fetch_assoc($res)) {
+            //$data = une ligne de la table
+            //On crée un tableau avec toutes ces lignes
+            $listeLabo[] = $data;
+        }
     }
-}
 } else {
     echo "Unable to connect <br>";
 }
@@ -89,27 +89,34 @@ if ($db_found) {
             </div>
         </div>
     </section>
+
     <section class="lesMedecins">
+        <div id="photoA"></div>
         <div id="section">
-            Liste M&eacute;decins G&eacute;n&eacute;ralistes <br>
+
+            <h2>Liste Médecins Généraliste: <br></h2>
             <form method="post" action="Supprimer.php" style="color:black">
                 <ul>
                     <!-- Pour chaque médecin Généraliste dans la table-->
-                    <?php foreach ($listeGeneralistes as $Generaliste) : ?>
-                        <li>
-                            <input type="radio" name="Id" value="<?= $Generaliste["Id"] ?>" checked>
-                            <?php echo $Generaliste["Id"] . " " . $Generaliste['Nom'] . " " . $Generaliste['Prenom'] . " " . $Generaliste['Spe'] ?>
-                        </li>
-                    <?php endforeach ?>
+                    <p>
+                        <?php foreach ($listeGeneralistes as $Generaliste) : ?>
+                            <li>
+                                <input type="radio" name="Id" value="<?= $Generaliste["Id"] ?>" checked>
+                                <?php echo $Generaliste["Id"] . " " . $Generaliste['Nom'] . " " . $Generaliste['Prenom'] . " " . $Generaliste['Spe'] ?>
+                            </li>
+                        <?php endforeach ?>
+                    </p>
                 </ul>
-                <label>Que faire avec le m&eacute;decin s&eacute;lectionn&eacute;:</label>
+                <label>
+                    <h2>Voulez-vous supprimer le Médecin sélectioné ?
+                </label></h2>
                 <input type="submit" name="SupprimerMedecin" value="Supprimer">
-                
+
             </form>
-        </div>
-    </section>
-    <section class="lesLabos">
-    <form method="post" action="Supprimer.php?Suppr=Labo" style="color:black">
+
+            <h2>Liste laboratoires: <br></h2>
+            <form method="post" action="Supprimer.php?Suppr=Labo" style="color:black">
+
                 <ul>
                     <!-- Pour chaque médecin Généraliste dans la table-->
                     <?php foreach ($listeLabo as $Labo) : ?>
@@ -119,31 +126,24 @@ if ($db_found) {
                         </li>
                     <?php endforeach ?>
                 </ul>
-                <label>Que faire avec le laboratoire s&eacute;lectionn&eacute; ?:</label>
+
+                <label>
+                    <h2>Voulez-vous supprimer le Laboratoire sélectioné ?
+                </label></h2>
                 <input type="submit" name="SupprimerLabo" value="Supprimer">
-           
             </form>
-    </section>
 
-    <section class="listesMedecins">
-        <div id="section">
-        <form method="post" action="Ajouter.php" style="color:black">
-            <input type="submit" name="Ajouter" value="Ajouter un M&eacute;decin ou un Laboratoire">
+
+            <h2>Voulez-vous ajouter un Medecin ou un Laboratoire ?</h2>
+            <form method="post" action="Ajouter.php" style="color:black">
+                <input type="submit" name="Ajouter" value="Ajouter un M&eacute;decin ou un Laboratoire">
             </form>
-        
+
         </div>
     </section>
 
 
-    <section class="footerAcceuil">
-        <a id="footer"></a>
-        <div class="footer container">
-            <div id="footer">
-                <a>Copyright &copy; 2022, OMNES Sant&eacute;<br></a>
-                <a href="mailto:OMNES.sante@gmail.com">OMNES.sante@gmail.com</a>
-            </div>
-        </div>
-    </section>
+
 
 </body>
 
