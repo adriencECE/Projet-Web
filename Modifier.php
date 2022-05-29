@@ -92,7 +92,7 @@ if ($db_found) {
     <section class="lesMedecins">
         <div id="section">
             Liste M&eacute;decins G&eacute;n&eacute;ralistes <br>
-            <form method="post" action="InfosMedecin.php" style="color:black">
+            <form method="post" action="Supprimer.php" style="color:black">
                 <ul>
                     <!-- Pour chaque médecin Généraliste dans la table-->
                     <?php foreach ($listeGeneralistes as $Generaliste) : ?>
@@ -102,13 +102,14 @@ if ($db_found) {
                         </li>
                     <?php endforeach ?>
                 </ul>
-                <label>Voir les informations du m&eacute;decin s&eacute;lectionn&eacute;:</label>
-                <input type="submit" value="Soumettre">
+                <label>Que faire avec le m&eacute;decin s&eacute;lectionn&eacute;:</label>
+                <input type="submit" name="SupprimerMedecin" value="Supprimer">
+                <input type="submit" name="ModifierMedecin" value="Modifier">
             </form>
         </div>
     </section>
     <section class="lesLabos">
-    <form method="post" action="InfosLabo.php" style="color:black">
+    <form method="post" action="Supprimer.php?Suppr=Labo" style="color:black">
                 <ul>
                     <!-- Pour chaque médecin Généraliste dans la table-->
                     <?php foreach ($listeLabo as $Labo) : ?>
@@ -118,17 +119,17 @@ if ($db_found) {
                         </li>
                     <?php endforeach ?>
                 </ul>
-                <label>Voir les informations du m&eacute;decin s&eacute;lectionn&eacute;:</label>
-                <input type="submit" value="Soumettre">
+                <label>Que faire avec le laboratoire s&eacute;lectionn&eacute; ?:</label>
+                <input type="submit" name="SupprimerLabo" value="Supprimer">
+                <input type="submit" name="ModifierLabo" value="Modifier">
             </form>
-                    </section>
+    </section>
 
     <section class="listesMedecins">
         <div id="section">
         <form method="post" action="Ajouter.php" style="color:black">
             <input type="submit" name="Ajouter" value="Ajouter un M&eacute;decin ou un Laboratoire">
             </form>
-            <input type="button" name="Supprimer" value="Supprimer un M&eacute;decin">
             <input type="button" name="Modifier" value="Modifier un M&eacute;decin">
         </div>
     </section>
