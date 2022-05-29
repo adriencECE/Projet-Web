@@ -76,8 +76,10 @@ if ($db_found) {
 
 
     <section class="lesMedecins">
+<div id=photo></div>
         <div id="section">
-            Liste M&eacute;decins G&eacute;n&eacute;ralistes <br>
+            <h2>Liste M&eacute;decins G&eacute;n&eacute;ralistes: </h2><br>
+
             <form method="post" action="InfosMedecin.php" style="color:black">
                 <ul>
                     <!-- Pour chaque médecin Généraliste dans la table-->
@@ -89,8 +91,7 @@ if ($db_found) {
                         </li>
                     <?php endforeach ?>
                 </ul>
-                <label>Voir les informations du m&eacute;decin s&eacute;lectionn&eacute;:</label>
-                <input type="submit" value="Soumettre">
+                <a href="infosMedecin.php" data-after="Voir les informations du m&eacute;decin s&eacute;lectionn&eacute;"> Voir les informations du m&eacute;decin s&eacute;lectionn&eacute;</a>
             </form>
         </div>
     </section>
@@ -108,4 +109,5 @@ if ($db_found) {
 
 
 </body>
+
 </html>
