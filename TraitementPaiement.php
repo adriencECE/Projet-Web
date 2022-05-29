@@ -37,7 +37,8 @@ if($db_found){
             //On crée un tableau avec toutes ces lignes
             $CB=$data;
         }  
-        if($CB["Type"]!=$Type){
+        if(isset($CB)){
+            if($CB["Type"]!=$Type){
             echo "Mauvais type ";
             $bon=false;
         }
@@ -50,9 +51,15 @@ if($db_found){
             $bon=false;
         }
         if($bon==true){
-            echo "Paiement accepte";
             header("Location:PriseRdvLabo.php?Bouton=".$clicked_id."&Id=".$Id);
+        } 
+        else{
+            header("Location:Paiement.php?Bouton=".$clicked_id."&Id=".$Id."&Pb=true");
         }
+        }else{
+            header("Location:Paiement.php?Bouton=".$clicked_id."&Id=".$Id."&Pb=true");
+        }
+        
         
 }
 else{

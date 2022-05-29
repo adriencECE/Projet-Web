@@ -10,6 +10,11 @@ $db = "omnessante"; //Name of DB
 $site = "localhost"; //Name of the Website
 $db_id = "root"; //DB login ID
 $db_mdp = ""; //DB login PW
+if(isset($_GET["Rempli"])){
+    $Rempli=$_GET["Rempli"];
+}
+
+
 if (isset($_POST["Id"])) {
     $Id = $_POST["Id"];
     $_SESSION["Id"] = $_POST["Id"];
@@ -37,6 +42,9 @@ if ($db_found) {
     <link href="OMNESSante.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" type="image/x-icon" href="https://www.omneseducation.com/app/themes/inseec-group/favicon.ico">
     <script type="text/javascript" src="script.js"></script>
+    <script>if(<?php echo $Rempli ?> == false){
+            alert("Des informations sont manquantes");
+        }</script>
 </head>
 
 
