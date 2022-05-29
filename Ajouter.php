@@ -24,7 +24,8 @@ $db_handle = mysqli_connect($site, $db_id, $db_mdp);
 //Access DB
 $db_found = mysqli_select_db($db_handle, $db);
 
-if ($db_found) {}
+if ($db_found) {
+}
 
 ?>
 <html>
@@ -41,55 +42,118 @@ if ($db_found) {}
 
 <body>
 
-   
+
+
+    <section class="presentation">
+        <div id="wrapper">
+            <div id="header">
+                <div id="nav">
+                    <img src="omnessante.png" class="logo">
+                    <div class="header-right">
+
+                        <a href="Accueil.php" data-after="Accueil">Accueil </a>
+                        <!--<input type="button" name="Accueil" value="Accueil">
+                    </a>-->
+                        <a href="ToutParcourir.php" data-after="ToutParcourir">Parcourir </a>
+                        <!--<input type="button" name="Parcourir" value="Tout Parcourir">
+                    </a>-->
+                        <a href="Accueil.php" data-after="Acc" id="btn1">Modif </a>
+                        <!--<input type="button" name="Modifier" value="Modifier" id="btn1">
+                    </a>-->
+                        <a href="Compte.php" data-after="Compte" id="btn2">Compte </a>
+                        <!--<input type="button" name="Compte" value="Compte" id="btn2">
+                    </a>-->
+                        <!--Modification boutons en fonction du compte connecte-->
+                        <?php echo "<script type='text/javascript'>testConnexion1Acc($jsvars)</script>";
+                        echo "<script type='text/javascript'>testConnexion2Acc($jsvars)</script>" ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="ajouterMedecin">
         <div id="section">
-            <form method="post" action="TraitementNvMedecin.php">
-            <label>Login:</label>
-                <input type="text" name="Login" />
-                <label>MDP:</label>
-                <input type="text" name="MDP" />
-                <label>Nom:</label>
-                <input type="text" name="Nom" />
-                <label>Prenom:</label>
-                <input type="text" name="Prenom" />
-                <label>Specialite:</label>
-                <input type="text" name="Specialite" />
-                <label>Salle</label>
-                <input type="text" name="Salle" />
-                <label>Tel:</label>
-                <input type="number" name="Tel" />
-                <label>Mail:</label>
-                <input type="text" name="Mail" /> 
-                <label>Image:</label>
-                <input type="text" name="Image" />
-                <label>Repos</label>
-                <input type="text" name="Repos" />
-                <label>CV:</label><br>
-                <input type="text" name="Cv" />
-              
-                <input type="submit" value="Soumettre" name="medecin"/>
-            </form>
+            <div class="carreca">
+                <u>
+                    <h2>Ajouter un medecin:</h2><br><br>
+                </u>
+                <form method="post" action="TraitementNvMedecin.php">
+                    <div class="input_field">
+                        <input type="text" placeholder="Login" name="Login" /><br>
+                    </div>
+                    <div class="input_field">
+                        <input type="text" placeholder="MDP" name="MDP" /><br>
+                    </div>
+                    <div class="input_field">
+                        <input type="text" placeholder="Nom" name="Nom" /><br>
+                    </div>
+                    <div class="input_field">
+                        <input type="text" placeholder="Prenom" name="Prenom" /><br>
+                    </div>
+                    <div class="input_field">
+                        <input type="text" placeholder="Specialité" name="Specialite" /><br>
+                    </div>
+                    <div class="input_field">
+                        <input type="text" placeholder="Salle" name="Salle" /><br>
+                    </div>
+                    <div class="input_field">
+                        <input type="text" placeholder="Téléphone" name="Tel" /><br>
+                    </div>
+                    <div class="input_field">
+                        <input type="text" placeholder="Mail" name="Mail" /><br>
+                    </div>
+                    <div class="input_field">
+                        <input type="text" placeholder="Image" name="Image" /><br>
+                    </div>
+                    <div class="input_field">
+                        <input type="text" placeholder="Repos" name="Repos" /><br>
+                    </div>
+                    <div class="input_field">
+                        <textarea type="text" placeholder="Cv" name="Cv"></textarea>
+                    </div>
+
+                    <div class="tbeau">
+                        <input type="submit" value="Soumettre" name="medecin" />
+                    </div>
+
+
+                </form>
+            </div>
         </div>
     </section>
-    <section class="ajouterMedecin">
+
+    <section class="ajouterLabo">
         <div id="section">
-            <form method="post" action="TraitementNvMedecin.php">
-                <label>Nom:</label>
-                <input type="text" name="Nom" />
-                <label>Service:</label>
-                <input type="text" name="Service" />
-                <label>Salle</label>
-                <input type="text" name="Salle" />
-                <label>Tel:</label>
-                <input type="number" name="Tel" />
-                <label>Mail:</label>
-                <input type="text" name="Mail" /> 
-                <input type="submit" value="Soumettre" name="labo" />
-            </form>
+            <div class="carreca">
+                <u>
+                    <h2>Ajouter un laboratoire:</h2><br><br>
+                </u>
+                <form method="post" action="TraitementNvMedecin.php">
+                    <div class="input_field">
+                        <input type="text" placeholder="Nom" name="Nom" />
+                    </div>
+                    <div class="input_field">
+                        <input type="text" placeholder="Service" name="Service" />
+                    </div>
+                    <div class="input_field">
+                        <input type="text" placeholder="Salle" name="Salle" />
+                    </div>
+                    <div class="input_field">
+                        <input type="text" placeholder="Téléphone" name="Tel" />
+                    </div>
+                    <div class="input_field">
+                        <input type="text" placeholder="Mail" name="Mail" />
+                    </div>
+
+                    <div class="tbeau">
+                        <input type="submit" value="Soumettre" name="labo" />
+                    </div>
+                </form>
+            </div>
         </div>
     </section>
+
     <section class="footerAcceuil">
         <a id="footer"></a>
         <div class="footer container">

@@ -96,7 +96,7 @@ if ($db_found) {
     </section>
 
 
-    <section class="footerAcceuil">
+    <section class="footerGeneraliste">
         <a id="footer"></a>
         <div class="footer container">
             <div id="footer">
