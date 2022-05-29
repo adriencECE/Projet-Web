@@ -96,7 +96,7 @@ if (isset($_POST['enter'])){
    
     if($_POST['name2'] != ""){
         $Nom=$_POST["name2"];
-        $sql="SELECT Nom FROM comptes";
+        $sql="SELECT Nom,Prenom FROM comptes";
         $res = mysqli_query($db_handle, $sql);
       
         while ($data = mysqli_fetch_assoc($res)) {
@@ -112,6 +112,7 @@ if (isset($_POST['enter'])){
                 echo $var["Nom"];
                 $existant=true;
                 $_SESSION['name2'] = stripslashes(htmlspecialchars($_POST['name2']));
+                $_SESSION["prenom2"]=stripslashes(htmlspecialchars($var['Prenom']));
                 header("Location:CommuniquerRDV.php");
             }
         }
@@ -177,7 +178,7 @@ if (isset($_POST['enter'])){
 
             <div id="chatWrapper">
                 <div id="menu">
-                    <p class="welcome">Communiquer avec Dr. <b>
+                    <p class="welcome">Communiquer avec  <b>
                             <?php echo $_SESSION['name2']; ?>
                         </b></p>
                     <p class="logout"><a id="exit" href="#">Quitter la conversation</a></p>
