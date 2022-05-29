@@ -1,9 +1,12 @@
 <?php session_start();
 $vars = array($_SESSION["connecte"], $_SESSION["login"], $_SESSION["MDP"]);
 $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
-
+$Pb = false;
 $clicked_id = $_GET["Bouton"];
 $Id = $_GET["Id"];
+if(isset($_GET["Pb"])){
+    $Pb=$_GET["Pb"];
+}
 
 $link = "TraitementPaiement.php?Bouton=" . $clicked_id . "&Id=" . $Id;
 ?>
@@ -14,6 +17,12 @@ $link = "TraitementPaiement.php?Bouton=" . $clicked_id . "&Id=" . $Id;
     <link href="OMNESSante.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" type="image/x-icon" href="https://www.omneseducation.com/app/themes/inseec-group/favicon.ico">
     <script src="script.js">
+        
+    </script>
+    <script>
+        if(<?php echo $Pb ?> == true){
+            alert("Les informations sont erronees");
+        }
     </script>
 </head>
 

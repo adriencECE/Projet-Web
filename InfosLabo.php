@@ -87,7 +87,7 @@ if ($db_found) {
     <section class="lesMedecins">
     <div id="photoB"></div>
         <div id="section">
-            <h2>Infos Labo <?php echo  $Id ?><br></h2>
+            <h2>Infos Laboratoire <br></h2>
             <p>
                 <?php echo "Nom: " . $Labo["Nom"] . " <br> ";
                 echo "Salle: " . $Labo["Salle"] . " <br> ";

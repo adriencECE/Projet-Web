@@ -13,68 +13,132 @@ $toutRempli = true;
 $existant = false;
 $inscrit = false;
 if (isset($_POST["Login"])) {
-    $login = $_POST["Login"];
+    if($_POST["Login"] != ""){
+        $Login = $_POST["Login"];
+    }else{
+        $toutRempli = false;
+        $Login = "";
+    }    
 } else {
     $toutRempli = false;
-    $login = "";
+    $Login = "";
 }
 if (isset($_POST["MDP"])) {
-    $MDP = $_POST["MDP"];
+    if($_POST["MDP"] != ""){
+        $MDP = $_POST["MDP"];
+    }else{
+        $toutRempli = false;
+        $MDP = "";
+    }    
 } else {
     $toutRempli = false;
     $MDP = "";
 }
 if (isset($_POST["Nom"])) {
-    $Nom = $_POST["Nom"];
+    if($_POST["Nom"] != ""){
+        $Nom = $_POST["Nom"];
+    }else{
+        $toutRempli = false;
+        $Nom = "";
+    }    
 } else {
     $toutRempli = false;
     $Nom = "";
 }
 if (isset($_POST["Prenom"])) {
-    $Prenom = $_POST["Prenom"];
+    if($_POST["Prenom"] != ""){
+        $Prenom = $_POST["Prenom"];
+    }else{
+        $toutRempli = false;
+        $Prenom = "";
+    }    
 } else {
     $toutRempli = false;
     $Prenom = "";
 }
-if (!isset($_POST["Tel"])) {
-    $toutRempli = false;
+if (isset($_POST["Tel"])) {
+    if($_POST["Tel"] != ""){
+        $Tel = $_POST["Tel"];
+    }else{
+        $toutRempli = false;
+        $Tel = "";
+    }    
 } else {
-    $Tel = $_POST["Tel"];
+    $toutRempli = false;
+    $Tel = "";
 }
-if (!isset($_POST["Mail"])) {
-    $toutRempli = false;
+if (isset($_POST["Mail"])) {
+    if($_POST["Mail"] != ""){
+        $Mail = $_POST["Mail"];
+    }else{
+        $toutRempli = false;
+        $Mail = "";
+    }    
 } else {
-    $Mail = $_POST["Mail"];
+    $toutRempli = false;
+    $Mail = "";
+}if (isset($_POST["Adresse"])) {
+    if($_POST["Adresse"] != ""){
+        $Adresse = $_POST["Adresse"];
+    }else{
+        $toutRempli = false;
+        $Adresse = "";
+    }    
+} else {
+    $toutRempli = false;
+    $Adresse = "";
+}if (isset($_POST["NumCarteVitale"])) {
+    if($_POST["NumCarteVitale"] != ""){
+        $NumCarteVitale = $_POST["NumCarteVitale"];
+    }else{
+        $toutRempli = false;
+        $NumCarteVitale = "";
+    }    
+} else {
+    $toutRempli = false;
+    $NumCarteVitale = "";
+}if (isset($_POST["NumeroCarte"])) {
+    if($_POST["NumeroCarte"] != ""){
+        $NumeroCarte = $_POST["NumeroCarte"];
+    }else{
+        $toutRempli = false;
+        $NumeroCarte = "";
+    }    
+} else {
+    $toutRempli = false;
+    $NumeroCarte = "";
+}if (isset($_POST["TypeCarte"])) {
+    if($_POST["TypeCarte"] != ""){
+        $TypeCarte = $_POST["TypeCarte"];
+    }else{
+        $toutRempli = false;
+        $TypeCarte = "";
+    }    
+} else {
+    $toutRempli = false;
+    $TypeCarte = "";
 }
-if (!isset($_POST["Adresse"])) {
-    $toutRempli = false;
+if (isset($_POST["DateExpiration"])) {
+    if($_POST["DateExpiration"] != ""){
+        $DateExpiration = $_POST["DateExpiration"];
+    }else{
+        $toutRempli = false;
+        $DateExpiration = "";
+    }    
 } else {
-    $Adresse = $_POST["Adresse"];
+    $toutRempli = false;
+    $DateExpiration = "";
 }
-if (!isset($_POST["NumCarteVitale"])) {
-    $toutRempli = false;
+if (isset($_POST["CodeCarte"])) {
+    if($_POST["CodeCarte"] != ""){
+        $CodeCarte = $_POST["CodeCarte"];
+    }else{
+        $toutRempli = false;
+        $CodeCarte = "";
+    }    
 } else {
-    $NumCarteVitale = $_POST["NumCarteVitale"];
-}
-if (!isset($_POST["NumeroCarte"])) {
     $toutRempli = false;
-} else {
-    $NumeroCarte = $_POST["NumeroCarte"];
-}
-if (!isset($_POST["TypeCarte"])) {
-    $toutRempli = false;
-} else {
-    $TypeCarte = $_POST["TypeCarte"];
-}
-if (!isset($_POST["DateExpiration"])) {
-    $toutRempli = false;
-} else {
-    $DateExpiration = $_POST["DateExpiration"];
-}
-if (!isset($_POST["CodeCarte"])) {
-    $toutRempli = false;
-} else {
-    $CodeCarte = $_POST["CodeCarte"];
+    $CodeCarte = "";
 }
 
 

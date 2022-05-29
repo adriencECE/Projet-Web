@@ -15,109 +15,188 @@ $inscrit = false;
 
 if(isset($_POST["medecin"])){
 
+
+
     if (isset($_POST["Login"])) {
-        $Login = $_POST["Login"];
+        if($_POST["Login"] != ""){
+            $Login = $_POST["Login"];
+        }else{
+            $toutRempli = false;
+            $Login = "";
+        }    
     } else {
         $toutRempli = false;
         $Login = "";
-        echo "log";
     }
     if (isset($_POST["MDP"])) {
-        $MDP = $_POST["MDP"];
+        if($_POST["MDP"] != ""){
+            $MDP = $_POST["MDP"];
+        }else{
+            $toutRempli = false;
+            $MDP = "";
+        }    
     } else {
         $toutRempli = false;
         $MDP = "";
-        echo "mdp";
     }
-if (isset($_POST["Nom"])) {
-    $Nom = $_POST["Nom"];
-} else {
-    $toutRempli = false;
-    $Nom = "";
-    echo "nom";
-}
-if (isset($_POST["Prenom"])) {
-    $Prenom = $_POST["Prenom"];
-} else {
-    $toutRempli = false;
-    $Prenom = "";
-    echo "pre";
-}
-if (!isset($_POST["Tel"])) {
-    $toutRempli = false;
-    echo "tel";
-} else {
-    $Tel = $_POST["Tel"];
-}
-if (!isset($_POST["Mail"])) {
-    $toutRempli = false;
-    echo "mai";
-} else {
-    $Mail = $_POST["Mail"];
-}
-if (!isset($_POST["Cv"])) {
-    $toutRempli = false;
-    echo "cv";
-} else {
-    $Cv= $_POST["Cv"];
-}
-if (!isset($_POST["Image"])) {
-    $toutRempli = false;
-    echo "pho";
-    
-} else {
-    $Image = $_POST["Image"];
-}
-if (!isset($_POST["Repos"])) {
-    $toutRempli = false;
-    echo "rep";
-} else {
-    $Repos = $_POST["Repos"];
-}
-if (!isset($_POST["Specialite"])) {
-    $toutRempli = false;
-    echo "spe";
-} else {
-    $Specialite = $_POST["Specialite"];
-}
-if (!isset($_POST["Salle"])) {
-    $toutRempli = false;
-    echo "sall";
-} else {
-    $Salle = $_POST["Salle"];
-}
-
+    if (isset($_POST["Nom"])) {
+        if($_POST["Nom"] != ""){
+            $Nom = $_POST["Nom"];
+        }else{
+            $toutRempli = false;
+            $Nom = "";
+        }    
+    } else {
+        $toutRempli = false;
+        $Nom = "";
+    }
+    if (isset($_POST["Prenom"])) {
+        if($_POST["Prenom"] != ""){
+            $Prenom = $_POST["Prenom"];
+        }else{
+            $toutRempli = false;
+            $Prenom = "";
+        }    
+    } else {
+        $toutRempli = false;
+        $Prenom = "";
+    }
+    if (isset($_POST["Tel"])) {
+        if($_POST["Tel"] != ""){
+            $Tel = $_POST["Tel"];
+        }else{
+            $toutRempli = false;
+            $Tel = "";
+        }    
+    } else {
+        $toutRempli = false;
+        $Tel = "";
+    }
+    if (isset($_POST["Mail"])) {
+        if($_POST["Mail"] != ""){
+            $Login = $_POST["Mail"];
+        }else{
+            $toutRempli = false;
+            $Mail = "";
+        }    
+    } else {
+        $toutRempli = false;
+        $Mail = "";
+    }
+    if (isset($_POST["Cv"])) {
+        if($_POST["Cv"] != ""){
+            $Cv = $_POST["Cv"];
+        }else{
+            $toutRempli = false;
+            $Cv = "";
+        }    
+    } else {
+        $toutRempli = false;
+        $Cv = "";
+    }
+    if (isset($_POST["Image"])) {
+        if($_POST["Image"] != ""){
+            $Image = $_POST["Image"];
+        }else{
+            $toutRempli = false;
+            $Image = "";
+        }    
+    } else {
+        $toutRempli = false;
+        $Image = "";
+    }
+    if (isset($_POST["Repos"])) {
+        if($_POST["Repos"] != ""){
+            $Repos = $_POST["Repos"];
+        }else{
+            $toutRempli = false;
+            $Repos = "";
+        }    
+    } else {
+        $toutRempli = false;
+        $Repos = "";
+    }
+    if (isset($_POST["Specialite"])) {
+        if($_POST["Specialite"] != ""){
+            $Specialite = $_POST["Specialite"];
+        }else{
+            $toutRempli = false;
+            $Specialite = "";
+        }    
+    } else {
+        $toutRempli = false;
+        $Specialite = "";
+    }
+    if (isset($_POST["Salle"])) {
+        if($_POST["Salle"] != ""){
+            $Salle = $_POST["Salle"];
+        }else{
+            $toutRempli = false;
+            $Salle = "";
+        }    
+    } else {
+        $toutRempli = false;
+        $Salle = "";
+    }
 }
 
 
 elseif(isset($_POST["labo"])){
    
     if (isset($_POST["Nom"])) {
-        $Nom = $_POST["Nom"];
+        if($_POST["Nom"] != ""){
+            $Nom = $_POST["Nom"];
+        }else{
+            $toutRempli = false;
+            $Nom = "";
+        }    
     } else {
         $toutRempli = false;
         $Nom = "";
     }
     if (isset($_POST["Service"])) {
-        $Service = $_POST["Service"];
+        if($_POST["Service"] != ""){
+            $Login = $_POST["Service"];
+        }else{
+            $toutRempli = false;
+            $Service = "";
+        }    
     } else {
         $toutRempli = false;
         $Service = "";
     }
-    if (!isset($_POST["Tel"])) {
+    if (isset($_POST["Tel"])) {
+        if($_POST["Tel"] != ""){
+            $Tel = $_POST["Tel"];
+        }else{
+            $toutRempli = false;
+            $Tel = "";
+        }    
+    } else {
         $toutRempli = false;
-    } else {
-        $Tel = $_POST["Tel"];
+        $Tel = "";
     }
-    if (!isset($_POST["Mail"])) {
+    if (isset($_POST["Mail"])) {
+        if($_POST["Mail"] != ""){
+            $Login = $_POST["Mail"];
+        }else{
+            $toutRempli = false;
+            $Mail = "";
+        }    
+    } else {
         $toutRempli = false;
-    } else {
-        $Mail = $_POST["Mail"];
+        $Mail = "";
     }
-    if (!isset($_POST["Salle"])) {
-        $Salle = false;
+    if (isset($_POST["Salle"])) {
+        if($_POST["Salle"] != ""){
+            $Salle = $_POST["Salle"];
+        }else{
+            $toutRempli = false;
+            $Salle = "";
+        }    
     } else {
-        $Salle = $_POST["Salle"];
+        $toutRempli = false;
+        $Salle = "";
     }
     
 }
@@ -137,9 +216,8 @@ $db_found = mysqli_select_db($db_handle, $db);
 if ($db_found) {
     //echo "Connected to DB <br>";
     
-
     if ($toutRempli == true) {
-        if(isset($_POST["medecin"])){
+        if(isset($_POST["medecin"]) && $Nom!="" && $Prenom!="" && $Login!="" && $MDP!=""){
         $sql = "SELECT * FROM comptes WHERE Login='$Login' AND MDP='$MDP' AND Nom='$Nom' AND Prenom='$Prenom'";
         $res = mysqli_query($db_handle, $sql);
         //var_dump($res);
@@ -152,7 +230,7 @@ if ($db_found) {
         }
         if (isset($Compte)) {
             $existant = true;
-        } else {
+        } elseif($Nom!="" && $Prenom!="" && $Login!="" && $MDP!="") {
             $sql = "INSERT INTO comptes (Nom, Prenom, Type, Login, MDP) VALUES ('$Nom', '$Prenom', '2', '$Login', '$MDP')";
             $res = mysqli_query($db_handle, $sql);
            // return mysqli_query($db_handle, $sql)or die(mysqli_error($db_handle));
@@ -165,6 +243,9 @@ if ($db_found) {
             //var_dump($res);
             $inscrit=true;
         }
+        else{
+            header("Location: Ajouter.php");
+        }
     }
     elseif(isset($_POST["labo"])){
         $sql4  = "INSERT INTO labo (Nom, Service,Salle,Tel, Mail) 
@@ -174,6 +255,8 @@ $inscrit=true;
     }
 
 
+    }else{
+        header("Location: Ajouter.php?Rempli=false");
     }
 
 
@@ -197,14 +280,14 @@ $inscrit=true;
     <?php if ($toutRempli == false) : ?>
         <script type="text/javascript">
             alert("Veuillez remplir tous les champs");
-           // window.location = "Ajouter.php";
+           window.location = "Ajouter.php";
         </script>
 
     <?php else : ?>
         <?php if ($existant == false && $inscrit == true) : ?>
             <script type="text/javascript">
                 alert("Inscription reussie \nBienvenue");
-              //  window.location = "Modifier.php";
+               window.location = "Modifier.php";
             </script>
         <?php endif ?>
     <?php endif ?>

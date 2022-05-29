@@ -90,7 +90,7 @@ if ($db_found) {
         <div id="photo"></div>
         <div id="section" style="color:black">
 
-            <h2>Les informations du M&eacute;decin <?php echo  $Id ?><br></h2>
+            <h2>Les informations du M&eacute;decin <br></h2>
             <p>
                     <?php
                     echo "Nom: " . $Medecin["Nom"] . " <br> ";
