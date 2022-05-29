@@ -2,10 +2,10 @@
 $vars = array($_SESSION["connecte"], $_SESSION["login"], $_SESSION["MDP"]);
 $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
 
-$clicked_id=$_GET["Bouton"];
-$Id=$_GET["Id"];
+$clicked_id = $_GET["Bouton"];
+$Id = $_GET["Id"];
 
-$link="TraitementPaiement.php?Bouton=".$clicked_id."&Id=".$Id;
+$link = "TraitementPaiement.php?Bouton=" . $clicked_id . "&Id=" . $Id;
 ?>
 <html>
 
@@ -48,30 +48,46 @@ $link="TraitementPaiement.php?Bouton=".$clicked_id."&Id=".$Id;
     </section>
 
 
-    <section class="payement">
-        <div id="section">
-            <form method="post" action=<?php echo $link?> >
-                <label>Type de Carte:</label>
-                <input type="radio" name="TypeCarte" value="Visa" checked>
-                <label>Visa</label>
-                <input type="radio" name="TypeCarte" value="MasterCard">
-                <label>MasterCard</label>
-                <input type="radio" name="TypeCarte" value="American Express">
-                <label>American Express</label>
-                <input type="radio" name="TypeCarte" value="Paypal">
-                <label>Paypal</label><br>
-                <label>Num&eacute;ro de Carte:</label>
-                <input type="text" name="NumeroCarte"><br>
-                <label>Nom:</label>
-                <input type="text" name="Nom"><br>
-                <label>Prenom:</label>
-                <input type="text" name="Prenom"><br>
-                <label>Date d'Expiration:</label>
-                <input type="text" name="DateExpiration" value="yyyy-mm-dd" onclick="value=''"><br>
-                <label>Code:</label>
-                <input type="number" name="CodeCarte"><br>
-                <input type="submit" value="Soumettre">
-            </form>
+    <section class="ajouterPayement">
+        <div id="section"><br><br>
+            <div class="carreca">
+                <h2>Procédons au payment: </h2>
+                <form method="post" action=<?php echo $link ?>>
+                    <label>Type de Carte:</label>
+                    <input type="radio" name="TypeCarte" value="Visa" checked>
+                    <label>Visa</label>
+                    <input type="radio" name="TypeCarte" value="MasterCard">
+                    <label>MasterCard</label>
+                    <input type="radio" name="TypeCarte" value="American Express">
+                    <label>American Express</label>
+                    <input type="radio" name="TypeCarte" value="Paypal">
+                    <label>Paypal</label><br>
+
+                    <div class="input_field">
+                        <input type="text" placeholder="NumeroCarte" name="NumeroCarte"><br>
+                    </div>
+
+                    <div class="input_field">
+                        <input type="text" placeholder="Nom" name="Nom"><br>
+                    </div>
+
+                    <div class="input_field">
+                        <input type="text" placeholder="Prenom" name="Prenom"><br>
+                    </div>
+
+                    <div class="input_field">
+                        <input type="text" placeholder="DateExpiration" name="DateExpiration" value="yyyy-mm-dd" onclick="value=''"><br>
+                    </div>
+
+                    <div class="input_field">
+                        <textarea type="number" placeholder="CodeCarte" name="CodeCarte"></textarea>
+                    </div>
+
+                    <div class="tbeau">
+                        <input type="submit" value="Soumettre">
+                    </div>
+                </form>
+            </div>
         </div>
     </section>
 

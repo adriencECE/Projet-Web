@@ -29,6 +29,7 @@ $db_handle = mysqli_connect($site, $db_id, $db_mdp);
 $db_found = mysqli_select_db($db_handle, $db);
 
 if ($db_found) {
+    echo $Id;
     //echo "Connected to DB <br>";
     $sql = "SELECT * FROM medecins WHERE Id=$Id";
     $res = mysqli_query($db_handle, $sql);
@@ -37,9 +38,8 @@ if ($db_found) {
         //On crée un tableau avec toutes ces lignes
         $Medecin = $data;
     }
-    $link="test.php?Nom=".$Medecin['Nom'];
-} 
-else {
+    $link = "test.php?Nom=".$Medecin['Nom'];
+} else {
     echo "Unable to connect <br>";
 }
 
@@ -86,31 +86,33 @@ else {
         </div>
     </section>
 
-    <section class="infoMedecins">
+    <section class="lesMedecins">
+        <div id="photo"></div>
         <div id="section" style="color:black">
-            Infos M&eacute;decin <?php echo  $Id ?><br>
-            <?php echo "Nom: " . $Medecin["Nom"] . "  ";
-            echo "Prenom :" . $Medecin["Prenom"] . "  ";
-            echo "Specialite :" . $Medecin["Spe"] . "  ";
-            echo "Telephone :" . $Medecin["Tel"] . "  ";
-            echo "Mail :" . $Medecin["Mail"] . " <br> "; 
-            $_SESSION["name2"]=$Medecin["Nom"];
-            $_SESSION["prenom2"]=$Medecin["Prenom"];?>
-            
-            <a href="testu.php">
-                <input type="button" name="RDV" value="Prendre un RDV">
-            </a>
-            
-            <a href="#" id="btnCom">
-                <input type="button" name="Communiquer" value="Communiquer avec le m&eacute;decin" onclick='if(<?php echo $_SESSION["connecte"]?>==false)alert("Vous devez etre connecte pour envoyer un message")'>
-            </a>
+
+            <h2>Les informations du M&eacute;decin <?php echo  $Id ?><br></h2>
+            <p>
+                    <?php
+                    echo "Nom: " . $Medecin["Nom"] . " <br> ";
+                    echo "Prénom: " . $Medecin["Prenom"] . " <br> ";
+                    echo "Spécialité: " . $Medecin["Spe"] . "<br>  ";
+                    echo "Téléphone: " . $Medecin["Tel"] . " <br> ";
+                    echo "Mail: " . $Medecin["Mail"] . " <br> ";
+                    $_SESSION["name2"] = $Medecin["Nom"];
+                    $_SESSION["prenom2"] = $Medecin["Prenom"]; ?>
+            </p>
+            <li><a href="testu.php" value="Prendre un RDV" data-after="RDV">Prendre un rendez-vous <br></a></li>
+
+
+            <li><a href="Communiquer.php" id="btnCom" name="Communiquer" value="Communiquer avec le m&eacute;decin" onclick='if(<?php echo $_SESSION["connecte"] ?>==false)alert("Vous devez etre connecte pour envoyer un message")'>Communiquer avec le m&eacute;decin <br></a></li>
+               
             <!--On ne peut pas cliquer sur le bouton communiquer si on n'est pas connecte-->
             <script type="text/javascript">
-                if(<?php echo $_SESSION["connecte"]?>==true){
+                
+                if (<?php echo $_SESSION["connecte"] ?> == true) {
                     document.getElementById("btnCom").href = "Communiquer.php";
-                }
-                else{
-                    
+                } else {
+
                     document.getElementById("btnCom").href = "javascript:void(0)";
                 }
             </script>
@@ -118,7 +120,7 @@ else {
             <a href=<?php echo $link ?>>
                 <input type="button" name="CV" value="Voir son CV">
 
-            </a>
+            
         </div>
     </section>
 
@@ -132,7 +134,7 @@ else {
         </div>
     </section>
 
-    
+
 </body>
 
 </html>

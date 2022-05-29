@@ -27,7 +27,7 @@ $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
 //echo "<script>alert($jsvars)</script>";
 ?>
 
-alert("Rien n'a ete trouve pour cette recherche !");
+
 
 <html>
 
@@ -162,7 +162,6 @@ alert("Rien n'a ete trouve pour cette recherche !");
             </div>
         </div>
     </section>
-
 
 
 

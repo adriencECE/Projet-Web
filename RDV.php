@@ -187,19 +187,19 @@ function loginForm()
         href="https://www.omneseducation.com/app/themes/inseec-group/favicon.ico">
     <script src="script.js">
     </script>
-    
+
     <script>
         function RDV(clicked_id) {
-window.location="RDV.php?Bouton="+clicked_id;
-        
+            window.location = "RDV.php?Bouton=" + clicked_id;
+
         }
-        
-        
+
+
     </script>
 </head>
 
 <body>
-<section class="presentation">
+    <section class="presentation">
         <div id="wrapper">
             <div id="header">
                 <div id="nav">
@@ -226,11 +226,11 @@ window.location="RDV.php?Bouton="+clicked_id;
             </div>
         </div>
     </section>
-    
+
     <section>
 
 
-        <div id="loginchat"> 
+        <div id="loginchat">
 
             <?php
                        
@@ -240,7 +240,7 @@ window.location="RDV.php?Bouton="+clicked_id;
         </div>
 
         <div id="tableau" style="color:black">
-            <table border="colapse">
+            <table border="colapse" bgcolor="#98bbe3">
                 <tr bgcolor="grey">
 
                     <th width="50px">Lundi 06/06</th>
@@ -414,35 +414,33 @@ window.location="RDV.php?Bouton="+clicked_id;
                 </tr>
             </table>
             </form>
-          
-<section>
- 
-        <?php
+
+            <div id="suprimer">
+                <?php
 if (isset($rdvclick)) {
-echo $rdvclick["Date"];
-echo $rdvclick["Heure"];
-echo $rdvclick["PrenomM"];
-echo $rdvclick["NomM"];
-echo $rdvclick["NomP"];
-echo $rdvclick["PrenomP"];
+echo "Date du RDV: ".$rdvclick["Date"];
+echo " Heure du RDV: ".$rdvclick["Heure"];
+echo "h<br> Nom et prenom du medecin ou Nom du Laboratoire: ".$rdvclick["NomM"]." ".$rdvclick["PrenomM"];
+echo "<br>Nom et prenom du patient: ".$rdvclick["NomP"]." ".$rdvclick["PrenomP"]."<br>";
 
 ?>
-
 <input type="button" value="Supprimer" onclick="window.location='RDV.php?supr=true'">
 <?php
 }
 
 ?>
 
-</section>
+</div>
 
             <?php
-  foreach($rdv as $var):
+            foreach($rdv as $var):
         
              ?>
             <script type="text/javascript">
                 document.getElementById("<?php echo $var["Date"].$var["Heure"]?>").style.backgroundColor = "Red";
-                
+            </script>
+            <?php endforeach ; ?>
+            <script>
                 var elements = document.getElementsByClassName("<?php echo $repos?>");
                 for (i = 0; i < elements.length; i++) {
                     elements[i].style.backgroundColor = "white";
@@ -457,17 +455,19 @@ echo $rdvclick["PrenomP"];
                 }
             </script>
 
-            <?php endforeach ; ?>
+
 
 
         </div>
+        
+       
     </section>
 
 
+   
 
 
-
-    <section class="footerRDV">
+    <section class="footerAcceuil">
         <a id="footer"></a>
         <div class="footer container">
             <div id="footer">
