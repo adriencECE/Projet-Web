@@ -12,12 +12,13 @@ $db_mdp = ""; //DB login PW
 if (isset($_POST["Id"])) {
     $Id = $_POST["Id"];
     $_SESSION["Id"] = $_POST["Id"];
- 
-   
-} else {
+} elseif(isset($_GET["Id"]))
+{
+    $Id=$_GET["Id"];
+}
+else{
     $Id = $_SESSION["Id"];
 }
-$Id = $_POST["Id"];
 $sql = "";
 $test = "";
 

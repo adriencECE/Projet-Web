@@ -12,11 +12,14 @@ $Nom = $_POST["NomLabo"];
 if (isset($_POST["Id"])) {
     $Id = $_POST["Id"];
     $_SESSION["Id"] = $_POST["Id"];
- 
-   
-} else {
+} elseif(isset($_GET["Id"]))
+{
+    $Id=$_GET["Id"];
+}
+else{
     $Id = $_SESSION["Id"];
 }
+
 
 //Connect
 //$db_handle = mysqli_connect($site, $db_id, $db_mdp, $db, $port);

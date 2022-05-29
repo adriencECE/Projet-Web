@@ -16,7 +16,11 @@ $test = "";
 
 if (isset($_POST["service"])) {
     $service = $_POST["service"];
-} else {
+} elseif(isset($_GET["Service"]))
+{
+    $service=$_GET["Service"];
+}
+else {
     $service = "";
 }
 
@@ -60,6 +64,8 @@ if ($db_found) {
     <link rel="shortcut icon" type="image/x-icon" href="https://www.omneseducation.com/app/themes/inseec-group/favicon.ico">
     <script src="script.js">
     </script>
+    <script>
+    document.getElementById(<?php echo $service ?>).checked=true;</script>
 </head>
 
 <body>
@@ -114,7 +120,7 @@ if ($db_found) {
                     <label> Gyn&eacute;cologie</label><br>
                     <input type="radio" name="service" value="BioFemmeEnceinte" onclick="<?php $service = "BioFemmeEnceinte" ?>">
                     <label> Biologie Femme Enceinte</label><br>
-                    <input type="radio" name="service" value="" onclick="<?php $service = "" ?>" checked>
+                    <input type="radio" name="service" value="" onclick="<?php $service = "" ?>">
                     <label> Tous</label><br>
                     <input type="submit" value="Valider">
                 </p>

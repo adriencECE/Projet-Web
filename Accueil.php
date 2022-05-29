@@ -27,6 +27,7 @@ $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
 //echo "<script>alert($jsvars)</script>";
 ?>
 
+alert("Rien n'a ete trouve pour cette recherche !");
 
 <html>
 
@@ -37,6 +38,12 @@ $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
     <link href="OMNESSante.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" type="image/x-icon" href="https://www.omneseducation.com/app/themes/inseec-group/favicon.ico">
     <script type="text/javascript" src="script.js"></script>
+    <script>
+        function Rechercher(){
+        var r=document.getElementById("recherche").value;
+        window.location="RechercherTraitement.php?Recherche="+r;
+        }
+    </script>
 </head>
 
 
@@ -47,8 +54,11 @@ $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
             <div id="header">
                 <div id="nav">
                     <img src="omnessante.png" class="logo">
+                    <input id="recherche" type="text" name="Rechercher" value=""/> 
                     <div class="header-right">
-
+                    
+                        <a id="Rechercher" onclick="Rechercher()">Rechercher</a>
+                        
                         <a href="Accueil.php" data-after="Accueil">Accueil </a>
                         <!--<input type="button" name="Accueil" value="Accueil">
                     </a>-->
