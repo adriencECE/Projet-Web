@@ -276,6 +276,24 @@ body {
 
 }
 
+.lesMedecins #photoD{
+
+	background-image: url(https://cdn-icons-png.flaticon.com/512/387/387554.png);
+	background-size: 200px;
+	padding-bottom: 10px;
+	width: 200px;
+	height: 200px;
+
+	position: absolute;
+	top: 90px;
+	left: 50px;
+	background-repeat: no-repeat;
+
+
+}
+
+
+
 .lesMedecins #section {
 	position: absolute;
 	top: 50px;
@@ -437,6 +455,7 @@ loginform{
 .offers .offer-top {
 	max-width: 700px;
 	margin: 0 auto;
+
 }
 
 .offers .offer-bottom {

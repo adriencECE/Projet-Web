@@ -95,7 +95,7 @@ if ($db_found) {
     </section>
 
     <section class="lesMedecins">
-        <div id="photo"></div>
+        <div id="photoD"></div>
         <div id="section">
             <h2>Choisissez une Sp&eacute;cialit&eacute;:</h2>
             <form method="post" action="specialiste.php" style="color:black">

@@ -110,7 +110,7 @@ $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
         <div class="offers container">
             <div class="offer-top">
                 <h1 class="section-title">Nos service et notre offre <br></h1>
-                <p>Notre valeur première et la plus fondamentale est la qualité des soins. 
+                <p style="color:black">Notre valeur première et la plus fondamentale est la qualité des soins. 
                     Nous nous efforçons d'offrir à tous les patients la meilleure qualité de soins grâce 
                     à une formation approfondie et continue de notre personnel, des équipements performants, 
                     une approche multidisciplinaire et une priorité absolue pour la sécurité des patients.
@@ -132,13 +132,6 @@ $jsvars = json_encode($vars, JSON_HEX_TAG | JSON_HEX_AMP);
                     <p>Nous sommes ravis de vous inviter à la 7e Conférence internationale sur la maladie aortique. 
                         Cette année sera particulière à plusieurs égards.</p>
                 </div>
-                <!--
-                <div class="offer-item">
-                    <div class="icon"><img src="https://img.icons8.com/ios-glyphs/30/000000/implant.png" /></div>
-                    <h2>Soins</h2>
-                    <p>Mountain passes connecting valleys or countries often exceed 2,000 meters in altitude.
-                        The Alps form a 1,200 kilometer barrier between the Mediterranean Sea and the Danube. The alps are beautiful and as big as huge.</p>
-                </div>-->
                 <div class="offer-item">
                     <div class="icon"><img src="https://img.icons8.com/fluency-systems-filled/48/000000/fetus.png" /></div>
                     <h2>Maternité</h2>
