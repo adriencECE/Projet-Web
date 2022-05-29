@@ -12,7 +12,7 @@ body {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
-	overflow-x: hidden; 
+	overflow-x: hidden;
 }
 
 /*barre de navigation*/
@@ -216,115 +216,73 @@ body {
 /*fin choix medecins*/
 
 
-
-/*ajouter medecin*/
-
-.ajouterMedecin {
-
-	transform: translate(0%, 30%);
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 350px;
-	text-align: center;
-	margin-bottom: 20px;
-	text-transform: uppercase;
-	letter-spacing: 3px;
-	color: #332902;
-
-}
-
-.ajouterLabo {
+/*medecins generalistes*/
 
 
-	transform: translate(200%, -92%);
+.lesMedecins #photo {
+	background-image: url(https://cdn-icons-png.flaticon.com/512/387/387561.png);
+	background-size: 200px;
+	padding-bottom: 10px;
+	width: 200px;
+	height: 200px;
 
-	max-width: 350px;
-	text-align: center;
-	padding-left: 13%;
-	text-transform: uppercase;
-	letter-spacing: 3px;
-	color: #332902;
-
+	position: absolute;
+	top: 150px;
+	left: 50px;
+	background-repeat: no-repeat;
 
 }
 
-.carreca {
+.lesMedecins #section {
+	position: absolute;
+	top: 120px;
+	left: 299px;
 
-	transform: translate(-100%, -10%);
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 350px;
+	color: white;
+	font-size: 2rem;
+
+	letter-spacing: 0.1rem;
+	flex-grow: 1;
+}
+
+
+.lesMedecins::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
 	width: 100%;
-	background: #fff;
-	padding: 25px;
-	box-shadow: 0px 0px 18px 0 #0000002c;
+	background-color: black;
+	opacity: 0.7;
+	z-index: -1;
 }
 
-.carreca h2 {
-	text-align: center;
-	margin-bottom: 20px;
-	text-transform: uppercase;
-	letter-spacing: 3px;
-	color: #332902;
+.lesMedecins a {
+
+	text-decoration: none;
+	color: white;
 }
 
-.carreca .tbeau {
+.lesMedecins li{
 
-	border: 0px;
-	margin-top: 10px;
-	padding: 5px;
-	text-align: center;
-	width: 100%;
-	background: rgb(109, 152, 243);
-	color: #332902;
-	text-transform: uppercase;
-	letter-spacing: 5px;
-	font-weight: bold;
-
-	cursor: pointer;
+	text-decoration: none;
+	color: white;
 }
 
-.carreca .input_field {
-	margin-bottom: 5px;
-}
 
-.carreca .input_field input[type="text"],
-.carreca .textarea {
-	border: 1px solid #e0e0e0;
-	width: 100%;
-	padding: 5px;
-	text-align: center;
-}
-
-.carreca textarea {
-	resize: none;
-	height: 30px;
-	border: 1px solid #e0e0e0;
-	width: 100%;
-	padding: 5px;
-	text-align: center;
-}
-
-.carreca .tbeau input[type="submit"] {
-	border: 0px;
+.lesMedecins a:hover {
 
 
-	text-align: center;
-	width: 100%;
-	background: rgb(109, 152, 243);
-	color: #332902;
-	text-transform: uppercase;
-	letter-spacing: 5px;
-	font-weight: bold;
-	cursor: pointer;
+	color: crimson;
 }
 
 
 
 
+/*fin medecins generalistes*/
 
 
-/*fin ajouter medecin*/
 
 
 /* offers Section */
@@ -587,17 +545,7 @@ body {
 
 }
 
-.lesMedecins div {
 
-	font-family: 'Montserrat', sans-serif;
-
-	font-weight: bold;
-	margin-top: 20px;
-	margin: 20px;
-	padding-top: 200px;
-
-	font-size: 3rem;
-}
 
 .lesLabos div {
 	font-family: 'Montserrat', sans-serif;
@@ -738,39 +686,107 @@ body {
 
 }
 
-/*
-.toutParcourir div:nth-child(1) {
 
-	background-image: url(https://img.freepik.com/vecteurs-libre/cardiologie-cardiologue-examine-coeur-humain-medecin-traite-maladies-cardiaques-verifie-rythme-cardiaque-pouls-du-patient-cardiogramme-diagnostic-avc-examen-medical-pression-cardiovasculaire_458444-526.jpg?w=1060);
-	width: auto;
-	height: auto;
-	max-width: 200px;
-	max-height: 150px;
+/*ajouter medecin*/
 
-	text-decoration: none;
+.ajouterMedecin {
 
-}
-
-.toutParcourir div:nth-child(2) {
-
-	background-image: url(https://img.freepik.com/vecteurs-libre/cardiologie-cardiologue-examine-coeur-humain-medecin-traite-maladies-cardiaques-verifie-rythme-cardiaque-pouls-du-patient-cardiogramme-diagnostic-avc-examen-medical-pression-cardiovasculaire_458444-526.jpg?w=1060);
-	width: auto;
-	height: auto;
-	max-width: 200px;
-	max-height: 150px;
-
-	text-decoration: none;
+	transform: translate(0%, 30%);
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 350px;
+	text-align: center;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	color: #332902;
 
 }
 
-.toutParcourir div:nth-child(3) {
+.ajouterLabo {
 
-	background-image: url(https://img.freepik.com/vecteurs-libre/cardiologie-cardiologue-examine-coeur-humain-medecin-traite-maladies-cardiaques-verifie-rythme-cardiaque-pouls-du-patient-cardiogramme-diagnostic-avc-examen-medical-pression-cardiovasculaire_458444-526.jpg?w=1060);
-	width: auto;
-	height: auto;
-	max-width: 200px;
-	max-height: 150px;
 
-	text-decoration: none;
+	transform: translate(200%, -92%);
 
-}*/
+	max-width: 350px;
+	text-align: center;
+	padding-left: 13%;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	color: #332902;
+
+
+}
+
+.carreca {
+
+	transform: translate(-100%, -10%);
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 350px;
+	width: 100%;
+	background: #fff;
+	padding: 25px;
+	box-shadow: 0px 0px 18px 0 #0000002c;
+}
+
+.carreca h2 {
+	text-align: center;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	color: #332902;
+}
+
+.carreca .tbeau {
+
+	border: 0px;
+	margin-top: 10px;
+	padding: 5px;
+	text-align: center;
+	width: 100%;
+	background: rgb(109, 152, 243);
+	color: #332902;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	font-weight: bold;
+
+	cursor: pointer;
+}
+
+.carreca .input_field {
+	margin-bottom: 5px;
+}
+
+.carreca .input_field input[type="text"],
+.carreca .textarea {
+	border: 1px solid #e0e0e0;
+	width: 100%;
+	padding: 5px;
+	text-align: center;
+}
+
+.carreca textarea {
+	resize: none;
+	height: 30px;
+	border: 1px solid #e0e0e0;
+	width: 100%;
+	padding: 5px;
+	text-align: center;
+}
+
+.carreca .tbeau input[type="submit"] {
+	border: 0px;
+
+
+	text-align: center;
+	width: 100%;
+	background: rgb(109, 152, 243);
+	color: #332902;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+/*fin ajouter medecin*/
