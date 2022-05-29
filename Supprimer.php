@@ -50,6 +50,6 @@ if ($db_found) {
 } else {
     echo "Unable to connect <br>";
 }
-//header("Location: Modifier.php");
+header("Location: Modifier.php");
 
 ?>

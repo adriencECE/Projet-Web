@@ -20,7 +20,7 @@ if($_SESSION["type"]==1){
     $NomPatient=$_SESSION["name2"];
     $PrenomPatient = $_SESSION["prenom2"];
     }
-
+ 
 $text;
 $sent;
 if(isset($_GET["text"])){
@@ -94,12 +94,36 @@ if (isset($_GET['logout'])){
     fclose($myfile);
     header("Location: RDV.php"); //Rediriger l'utilisateur
  }
-
+$existant=false;
 if (isset($_POST['enter'])){
+   
     if($_POST['name2'] != ""){
-        $_SESSION['name2'] = stripslashes(htmlspecialchars($_POST['name2']));
-    }
+        $Nom=$_POST["name2"];
+        $sql="SELECT Nom FROM comptes";
+        $res = mysqli_query($db_handle, $sql);
+      
+        while ($data = mysqli_fetch_assoc($res)) {
+            //$data = une ligne de la table
+            //On crée un tableau avec toutes ces lignes
+            $comptes[] = $data;
+        }
+        
+        foreach($comptes as $var)
+        
+        {if($var["Nom"]==$Nom)
+            {
+                echo $var["Nom"];
+                $existant=true;
+                $_SESSION['name2'] = stripslashes(htmlspecialchars($_POST['name2']));
+                header("Location:CommuniquerRDV.php");
+            }
+        }
+        if($existant==false)
+        {header("Location:RDV.php");
+        }    }
     else{
+
+        header("Location:RDV.php");
         $_POST['name2']="";
         echo '<span class="error">Veuillez saisir votre nom</span>';
     }

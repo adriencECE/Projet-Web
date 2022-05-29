@@ -418,7 +418,7 @@ window.location="RDV.php?Bouton="+clicked_id;
 <section>
  
         <?php
-if (isset($_GET["Bouton"])) {
+if (isset($rdvclick)) {
 echo $rdvclick["Date"];
 echo $rdvclick["Heure"];
 echo $rdvclick["PrenomM"];
