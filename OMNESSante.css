@@ -17,6 +17,13 @@ body {
 
 /*barre de navigation*/
 
+#header input{
+	background-color: white;
+	height: 30px;
+	margin-top: -20px;
+	margin-left: 450px;
+  }
+
 .presentation {
 
 	/*background-image: url(https://zupimages.net/up/22/21/zfsx.jpg);*/

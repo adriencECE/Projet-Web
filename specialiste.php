@@ -14,7 +14,11 @@ $var;
 $sql = "";
 if (isset($_POST["spe"])) {
     $spe = $_POST["spe"];
-} else {
+} elseif(isset($_GET["Spe"]))
+{
+    $spe=$_GET["Spe"];
+}
+else {
     $spe = "";
 }
 
@@ -110,7 +114,7 @@ if ($db_found) {
                 <label> IST</label>
                 <input type="radio" name="spe" value="Osth&eacute;opathie" onclick="<?php $spe = "Ostheopathie" ?>">
                 <label> Ostheopathie</label>
-                <input type="radio" name="spe" value="" onclick="<?php $spe = "" ?>" checked >
+                <input type="radio" name="spe" value="" onclick="<?php $spe = "" ?>"  >
                 <label> Tous</label><br>
                 <input type="submit" value="Valider">
             </form>
