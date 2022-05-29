@@ -139,15 +139,7 @@ if ($db_found) {
     </section>
 
 
-    <section class="footerRDV">
-        <a id="footer"></a>
-        <div class="footer container">
-            <div id="footer">
-                <a>Copyright &copy; 2022, OMNES Sant&eacute;<br></a>
-                <a href="mailto:OMNES.sante@gmail.com">OMNES.sante@gmail.com</a>
-            </div>
-        </div>
-    </section>
+
 
 
 </body>

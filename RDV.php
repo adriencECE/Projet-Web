@@ -227,7 +227,7 @@ function loginForm()
         </div>
     </section>
 
-    <section class="lesMedecins">
+    <section class="lesMedeci">
 
 
         <div id="loginchat">

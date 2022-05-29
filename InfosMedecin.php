@@ -124,16 +124,6 @@ if ($db_found) {
         </div>
     </section>
 
-    <section class="footerinfoMedecins">
-        <a id="footer"></a>
-        <div class="footer container">
-            <div id="footer">
-                <a>Copyright &copy; 2022, OMNES Sant&eacute;<br></a>
-                <a href="mailto:OMNES.sante@gmail.com">OMNES.sante@gmail.com</a>
-            </div>
-        </div>
-    </section>
-
 
 </body>
 

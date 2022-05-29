@@ -22,7 +22,7 @@ if (isset($_POST["Id"])) {
 } else {
   $Id = $_SESSION["Id"];
 }
-var_dump($Id);
+//var_dump($Id);
 //Connect
 //$db_handle = mysqli_connect($site, $db_id, $db_mdp, $db, $port);
 $db_handle = mysqli_connect($site, $db_id, $db_mdp);
@@ -135,9 +135,9 @@ if ($db_found) {
     </div>
   </section>
 
-  <section class="lesMedecins">
-    <div id="section" style="color:black">
-    <h2>Choisissez vos horaires:</h2>
+  <section class="lesMedeci"><br><br><br><br>
+    <div id="section" style="color:black"><br>
+    <h2 style="color:black">Choisissez vos horaires:</h2>
       <table border="colapse">
         <tr bgcolor="grey">
 
@@ -325,7 +325,7 @@ if ($db_found) {
   </section>
 
 
-  <section class="footerRDV">
+  <section class="footer">
     <a id="footer"></a>
     <div class="footer container">
       <div id="footer">
