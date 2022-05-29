@@ -322,7 +322,10 @@ else{
              document.getElementById("<?php echo $var["Date"].$var["Heure"]?>").style.backgroundColor="Red";
              document.getElementById("<?php echo $var["Date"].$var["Heure"]?>").disabled=true;
 
-            var elements= document.getElementsByClassName("<?php echo $repos?>");
+          </script>
+          <?php endforeach ; ?> 
+          <script> 
+           var elements= document.getElementsByClassName("<?php echo $repos?>");
            for(i=0;i<elements.length;i++)
            {
             elements[i].style.backgroundColor="white";
@@ -338,7 +341,7 @@ else{
            }
              </script>
 
-                <?php endforeach ; ?> 
+                
                
 
                 </div>

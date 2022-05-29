@@ -91,7 +91,8 @@ if ($db_found) {
                         </li>
                     <?php endforeach ?>
                 </ul>
-                <a href="infosMedecin.php" data-after="Voir les informations du m&eacute;decin s&eacute;lectionn&eacute;"> Voir les informations du m&eacute;decin s&eacute;lectionn&eacute;</a>
+                <input type="submit">
+                <a href="InfosMedecin.php" data-after="Voir les informations du m&eacute;decin s&eacute;lectionn&eacute;"> Voir les informations du m&eacute;decin s&eacute;lectionn&eacute;</a>
             </form>
         </div>
     </section>

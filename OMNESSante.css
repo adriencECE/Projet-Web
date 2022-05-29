@@ -682,16 +682,26 @@ body {
 #loginchat {
 	float: left;
 	width: 300px;
-
+margin-top: 200px;
 }
 
 #tableau {
-	background-color: #2A64A7;
-	width: 600px;
-
-	float: right;
+	
+	width: 400px;
+	margin-left: 400px;
+	margin-top: 100px;
+float: left;
 
 }
+#suprimer {
+	margin-top: 50px;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	font-size: 2rem;
+	color: #000000;
+}
+
 
 
 /*ajouter medecin*/
