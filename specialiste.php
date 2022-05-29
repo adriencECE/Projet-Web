@@ -94,33 +94,37 @@ if ($db_found) {
         </div>
     </section>
 
-    <section class="specialiste">
+    <section class="lesMedecins">
+        <div id="photo"></div>
         <div id="section">
+            <h2>Choisissez une Sp&eacute;cialit&eacute;:</h2>
             <form method="post" action="specialiste.php" style="color:black">
-                Choisissez une Sp&eacute;cialit&eacute;:<br>
-                <input type="radio" name="spe" value="Addictologie" onclick="<?php $spe = "Addictologie" ?>">
-                <label>Addictologie</label>
-                <input type="radio" name="spe" value="Andrologie" onclick="<?php $spe = "Andrologie" ?>">
-                <label>Andrologie</label>
-                <input type="radio" name="spe" value="Cardiologie" onclick="<?php $spe = "Cardiologie" ?>">
-                <label>Cardiologie</label>
-                <input type="radio" name="spe" value="Dermatologie" onclick="<?php $spe = "Dermatologie" ?>">
-                <label> Dermatologie</label>
-                <input type="radio" name="spe" value="Gastro-H&eacute;pato-Ent&eacute;rologie " onclick="<?php $spe = "GHE" ?>">
-                <label> Gastro-H&eacute;pato-Ent&eacute;rologie</label>
-                <input type="radio" name="spe" value="Gynecologie" onclick="<?php $spe = "Gynecologie" ?>">
-                <label> Gyn&eacute;cologie</label>
-                <input type="radio" name="spe" value="IST" onclick="<?php $spe = "IST" ?>">
-                <label> IST</label>
-                <input type="radio" name="spe" value="Osth&eacute;opathie" onclick="<?php $spe = "Ostheopathie" ?>">
-                <label> Ostheopathie</label>
-                <input type="radio" name="spe" value="" onclick="<?php $spe = "" ?>"  >
-                <label> Tous</label><br>
-                <input type="submit" value="Valider">
+                <p>
+                    <input type="radio" name="spe" value="Addictologie" onclick="<?php $spe = "Addictologie" ?>">
+                    <label>Addictologie</label><br>
+                    <input type="radio" name="spe" value="Andrologie" onclick="<?php $spe = "Andrologie" ?>">
+                    <label>Andrologie</label><br>
+                    <input type="radio" name="spe" value="Cardiologie" onclick="<?php $spe = "Cardiologie" ?>">
+                    <label>Cardiologie</label><br>
+                    <input type="radio" name="spe" value="Dermatologie" onclick="<?php $spe = "Dermatologie" ?>">
+                    <label> Dermatologie</label><br>
+                    <input type="radio" name="spe" value="Gastro-H&eacute;pato-Ent&eacute;rologie " onclick="<?php $spe = "GHE" ?>">
+                    <label> Gastro-H&eacute;pato-Ent&eacute;rologie</label><br>
+                    <input type="radio" name="spe" value="Gynecologie" onclick="<?php $spe = "Gynecologie" ?>">
+                    <label> Gyn&eacute;cologie</label><br>
+                    <input type="radio" name="spe" value="IST" onclick="<?php $spe = "IST" ?>">
+                    <label> IST</label><br>
+                    <input type="radio" name="spe" value="Osth&eacute;opathie" onclick="<?php $spe = "Ostheopathie" ?>">
+                    <label> Ostheopathie</label><br>
+                    <input type="radio" name="spe" value="" onclick="<?php $spe = "" ?>">
+                    <label> Tous</label><br>
+                    <input type="submit" value="Valider">
+                    
+                </p>
             </form>
             <?php if (isset($listeSpecialistes)) : ?>
                 <form method="post" action="InfosMedecin.php" style="color:black">
-                    Liste M&eacute;decins Sp&eacute;cialistes <br>
+                    <h2>Liste M&eacute;decins Sp&eacute;cialistes:</h2><br>
                     <ul>
                         <!-- Pour chaque médecin Généraliste dans la table-->
                         <?php foreach ($listeSpecialistes as $Specialiste) : ?>
@@ -130,8 +134,9 @@ if ($db_found) {
                             </li>
                         <?php endforeach ?>
                     </ul>
-                    <label>Voir les informations du m&eacute;decin s&eacute;lectionn&eacute;:</label>
+                    <label><a>Voir les informations du m&eacute;decin s&eacute;lectionn&eacute;:</a></label><br>
                     <input type="submit" value="Soumettre">
+                    <!--<a href="infosMedecin.php" data-after="Voir les informations du m&eacute;decin s&eacute;lectionn&eacute;"> Voir les informations du m&eacute;decin s&eacute;lectionn&eacute;</a>-->
                 </form>
 
             <?php else : ?>
@@ -140,15 +145,7 @@ if ($db_found) {
         </div>
     </section>
 
-    <section class="footerAcceuil">
-        <a id="footer"></a>
-        <div class="footer container">
-            <div id="footer">
-                <a>Copyright &copy; 2022, OMNES Sant&eacute;<br></a>
-                <a href="mailto:OMNES.sante@gmail.com">OMNES.sante@gmail.com</a>
-            </div>
-        </div>
-    </section>
+
 
 
 </body>

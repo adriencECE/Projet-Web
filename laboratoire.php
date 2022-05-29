@@ -100,29 +100,32 @@ if ($db_found) {
     </section>
 
 
-    <section class="laboratoire">
+    <section class="lesMedecins">
+        <div id="photoA"></div>
         <div id="section" style="color:black">
-            <form method="post" action="laboratoire.php" >
-                Choisissez un Service:<br>
-                <input type="radio" name="service" value="depistage covid"  id="depistage covid" onclick="<?php $service = "depistage covid" ?>">
-                <label>Test COVID</label>
-                <input type="radio" name="service" id="test sanguin"value="test sanguin" onclick="<?php $service = "test sanguin" ?>">
-                <label>Test Sanguin</label>
-                <input type="radio" name="service" id="cancerologie" value="cancerologie" onclick="<?php $service = "cancerologie" ?>">
-                <label>Canc&eacute;rologie</label>
-                <input type="radio" name="service" id="IST" value="IST" onclick="<?php $service = "IST" ?>">
-                <label> Depisatge IST</label>
-                <input type="radio" name="service" value="BiologiePreventive"  id="BiologiePreventive" onclick="<?php $service = "BiologiePreventive" ?>">
-                <label> Biologie Pr&eacute;ventive</label>
-                <input type="radio" name="service" value="Gynecologie"  id="Gynecologie" onclick="<?php $service = "Gynecologie" ?>">
-                <label> Gyn&eacute;cologie</label>
-                <input type="radio" name="service" id="BioFemmeEnceinte" value="BioFemmeEnceinte" onclick="<?php $service = "BioFemmeEnceinte" ?>">
-                <label> Biologie Femme Enceinte</label>
-                <input type="radio" name="service" value="" id=""  onclick="<?php $service = "" ?>">
-                <label> Tous</label><br>
-                <input type="submit" value="Valider">
+            <h2>Choisissez un Service:<br></h2>
+            <form method="post" action="laboratoire.php">
+                <p>
+                    <input type="radio" name="service" value="depistage covid" onclick="<?php $service = "depistage covid" ?>">
+                    <label>Test COVID</label><br>
+                    <input type="radio" name="service" value="test sanguin" onclick="<?php $service = "test sanguin" ?>">
+                    <label>Test Sanguin</label><br>
+                    <input type="radio" name="service" value="cancerologie" onclick="<?php $service = "cancerologie" ?>">
+                    <label>Canc&eacute;rologie</label><br>
+                    <input type="radio" name="service" value="IST" onclick="<?php $service = "IST" ?>">
+                    <label> Depisatge IST</label><br>
+                    <input type="radio" name="service" value="BiologiePreventive" onclick="<?php $service = "BiologiePreventive" ?>">
+                    <label> Biologie Pr&eacute;ventive</label><br>
+                    <input type="radio" name="service" value="Gynecologie" onclick="<?php $service = "Gynecologie" ?>">
+                    <label> Gyn&eacute;cologie</label><br>
+                    <input type="radio" name="service" value="BioFemmeEnceinte" onclick="<?php $service = "BioFemmeEnceinte" ?>">
+                    <label> Biologie Femme Enceinte</label><br>
+                    <input type="radio" name="service" value="" onclick="<?php $service = "" ?>">
+                    <label> Tous</label><br>
+                    <input type="submit" value="Valider">
+                </p>
             </form>
-            Liste Laboratoires contenant le service s&eacute;lectionn&eacute; <br>
+            <h2>Liste laboratoires contenant le service s&eacute;lectionn&eacute; <br></h2>
             <form method="post" action="InfosLabo.php" style="color:black">
                 <ul>
                     <!-- Pour chaque médecin Généraliste dans la table-->
@@ -133,22 +136,14 @@ if ($db_found) {
                         </li>
                     <?php endforeach ?>
                 </ul>
-                <label>Voir les informations du m&eacute;decin s&eacute;lectionn&eacute;:</label>
+                <label><h2>Voir les informations du laboratoire s&eacute;lectionn&eacute;:</label></h2>
                 <input type="submit" value="Soumettre">
             </form>
         </div>
     </section>
 
 
-    <section class="footerAcceuil">
-        <a id="footer"></a>
-        <div class="footer container">
-            <div id="footer">
-                <a>Copyright &copy; 2022, OMNES Sant&eacute;<br></a>
-                <a href="mailto:OMNES.sante@gmail.com">OMNES.sante@gmail.com</a>
-            </div>
-        </div>
-    </section>
 
 </body>
+
 </html>

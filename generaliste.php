@@ -76,7 +76,7 @@ if ($db_found) {
 
 
     <section class="lesMedecins">
-<div id=photo></div>
+        <div id=photo></div>
         <div id="section">
             <h2>Liste M&eacute;decins G&eacute;n&eacute;ralistes: </h2><br>
 
